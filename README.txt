@@ -1,7 +1,7 @@
 
 Scores - Chirag
 Fletchblue - Alex
-shintaboy - Shiraz
+shintaboy - Sheraaz
 GarethAlgar - Gareth
 YoussefKawkgi - Youssef
 kiriXT - Bingtong
