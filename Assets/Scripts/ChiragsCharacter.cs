@@ -5,7 +5,7 @@ using System;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class Character : MonoBehaviour
+public class ChiragsCharacter : MonoBehaviour
 {
     private CharacterController cc;
 
