@@ -91,7 +91,7 @@ public class suspicionMeter : MonoBehaviour
     //when the meter is above the second threashold, do this
     void area1AboveNum2()
     {
-        Debug.Log("SUSPICIOIN LEVEL 2");
+        GameManager.instance.lose();
     }
 
     //add to meter every WAIT_TIME seconds

@@ -13,13 +13,13 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Quit()
@@ -30,6 +30,20 @@ public class GameManager : MonoBehaviour
         Application.Quit();
 #endif
     }
+
+    public void win()
+    {
+        Debug.Log("win");
+
+    }
+
+    public void lose()
+    {
+        Debug.Log("lose");
+
+    }
+
+
     /*
      //this is a template for a variable
     public int health
