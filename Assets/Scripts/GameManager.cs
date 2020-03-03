@@ -13,6 +13,13 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        if (_instance)
+            Destroy(gameObject);
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this);
+        }
 
     }
 
