@@ -1371,7 +1371,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8187877655360303970}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2128080652
+--- !u!114 &2128080651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1388,9 +1388,28 @@ MonoBehaviour:
   rotateSpeed: 5
   gravity: 9.81
   type: 0
-  projectilePrefab: {fileID: 0}
-  projectileSpawnPoint: {fileID: 0}
-  projectileSpeed: 10
+--- !u!114 &2128080652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128080650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705b2d9a817207f4c8716184f570af27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availCams: []
+  player: {fileID: 2128080650}
+  maxCamAngles: 0
+  currentCams: 3
+  findRange: 20
+  cameras: []
+  layer:
+    serializedVersion: 2
+    m_Bits: 256
+  inRange: 0
 --- !u!1001 &4016124258010827498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1609,4 +1628,5 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8187877655784107376, guid: 57f17f06241150346a54c1cf944dd8d9, type: 3}
+    - {fileID: 1766153747, guid: 57f17f06241150346a54c1cf944dd8d9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57f17f06241150346a54c1cf944dd8d9, type: 3}

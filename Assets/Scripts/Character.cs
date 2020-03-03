@@ -22,9 +22,6 @@ public class Character : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
 
     // Projectile variables
-    public Rigidbody projectilePrefab;      // What projectile to spawn
-    public Transform projectileSpawnPoint;  // Where to spawn projectile
-    public float projectileSpeed = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
