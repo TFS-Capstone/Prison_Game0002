@@ -1,16 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    //variables ---------------------------------------
+
+
+    //whether the game is paused
+    public static bool GameIsPause = false;
+    //the pause menu GameObject
+    public GameObject PauseMenuUI;
+    //instance for the GameManager
     static GameManager _instance = null;
-    // Start is called before the first frame update
+
+
+    //end of variables --------------------------------
+
+    //creates the GameManager instance
     public static GameManager instance
     {
         get { return _instance; }
         set { instance = value; }
     }
+
+    //start with don't destroy on load
     void Start()
     {
         if (_instance)
@@ -23,12 +39,40 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    // Update has pause menu checks
     void Update()
     {
-
+        //checking if correct scene is active before being able to pause
+        if (SceneManager.GetActiveScene().name == "Sheraaz")
+        { 
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                if (GameIsPause)
+                    Resume();
+                else
+                    Pause();
+            }
+        
+        }
     }
 
+    //pause game
+    public void Pause()
+    {
+        PauseMenuUI.SetActive(true);
+        Time.timeScale = 0;
+        GameIsPause = true;
+    }
+    //resume game
+    public void Resume()
+    {
+        GrabPauseMenu();
+        PauseMenuUI.SetActive(false);
+        Time.timeScale = 1;
+        GameIsPause = false;
+    }
+
+    //quit the game
     public void Quit()
     {
 #if UNITY_EDITOR
@@ -43,29 +87,43 @@ public class GameManager : MonoBehaviour
         Debug.Log("win");
 
     }
-
+    //loads the lose scene
     public void lose()
     {
-        Debug.Log("lose");
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
-
-
+    //lose scene go back to title scene
+    public void Restart()
+    {
+        SceneManager.LoadScene("Title");
+    }
+    //pause menu go back to title scene
+    public void Mainmenu()
+    {
+        SceneManager.LoadScene("Title");
+    }
+    //main menu start game and find the UI
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Sheraaz");
+        PauseMenuUI = GameObject.Find("Canvas");
+    }
+    //grabs the pause menu for the GameManager
+    public void GrabPauseMenu()
+    {
+        PauseMenuUI = GameObject.FindGameObjectWithTag("Pause");
+        PauseMenuUI.SetActive(false);
+        GameIsPause = false;
+    }
+    //template for GameManager variables
     /*
      //this is a template for a variable
     public int health
     {
         get { return _health; }
-        set
-        {
-            _health = value;
-            if (healthText)
-            {
-                healthText.text = _health.ToString();
-            }
-        }
-
+        set {_health = value;}
     }
     */
+
 
 }

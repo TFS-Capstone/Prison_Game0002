@@ -8,6 +8,7 @@ TagManager:
   - interactable
   - GameManager
   - Door
+  - Pause
   layers:
   - Default
   - TransparentFX
