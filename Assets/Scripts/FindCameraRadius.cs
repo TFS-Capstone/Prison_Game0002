@@ -5,11 +5,11 @@ using UnityEngine;
 public class FindCameraRadius : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject[] availCams;
+    // public GameObject[] availCams;
 
     public GameObject player;
     public int maxCamAngles;
-    public int currentCams;
+    //public int currentCams;
     public float findRange = 20.0f;
 
     public Camera[] cameras;
@@ -17,7 +17,7 @@ public class FindCameraRadius : MonoBehaviour
     //in inspector, this has to be the same layer tha Camera object nodes are on
     public LayerMask layer;
 
-    public bool inRange;
+    //public bool inRange;
 
 
     void Start()
