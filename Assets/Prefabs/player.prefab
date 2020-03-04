@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 8187877655784107372}
   - component: {fileID: 8187877655784107374}
   - component: {fileID: 8187877655784107375}
-  - component: {fileID: 8187877655784107376}
-  - component: {fileID: 1766153747}
+  - component: {fileID: 5839905157343627945}
+  - component: {fileID: 5875651946349708932}
+  - component: {fileID: 2128080652}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -133,7 +134,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8187877655784107376
+--- !u!114 &5839905157343627945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,16 +143,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 8187877655784107369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe89754b8e68e8f4ca1a4b5b715bfb70, type: 3}
+  m_Script: {fileID: 11500000, guid: 9abcca80c26b0b546bd1edaa4f4c7b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  jumpSpeed: 0
-  rotationSpeed: 0
-  gravity: 0
-  camMode: 0
-  playerTransform: {fileID: 8187877655784107379}
---- !u!114 &1766153747
+  speed: 6
+  jumpSpeed: 8
+  rotateSpeed: 5
+  gravity: 9.81
+  type: 0
+--- !u!114 &5875651946349708932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187877655784107369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96f6d282d8152946ba226c106607515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2128080652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,8 +177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8187877655784107369}
   maxCamAngles: 0
-  findRange: 10
+  findRange: 20
   cameras:
+  - {fileID: 8187877654980124177}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -255,10 +269,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8187877655784107379}
     m_Modifications:
+    - target: {fileID: 242961818728161112, guid: 4f09d1cf012edfd40a1f2861cba4344d,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 242961818728161114, guid: 4f09d1cf012edfd40a1f2861cba4344d,
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 242961818728161114, guid: 4f09d1cf012edfd40a1f2861cba4344d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 242961818728161114, guid: 4f09d1cf012edfd40a1f2861cba4344d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cameras
       objectReference: {fileID: 0}
     - target: {fileID: 242961818728161119, guid: 4f09d1cf012edfd40a1f2861cba4344d,
         type: 3}
@@ -320,6 +349,12 @@ PrefabInstance:
 --- !u!4 &8187877654980124182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 242961818728161119, guid: 4f09d1cf012edfd40a1f2861cba4344d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8286063818404299081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &8187877654980124177 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 242961818728161112, guid: 4f09d1cf012edfd40a1f2861cba4344d,
     type: 3}
   m_PrefabInstance: {fileID: 8286063818404299081}
   m_PrefabAsset: {fileID: 0}

@@ -29,6 +29,8 @@ public class CameraInteract : MonoBehaviour
                     if (hit.collider.CompareTag("Door"))
                     {
                         Debug.Log("hit door");
+                        Animator anim = hit.collider.GetComponentInChildren<Animator>();
+                        anim.SetTrigger("OpenClose");
                     }
                 }
             }
