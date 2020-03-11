@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //checking if correct scene is active before being able to pause
-        if (SceneManager.GetActiveScene().name == "Sheraaz")
+        if (SceneManager.GetActiveScene().name == "Sheraaz" || SceneManager.GetActiveScene().name == "Alex")
         { 
             if (Input.GetKeyDown(KeyCode.P))
             {
@@ -66,9 +66,10 @@ public class GameManager : MonoBehaviour
     //resume game
     public void Resume()
     {
+        Time.timeScale = 1;
         GrabPauseMenu();
         PauseMenuUI.SetActive(false);
-        Time.timeScale = 1;
+        
         GameIsPause = false;
     }
 
@@ -114,6 +115,7 @@ public class GameManager : MonoBehaviour
         PauseMenuUI = GameObject.FindGameObjectWithTag("Pause");
         PauseMenuUI.SetActive(false);
         GameIsPause = false;
+        Time.timeScale = 1;
     }
     //template for GameManager variables
     /*
