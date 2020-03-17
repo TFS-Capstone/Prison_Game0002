@@ -9,7 +9,6 @@ TagManager:
   - GameManager
   - Door
   - Pause
-  - Path
   layers:
   - Default
   - TransparentFX
@@ -20,7 +19,7 @@ TagManager:
   - 
   - 
   - Cameras
-  - Player
+  - 
   - 
   - 
   - 
