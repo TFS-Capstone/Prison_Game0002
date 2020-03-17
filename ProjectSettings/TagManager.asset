@@ -9,7 +9,6 @@ TagManager:
   - GameManager
   - Door
   - Pause
-  - Route
   layers:
   - Default
   - TransparentFX
