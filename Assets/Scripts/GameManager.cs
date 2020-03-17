@@ -94,10 +94,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
     //lose scene go back to title scene
-   /* public void Restart()
+    public void Restart()
     {
         SceneManager.LoadScene("Title");
-    }*/
+    }
     //pause menu go back to title scene
     public void Mainmenu()
     {
