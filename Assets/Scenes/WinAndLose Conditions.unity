@@ -147,9 +147,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 154124136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1c073c97ada15e4f87655aee3654436, type: 3}
+  m_Script: {fileID: 11500000, guid: cc15daad013a3584f8b9367533306112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  area1: 0
+  area1Metric: 0
+  meter: {fileID: 0}
 --- !u!4 &154124138
 Transform:
   m_ObjectHideFlags: 0
