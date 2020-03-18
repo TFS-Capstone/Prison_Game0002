@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //checking if correct scene is active before being able to pause
-        if (SceneManager.GetActiveScene().name == "Sheraaz" || SceneManager.GetActiveScene().name == "Alex")
+        if (SceneManager.GetActiveScene().name == "Sheraaz" || SceneManager.GetActiveScene().name == "Alex"|| SceneManager.GetActiveScene().name =="Whitebox2.0")
         { 
             if (Input.GetKeyDown(KeyCode.P))
             {
@@ -85,13 +85,13 @@ public class GameManager : MonoBehaviour
 
     public void win()
     {
-        Debug.Log("win");
+        SceneManager.LoadScene("Win");
 
     }
     //loads the lose scene
     public void lose()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("GameOver");
     }
     //lose scene go back to title scene
     public void Restart()
@@ -106,8 +106,7 @@ public class GameManager : MonoBehaviour
     //main menu start game and find the UI
     public void StartGame()
     {
-        SceneManager.LoadScene("Sheraaz");
-        PauseMenuUI = GameObject.Find("Canvas");
+        SceneManager.LoadScene("Whitebox2.0");
     }
     //grabs the pause menu for the GameManager
     public void GrabPauseMenu()
@@ -117,6 +116,7 @@ public class GameManager : MonoBehaviour
         GameIsPause = false;
         Time.timeScale = 1;
     }
+
     //template for GameManager variables
     /*
      //this is a template for a variable

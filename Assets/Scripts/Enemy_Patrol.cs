@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class Enemy_Patrol : MonoBehaviour
 {
-
+    public bool doLooking = false;
     public bool isLooking = false;
     public float speed;
     NavMeshAgent nmAgent;
@@ -61,6 +61,8 @@ public class Enemy_Patrol : MonoBehaviour
         
         float playerDistance = Vector3.Distance(player.position, transform.position);
         float playerBackDistance = Vector3.Distance(playerBack.position, transform.position);
+
+        if (doLooking)
         if (playerDistance > playerBackDistance)
         {
             isLooking = false;
@@ -74,7 +76,7 @@ public class Enemy_Patrol : MonoBehaviour
 
         if (playerBackDistance < 2)
         {
-            Debug.Log("You Lose");
+            GameManager.instance.lose();
         }
         
     }
