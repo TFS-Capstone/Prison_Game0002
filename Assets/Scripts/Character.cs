@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    RaycastHit hit;
+    //RaycastHit hit;
     CharacterController cc;
 
     // Variables to control Character
@@ -77,6 +77,9 @@ public class Character : MonoBehaviour
             // Actually moves the Character
             cc.Move(moveDirection * Time.deltaTime);
         }
+
+        //moved into the inventory system
+        /*
         if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
         {
             if (hit.distance < 20 && hit.transform.gameObject.tag == "interactable")
@@ -88,5 +91,6 @@ public class Character : MonoBehaviour
                 }
             }
         }
+        */
     }
 }

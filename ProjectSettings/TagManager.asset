@@ -10,6 +10,8 @@ TagManager:
   - Door
   - Pause
   - Node
+  - item
+  - disguise
   layers:
   - Default
   - TransparentFX
