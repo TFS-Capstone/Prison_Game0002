@@ -77,6 +77,12 @@ public class Character : MonoBehaviour
             // Actually moves the Character
             cc.Move(moveDirection * Time.deltaTime);
         }
+        else if(type == 2)
+        {
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            float curSpeed = 0;
+            cc.SimpleMove(forward * curSpeed);
+        }
 
         //moved into the inventory system
         /*

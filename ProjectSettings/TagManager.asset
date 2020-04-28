@@ -12,6 +12,7 @@ TagManager:
   - Node
   - item
   - disguise
+  - Minigame
   layers:
   - Default
   - TransparentFX
