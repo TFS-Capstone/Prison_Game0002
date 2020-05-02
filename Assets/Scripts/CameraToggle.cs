@@ -32,7 +32,7 @@ public class CameraToggle : MonoBehaviour
         }
         else
         {
-            Debug.Log("no parent cam");
+            Debug.Log("no cam");
         }
     }
 }

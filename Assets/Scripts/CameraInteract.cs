@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CameraInteract : MonoBehaviour
 {
     Ray ray;
     RaycastHit hit;
     Camera cam;
+
+    public GameObject pingIcon;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,16 @@ public class CameraInteract : MonoBehaviour
                 }
             }
 
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                Debug.Log("sending ray");
+                ray = cam.ScreenPointToRay(new Vector3(0, 0, 0));
+                Debug.DrawRay(cam.transform.position, cam.transform.forward * 10, Color.green);
+                if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+                {
+                    Instantiate(pingIcon, hit.point, Quaternion.identity);
+                }
+            }
             
         }
     }
