@@ -24,6 +24,8 @@ namespace DavidJalbert
             public bool invert;
         }
 
+        //Movement Section
+
         [Header("Input")]
         [Tooltip("Whether to let this script control the vehicle.")]
         public bool enableInput = true;
@@ -35,6 +37,10 @@ namespace DavidJalbert
         public InputValue steerRightInput = new InputValue() { type = InputType.RawAxis, name = "Horizontal", invert = false };
         [Tooltip("Input type to check to make the vehicle turn left.")]
         public InputValue steerLeftInput = new InputValue() { type = InputType.RawAxis, name = "Horizontal", invert = true };
+
+        
+
+        //Rotation of Wheels
 
         [Header("Visuals")]
         [Tooltip("Object on which to apply the controller's position and rotation.")]
@@ -54,6 +60,12 @@ namespace DavidJalbert
         [Tooltip("Whether to rotate the vehicle left and right on slopes.")]
         public bool rotateRoll = true;
 
+       
+       
+        
+        //Particle System
+
+        
         [Header("Particles")]
 
         [Tooltip("Minimum velocity when scraping against a wall to play the particle system.")]
@@ -79,6 +91,8 @@ namespace DavidJalbert
         private TinyCarController car;
         private float wheelRotation = 0;
         private float wheelSpin = 0;
+
+       
 
         void Start()
         {
@@ -185,7 +199,7 @@ namespace DavidJalbert
                 }
             }
         }
-
+        
         public float getInput(InputValue v)
         {
             float value = 0;
