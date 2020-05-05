@@ -49,110 +49,17 @@ public class FindCameraRadius : MonoBehaviour
         //}
         if (Input.GetKeyDown(KeyCode.V) && currentCameraIndex!=0)
         {
-
-            //GetComponent<Player>().camMode = true;
-            
-            currentCameraIndex++;
-            
-            Debug.Log("V button has been pressed. Switching to the next camera");
-            if (currentCameraIndex < cameras.Length)
-            {
-                cameras[currentCameraIndex - 1].gameObject.SetActive(false);
-                cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
-                cameras[currentCameraIndex].gameObject.SetActive(true);               
-                cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();               
-                
-            }
-            else
-            {
-                cameras[currentCameraIndex - 1].gameObject.SetActive(false);
-                cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
-                currentCameraIndex = 1;
-                
-                cameras[currentCameraIndex].gameObject.SetActive(true);
-                cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-
-            }
-            lastCameraIndex = currentCameraIndex;
+            NextCamera();
         }
 
         if (Input.GetKeyDown(KeyCode.Z) && currentCameraIndex != 0)
         {
-            Debug.Log("Z button has been pressed. Switching to the previous camera");
-
-            
-            //if(currentCameraIndex == 0)
-            //{
-            //    cameras[currentCameraIndex].gameObject.SetActive(true);
-            //    cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-            //    currentCameraIndex = cameras.Length - 1;
-
-            //    cameras[currentCameraIndex].gameObject.SetActive(true);
-            //    cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-            //}
-            if (currentCameraIndex-1 !=0)
-            {
-                currentCameraIndex--;
-
-                cameras[currentCameraIndex + 1].gameObject.SetActive(false);
-                cameras[currentCameraIndex + 1].gameObject.GetComponent<CameraToggle>().FindCam();
-                cameras[currentCameraIndex].gameObject.SetActive(true);
-                cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-            }
-            else if (currentCameraIndex-1 ==0)
-            {
-                currentCameraIndex = cameras.Length - 1;
-
-                cameras[lastCameraIndex].gameObject.SetActive(false);
-                cameras[lastCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-                cameras[currentCameraIndex].gameObject.SetActive(true);
-                cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-            }
-            
-            lastCameraIndex = currentCameraIndex;
+            PreviousCamera();
         }
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if (currentCameraIndex != 0)
-            {
-                Debug.Log("C button pressed. returning to main camera");
-                gameObject.GetComponent<Character>().type = 0; //Enable character movement
-
-                cameras[currentCameraIndex].gameObject.SetActive(false);
-                cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-                currentCameraIndex = 0;
-
-                cameras[currentCameraIndex].gameObject.SetActive(true);
-                cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-            }
-            else //if(currentCameraIndex == 0)
-            {
-                Debug.Log("C button pressed. Accessing cams");
-                gameObject.GetComponent<Character>().type = 2; //disable character movement
-
-                if (lastCameraIndex !=0)
-                {
-                    cameras[currentCameraIndex].gameObject.SetActive(true);
-                    cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-
-                    currentCameraIndex = lastCameraIndex;
-
-                    cameras[currentCameraIndex].gameObject.SetActive(true);
-                    cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-                }    
-                else
-                {
-
-                    currentCameraIndex++;
-                    lastCameraIndex++;
-                    cameras[currentCameraIndex - 1].gameObject.SetActive(false);
-                    cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
-                    cameras[currentCameraIndex].gameObject.SetActive(true);
-                    cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-                }
-            }
-            
+            AccessCameraSystem();            
         }       
 
     }
@@ -173,7 +80,98 @@ public class FindCameraRadius : MonoBehaviour
         }
     }
 
-    
-    
+    private void PreviousCamera()
+    {
+        Debug.Log("Z button has been pressed. Switching to the previous camera");
+        
+        if (currentCameraIndex - 1 != 0)
+        {
+            currentCameraIndex--;
 
+            cameras[currentCameraIndex + 1].gameObject.SetActive(false);
+            cameras[currentCameraIndex + 1].gameObject.GetComponent<CameraToggle>().FindCam();
+            cameras[currentCameraIndex].gameObject.SetActive(true);
+            cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+        }
+        else if (currentCameraIndex - 1 == 0)
+        {
+            currentCameraIndex = cameras.Length - 1;
+
+            cameras[lastCameraIndex].gameObject.SetActive(false);
+            cameras[lastCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+            cameras[currentCameraIndex].gameObject.SetActive(true);
+            cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+        }
+
+        lastCameraIndex = currentCameraIndex;
+    }
+    
+    private void NextCamera()
+    {
+
+        //GetComponent<Player>().camMode = true;
+
+        currentCameraIndex++;
+
+        Debug.Log("V button has been pressed. Switching to the next camera");
+        if (currentCameraIndex < cameras.Length)
+        {
+            cameras[currentCameraIndex - 1].gameObject.SetActive(false);
+            cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
+            cameras[currentCameraIndex].gameObject.SetActive(true);
+            cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+        }
+        else
+        {
+            cameras[currentCameraIndex - 1].gameObject.SetActive(false);
+            cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
+            currentCameraIndex = 1;
+
+            cameras[currentCameraIndex].gameObject.SetActive(true);
+            cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+        }
+        lastCameraIndex = currentCameraIndex;
+    }
+
+    private void AccessCameraSystem()
+    {
+        if (currentCameraIndex != 0)
+        {
+            Debug.Log("C button pressed. returning to main camera");
+            gameObject.GetComponent<Character>().type = 0; //Enable character movement
+
+            cameras[currentCameraIndex].gameObject.SetActive(false);
+            cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+
+            currentCameraIndex = 0;
+
+            cameras[currentCameraIndex].gameObject.SetActive(true);
+            cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+        }
+        else //if(currentCameraIndex == 0)
+        {
+            Debug.Log("C button pressed. Accessing cams");
+            gameObject.GetComponent<Character>().type = 2; //disable character movement
+
+            if (lastCameraIndex != 0)
+            {
+                cameras[currentCameraIndex].gameObject.SetActive(true);
+                cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+
+                currentCameraIndex = lastCameraIndex;
+
+                cameras[currentCameraIndex].gameObject.SetActive(true);
+                cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+            }
+            else
+            {
+                currentCameraIndex++;
+                lastCameraIndex++;
+                cameras[currentCameraIndex - 1].gameObject.SetActive(false);
+                cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
+                cameras[currentCameraIndex].gameObject.SetActive(true);
+                cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
+            }
+        }
+    }
 }

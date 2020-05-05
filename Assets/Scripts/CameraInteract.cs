@@ -24,31 +24,42 @@ public class CameraInteract : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                Debug.Log("sending ray");
-                ray = cam.ScreenPointToRay(new Vector3(0, 0, 0));
-                Debug.DrawRay(cam.transform.position, cam.transform.forward * 10, Color.green);
-                if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
-                {
-                    if (hit.collider.CompareTag("Door"))
-                    {
-                        Debug.Log("hit door");
-                        Animator anim = hit.collider.GetComponentInChildren<Animator>();
-                        anim.SetTrigger("OpenClose");
-                    }
-                }
+                CameraInteraction();
             }
 
             if (Input.GetKeyDown(KeyCode.B))
             {
-                Debug.Log("sending ray");
-                ray = cam.ScreenPointToRay(new Vector3(0, 0, 0));
-                Debug.DrawRay(cam.transform.position, cam.transform.forward * 10, Color.green);
-                if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
-                {
-                    Instantiate(pingIcon, hit.point, Quaternion.identity);
-                }
+                Ping();
             }
             
+        }
+    }
+
+    private void CameraInteraction()
+    {
+        Debug.Log("sending ray");
+        ray = cam.ScreenPointToRay(new Vector3(0, 0, 0));
+        Debug.DrawRay(cam.transform.position, cam.transform.forward * 10, Color.green);
+
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+        {
+            if (hit.collider.CompareTag("Door"))
+            {
+                Debug.Log("hit door");
+                Animator anim = hit.collider.GetComponentInChildren<Animator>();
+                anim.SetTrigger("OpenClose");
+            }
+        }
+    }
+
+    private void Ping()
+    {
+        Debug.Log("sending ray");
+        ray = cam.ScreenPointToRay(new Vector3(0, 0, 0));
+        Debug.DrawRay(cam.transform.position, cam.transform.forward * 10, Color.green);
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+        {
+            Instantiate(pingIcon, hit.point, Quaternion.identity);
         }
     }
 }
