@@ -16,7 +16,8 @@ public class Inventory : MonoBehaviour
     GameObject item = null; //the type of item the player is holding, may change from number later
     [SerializeField]
     int keycard = 0; //type of keycard the player is holding, probably staying a number
-
+    [SerializeField]
+    GameObject keycardObject = null;
     void Start()
     {
         playerColour = GetComponent<Renderer>();
@@ -46,7 +47,7 @@ public class Inventory : MonoBehaviour
                         item.SetActive(true);
                     }
                     item = hit.transform.gameObject;
-                    item.SetActive(false) ;
+                    item.SetActive(false);
                     //destroying the object breaks a few things
                     //Destroy(hit.transform.gameObject);
                     Debug.Log(item);
@@ -68,6 +69,39 @@ public class Inventory : MonoBehaviour
                     Debug.Log(disguise);
                 }
             }
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "keycard")
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    if (keycardObject != null)
+
+                    {
+                        keycardObject.transform.position = hit.point;
+                        keycardObject.SetActive(true);
+
+                    }
+                    keycardObject = hit.transform.gameObject;
+                    keycardObject.SetActive(false);
+                    if (keycardObject.name == "RedKeycard")
+                    {
+                        keycard = 1;
+                        GameManager.instance.keycardType = 1;
+                    }
+                    else if (keycardObject.name == "GreenKeycard")
+                    {
+                        keycard = 2;
+                        GameManager.instance.keycardType = 2;
+                    }
+                    else if (keycardObject.name == "BlueKeycard")
+                    {
+                        keycard = 3;
+                        GameManager.instance.keycardType = 2;
+                    }
+                    Debug.Log(keycardObject);
+
+                }
+            }
+            
         }
 
 
@@ -81,6 +115,7 @@ public class Inventory : MonoBehaviour
                 {
                     playerColour.material = original;
                     isDisguised = false;
+                    GameManager.instance.disguised = false;
                 }
                 else
                 {
@@ -88,12 +123,14 @@ public class Inventory : MonoBehaviour
                     {
                         playerColour.material = Disguise1;
                         isDisguised = true;
+                        GameManager.instance.disguised = true;
                     }
 
                     else if (disguise.name == "pink")
                     {
                         playerColour.material = Disguise2;
                         isDisguised = true;
+                        GameManager.instance.disguised = true;
                     }
                 }
                 

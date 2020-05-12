@@ -6,6 +6,7 @@ public class Enemy_Patrol : MonoBehaviour
 {
     public bool doLooking = false;
     public bool isLooking = false;
+    public bool disguised = false;
     public float speed;
     NavMeshAgent nmAgent;
     public Transform target;
@@ -42,6 +43,11 @@ public class Enemy_Patrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        disguised = GameManager.instance.disguised;
+        if (disguised)
+        {
+            target = patrolPath[patrolIndex].transform;
+        }
         nmAgent = GetComponent<NavMeshAgent>();
 
 
@@ -83,7 +89,12 @@ public class Enemy_Patrol : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
-            target = player;
+            if (!disguised)
+            {
+                target = player;
+            }
+            
+
     }
     private void OnTriggerExit(Collider collision)
     {

@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     //variables ---------------------------------------
-
-
+    //if the player is disguised
+    public bool disguised = false;
+    //the type of keycard the player is holding
+    public int keycardType = 0;
     //whether the game is paused
     public static bool GameIsPause = false;
     //the pause menu GameObject
