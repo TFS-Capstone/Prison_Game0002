@@ -1020,6 +1020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504c26759e46d8b4ebeb1bfad7a6c4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disguised: 0
+  keycardType: 0
   PauseMenuUI: {fileID: 888182653}
 --- !u!4 &312909920
 Transform:
@@ -4532,6 +4534,7 @@ MonoBehaviour:
   disguise: {fileID: 0}
   item: {fileID: 0}
   keycard: 0
+  keycardObject: {fileID: 0}
 --- !u!23 &1914457382 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8187877655784107373, guid: 57f17f06241150346a54c1cf944dd8d9,
@@ -5375,6 +5378,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Minigame Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859956967879018814, guid: ddd61a60bd1cb714ab1d33be7cfd0ae9,
+        type: 3}
+      propertyPath: m_TagString
+      value: MinigameUI
       objectReference: {fileID: 0}
     - target: {fileID: 6647261434591166327, guid: ddd61a60bd1cb714ab1d33be7cfd0ae9,
         type: 3}

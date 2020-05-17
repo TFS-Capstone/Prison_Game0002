@@ -15,7 +15,7 @@ public class suspicionMeter : MonoBehaviour
     bool canRemove = true;
     //the actual number that the meter is at for area 1
     [SerializeField]
-    float area1Metric;
+    public float area1Metric;
     //the temporary text box for the meter
     public Text meter;
 
