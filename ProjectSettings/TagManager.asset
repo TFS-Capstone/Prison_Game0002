@@ -16,6 +16,7 @@ TagManager:
   - keycard
   - SuspicionMeter
   - MinigameUI
+  - BlockNode
   layers:
   - Default
   - TransparentFX

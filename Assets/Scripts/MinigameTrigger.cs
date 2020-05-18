@@ -6,10 +6,14 @@ public class MinigameTrigger : MonoBehaviour
 {
     RaycastHit hit;
     public GameObject minigameUI;
+    public MainBlockNode node;
+    public Camera camera1;
+    public Camera camera2;
     // Start is called before the first frame update
     void Start()
     {
         minigameUI.SetActive(false);
+        camera2.enabled = false;
     }
 
     // Update is called once per frame
@@ -31,16 +35,24 @@ public class MinigameTrigger : MonoBehaviour
             {
                 ExitMinigame();
             }
+            if(node.connect == true)
+            {
+                ExitMinigame();
+            }
         }
     }
     public void ExitMinigame()
     {
         gameObject.GetComponent<Character>().type = 0; //Enable character movement
         minigameUI.SetActive(false);
+        camera2.enabled = false;
+        camera1.enabled = true;
     }
     public void startMinigame()
     {
         gameObject.GetComponent<Character>().type = 2; //disable character movement
         minigameUI.SetActive(true);
+        camera1.enabled = false;
+        camera2.enabled = true;
     }
 }
