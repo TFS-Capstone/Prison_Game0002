@@ -1,0 +1,37 @@
+what needs to get done in the next two days:
+
+	1) outline of the level (prison (2?) levels)
+			
+	1 cell as reference:  4.5x4.5x4.5 m
+		G.cafeteria
+		B.yard
+		Y.kitchen
+		B.cell blocks (#?)			
+		A.security room
+		G.admin
+		Y.Laundry
+		A.Warden office
+		
+	Take a look at the skill distribution sheet
+
+
+	2) Placement of static objects
+		Cameras
+		Doors
+		hacking terminals (subject to relocation, not to be hung up on)
+		Furniture
+		Alarms
+		AI paths (fine tuning)
+			
+
+	3) first objective designed loosely (first win condition)
+		Dig a hole
+			Shovel
+
+
+2 levels
+Dig a hole out of yard
+
+
+
+		
