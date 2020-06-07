@@ -70,7 +70,7 @@ public class Enemy_Warden : MonoBehaviour
             {
                 waitTime -= Time.deltaTime;
             }
-            else if (miniGame.activeSelf == false && waitTime < 0)
+            else if (miniGame.activeSelf == false && waitTime < startWaitTime)
             {
                 waitTime = 0;
             }
