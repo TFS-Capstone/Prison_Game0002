@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 8187877655784107374}
   - component: {fileID: 8187877655784107375}
   - component: {fileID: 5839905157343627945}
-  - component: {fileID: 5875651946349708932}
   - component: {fileID: 2128080652}
+  - component: {fileID: 813761106}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -96,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 80b43e2aebe481e42b9e92f32a2ee6eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -182,18 +182,6 @@ MonoBehaviour:
   rotateSpeed: 5
   gravity: 9.81
   type: 0
---- !u!114 &5875651946349708932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8187877655784107369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d96f6d282d8152946ba226c106607515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2128080652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,9 +203,32 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  currentCameraIndex: 0
+  lastCameraIndex: 0
   layer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &813761106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187877655784107369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fa606b337ff464cb7c9e41779c46ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerColour: {fileID: 8187877655784107373}
+  original: {fileID: 2100000, guid: 80b43e2aebe481e42b9e92f32a2ee6eb, type: 2}
+  Disguise1: {fileID: 2100000, guid: b0554537aa707e84a84455951ac6db98, type: 2}
+  Disguise2: {fileID: 2100000, guid: 6d7ca4f3064f2464b85d22bcf66ef518, type: 2}
+  isDisguised: 0
+  disguise: {fileID: 0}
+  item: {fileID: 0}
+  keycard: 0
+  keycardObject: {fileID: 0}
 --- !u!1001 &8198752689904190307
 PrefabInstance:
   m_ObjectHideFlags: 0

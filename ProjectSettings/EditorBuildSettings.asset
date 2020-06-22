@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 29cd6b0154111d144a2beff29febd099
   - enabled: 1
-    path: Assets/Scenes/Prison Whitebox.unity
+    path: Assets/Scenes/OldFiles/Prison Whitebox.unity
     guid: f2ecccbabfd126347be56a28697af6a9
   - enabled: 1
-    path: Assets/Scenes/Whitebox2.0.unity
+    path: Assets/Scenes/OldFiles/Whitebox2.0.unity
     guid: e394447d1cc943b4b967fb9b342f7948
   - enabled: 1
     path: Assets/Personal Scenes/Sheraaz.unity

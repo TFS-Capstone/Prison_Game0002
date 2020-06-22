@@ -95,7 +95,7 @@ public class Inventory : MonoBehaviour
                     else if (keycardObject.name == "BlueKeycard")
                     {
                         keycard = 3;
-                        GameManager.instance.keycardType = 2;
+                        GameManager.instance.keycardType = 3;
                     }
                     Debug.Log(keycardObject);
 

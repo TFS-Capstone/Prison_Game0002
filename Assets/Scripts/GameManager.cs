@@ -45,9 +45,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //checking if correct scene is active before being able to pause
-        if (SceneManager.GetActiveScene().name == "Sheraaz" || SceneManager.GetActiveScene().name == "Alex"|| SceneManager.GetActiveScene().name =="Whitebox2.0" || SceneManager.GetActiveScene().name == "Whitebox3.0")
+        if (SceneManager.GetActiveScene().name == "CurrentWhitebox" || SceneManager.GetActiveScene().name == "Alex"|| SceneManager.GetActiveScene().name =="Whitebox2.0" || SceneManager.GetActiveScene().name == "Whitebox3.0")
         { 
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
             {
                 if (GameIsPause)
                     Resume();
