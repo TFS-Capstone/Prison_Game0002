@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     //main menu start game and find the UI
     public void StartGame()
     {
-        SceneManager.LoadScene("Whitebox2.0");
+        SceneManager.LoadScene("CurrentWhitebox");
     }
     //grabs the pause menu for the GameManager
     public void GrabPauseMenu()
