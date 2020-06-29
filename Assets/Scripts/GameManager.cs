@@ -46,7 +46,11 @@ public class GameManager : MonoBehaviour
     {
         //checking if correct scene is active before being able to pause
         if (SceneManager.GetActiveScene().name == "CurrentWhitebox" || SceneManager.GetActiveScene().name == "Alex"|| SceneManager.GetActiveScene().name =="Whitebox2.0" || SceneManager.GetActiveScene().name == "Whitebox3.0")
-        { 
+        {
+            if (!PauseMenuUI)
+            {
+                GrabPauseMenu();
+            }
             if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
             {
                 if (GameIsPause)
@@ -54,7 +58,7 @@ public class GameManager : MonoBehaviour
                 else
                     Pause();
             }
-        
+
         }
     }
 
