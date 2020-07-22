@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    // player material stuff
     public Renderer playerColour;
     public Material original;
     public Material Disguise1;
     public Material Disguise2;
     public bool isDisguised = false;
-    RaycastHit hit;
+
+    //other materials for item selection
+    public Material redkey;
+    public Material bluekey;
+    public Material greenkey;
+
+    public Material item1;
+    public Material item2;
+
+
     [SerializeField]
     GameObject disguise = null; //The type of disguise that the player is holding, will change based on what is picked up
     [SerializeField]
@@ -18,14 +28,99 @@ public class Inventory : MonoBehaviour
     int keycard = 0; //type of keycard the player is holding, probably staying a number
     [SerializeField]
     GameObject keycardObject = null;
+    //Item Selection
+
+    [SerializeField]
+    Material highlightMaterial;
+
+    [SerializeField]
+    Camera cam;
+
+    Material originalMat;
+
+    Transform _selected;
+    //End of item selection
     void Start()
     {
         playerColour = GetComponent<Renderer>();
+        cam = GetComponentInChildren<Camera>();
     }
 
     
-    void Update()
+    void LateUpdate()
     {
+        //selection stuff
+
+        if (_selected != null)
+            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard")
+            {
+            var selectionRenderer = _selected.GetComponent<Renderer>();
+            selectionRenderer.material = originalMat;
+            _selected = null;
+        }
+
+
+        var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 500))
+        {
+            var selection = hit.transform;
+            var selectionRenderer = selection.GetComponent<Renderer>();
+
+            if (selection != null)
+            {
+                if (selection.gameObject.tag == "keycard")
+                {
+                    if (selection.gameObject.name == "RedKeycard")
+                    {
+                        originalMat = redkey;
+                    }
+                    else if (selection.gameObject.name == "BlueKeycard")
+                    {
+                        originalMat = bluekey;
+                    }
+                    else if (selection.gameObject.name == "GreenKeycard")
+                    {
+                        originalMat = greenkey;
+                    }
+                }
+                else if (selection.gameObject.tag == "disguise")
+                {
+                    if (selection.gameObject.name == "blue")
+                    {
+                        originalMat = Disguise1;
+                    }
+                    else if (selection.gameObject.name == "pink")
+                    {
+                        originalMat = Disguise2;
+                    }
+                }
+                else if (selection.gameObject.tag == "item")
+                {
+                    if (selection.gameObject.name == "item1")
+                    {
+                        originalMat = item1;
+                    }
+                    else if (selection.gameObject.name == "item1")
+                    {
+                        originalMat = item2;
+                    }
+                }
+
+
+                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard")    
+                {   
+                    selectionRenderer.material = highlightMaterial;
+                }
+                _selected = selection;
+            }
+                
+            
+        }
+
+
+        //end of selection stuff
+        
         /*
         Left click with an item, that will depend on what the player is looking at
         -- looking at an item and clicking will swap the current item out for the new one
@@ -34,7 +129,7 @@ public class Inventory : MonoBehaviour
         -- looking at a door with the correct keycard will open the door
         -- looking at a door with the wrong keycard will yield "This keycard does not work here"
        */
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
+        if (Physics.Raycast(ray, out hit, 100.0f))
         {
             if (hit.distance < 20 && hit.transform.gameObject.tag == "item")
             {

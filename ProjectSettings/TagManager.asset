@@ -17,6 +17,7 @@ TagManager:
   - SuspicionMeter
   - MinigameUI
   - BlockNode
+  - floor
   layers:
   - Default
   - TransparentFX
