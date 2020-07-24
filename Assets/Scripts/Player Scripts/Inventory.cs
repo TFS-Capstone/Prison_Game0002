@@ -37,6 +37,8 @@ public class Inventory : MonoBehaviour
     Camera cam;
 
     Material originalMat;
+    GameObject temp;
+
 
     Transform _selected;
     //End of item selection
@@ -66,50 +68,15 @@ public class Inventory : MonoBehaviour
         {
             var selection = hit.transform;
             var selectionRenderer = selection.GetComponent<Renderer>();
-
+            
             if (selection != null)
             {
-                if (selection.gameObject.tag == "keycard")
-                {
-                    if (selection.gameObject.name == "RedKeycard")
-                    {
-                        originalMat = redkey;
-                    }
-                    else if (selection.gameObject.name == "BlueKeycard")
-                    {
-                        originalMat = bluekey;
-                    }
-                    else if (selection.gameObject.name == "GreenKeycard")
-                    {
-                        originalMat = greenkey;
-                    }
-                }
-                else if (selection.gameObject.tag == "disguise")
-                {
-                    if (selection.gameObject.name == "blue")
-                    {
-                        originalMat = Disguise1;
-                    }
-                    else if (selection.gameObject.name == "pink")
-                    {
-                        originalMat = Disguise2;
-                    }
-                }
-                else if (selection.gameObject.tag == "item")
-                {
-                    if (selection.gameObject.name == "item1")
-                    {
-                        originalMat = item1;
-                    }
-                    else if (selection.gameObject.name == "item1")
-                    {
-                        originalMat = item2;
-                    }
-                }
+                
 
 
                 if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard")    
-                {   
+                {
+                    originalMat = selectionRenderer.material;
                     selectionRenderer.material = highlightMaterial;
                 }
                 _selected = selection;
@@ -169,7 +136,6 @@ public class Inventory : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (keycardObject != null)
-
                     {
                         keycardObject.transform.position = hit.point;
                         keycardObject.SetActive(true);
@@ -177,17 +143,17 @@ public class Inventory : MonoBehaviour
                     }
                     keycardObject = hit.transform.gameObject;
                     keycardObject.SetActive(false);
-                    if (keycardObject.name == "RedKeycard")
+                    if (keycardObject.GetComponent<Items>().type == 1)
                     {
                         keycard = 1;
                         GameManager.instance.keycardType = 1;
                     }
-                    else if (keycardObject.name == "GreenKeycard")
+                    else if (keycardObject.GetComponent<Items>().type == 2)
                     {
                         keycard = 2;
                         GameManager.instance.keycardType = 2;
                     }
-                    else if (keycardObject.name == "BlueKeycard")
+                    else if (keycardObject.GetComponent<Items>().type == 3)
                     {
                         keycard = 3;
                         GameManager.instance.keycardType = 3;
@@ -214,14 +180,14 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    if (disguise.name == "blue")
+                    if (disguise.GetComponent<Items>().type == 4)
                     {
                         playerColour.material = Disguise1;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
 
-                    else if (disguise.name == "pink")
+                    else if (disguise.GetComponent<Items>().type == 5)
                     {
                         playerColour.material = Disguise2;
                         isDisguised = true;
