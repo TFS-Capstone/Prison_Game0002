@@ -33,7 +33,7 @@ public class PlayerCameraController : MonoBehaviour
             }
         var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 4))
+        if (Physics.Raycast(ray, out hit, 3.5f))
         {
             var selection = hit.transform;
             var selectionRenderer = selection.GetComponent<Renderer>();

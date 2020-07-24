@@ -62,7 +62,7 @@ public class Inventory : MonoBehaviour
 
         var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 500))
+        if (Physics.Raycast(ray, out hit, 10))
         {
             var selection = hit.transform;
             var selectionRenderer = selection.GetComponent<Renderer>();
