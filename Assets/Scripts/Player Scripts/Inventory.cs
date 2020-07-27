@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    // player material stuff
     public Renderer playerColour;
     public Material original;
     public Material Disguise1;
     public Material Disguise2;
     public bool isDisguised = false;
-    RaycastHit hit;
+
+    //other materials for item selection
+    public Material redkey;
+    public Material bluekey;
+    public Material greenkey;
+
+    public Material item1;
+    public Material item2;
+
+
     [SerializeField]
     GameObject disguise = null; //The type of disguise that the player is holding, will change based on what is picked up
     [SerializeField]
@@ -18,14 +28,66 @@ public class Inventory : MonoBehaviour
     int keycard = 0; //type of keycard the player is holding, probably staying a number
     [SerializeField]
     GameObject keycardObject = null;
+    //Item Selection
+
+    [SerializeField]
+    Material highlightMaterial;
+
+    [SerializeField]
+    Camera cam;
+
+    Material originalMat;
+    GameObject temp;
+
+
+    Transform _selected;
+    //End of item selection
     void Start()
     {
         playerColour = GetComponent<Renderer>();
+        cam = GetComponentInChildren<Camera>();
     }
 
     
-    void Update()
+    void LateUpdate()
     {
+        //selection stuff
+
+        if (_selected != null)
+            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard")
+            {
+            var selectionRenderer = _selected.GetComponent<Renderer>();
+            selectionRenderer.material = originalMat;
+            _selected = null;
+        }
+
+
+        var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 10))
+        {
+            var selection = hit.transform;
+            var selectionRenderer = selection.GetComponent<Renderer>();
+            
+            if (selection != null)
+            {
+                
+
+
+                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard")    
+                {
+                    originalMat = selectionRenderer.material;
+                    selectionRenderer.material = highlightMaterial;
+                }
+                _selected = selection;
+            }
+                
+            
+        }
+
+
+        //end of selection stuff
+        
         /*
         Left click with an item, that will depend on what the player is looking at
         -- looking at an item and clicking will swap the current item out for the new one
@@ -34,7 +96,7 @@ public class Inventory : MonoBehaviour
         -- looking at a door with the correct keycard will open the door
         -- looking at a door with the wrong keycard will yield "This keycard does not work here"
        */
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
+        if (Physics.Raycast(ray, out hit, 100.0f))
         {
             if (hit.distance < 20 && hit.transform.gameObject.tag == "item")
             {
@@ -74,7 +136,6 @@ public class Inventory : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (keycardObject != null)
-
                     {
                         keycardObject.transform.position = hit.point;
                         keycardObject.SetActive(true);
@@ -82,17 +143,17 @@ public class Inventory : MonoBehaviour
                     }
                     keycardObject = hit.transform.gameObject;
                     keycardObject.SetActive(false);
-                    if (keycardObject.name == "RedKeycard")
+                    if (keycardObject.GetComponent<Items>().type == 1)
                     {
                         keycard = 1;
                         GameManager.instance.keycardType = 1;
                     }
-                    else if (keycardObject.name == "GreenKeycard")
+                    else if (keycardObject.GetComponent<Items>().type == 2)
                     {
                         keycard = 2;
                         GameManager.instance.keycardType = 2;
                     }
-                    else if (keycardObject.name == "BlueKeycard")
+                    else if (keycardObject.GetComponent<Items>().type == 3)
                     {
                         keycard = 3;
                         GameManager.instance.keycardType = 3;
@@ -119,14 +180,14 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    if (disguise.name == "blue")
+                    if (disguise.GetComponent<Items>().type == 4)
                     {
                         playerColour.material = Disguise1;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
 
-                    else if (disguise.name == "pink")
+                    else if (disguise.GetComponent<Items>().type == 5)
                     {
                         playerColour.material = Disguise2;
                         isDisguised = true;

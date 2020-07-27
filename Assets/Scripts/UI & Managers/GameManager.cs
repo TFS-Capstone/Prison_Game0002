@@ -12,13 +12,11 @@ public class GameManager : MonoBehaviour
     //the type of keycard the player is holding
     public int keycardType = 0;
     //whether the game is paused
-    public static bool GameIsPause = false;
-    //the pause menu GameObject
-    public GameObject PauseMenuUI;
+    public  bool GameIsPause = false;
     //instance for the GameManager
     static GameManager _instance = null;
 
-
+    
     //end of variables --------------------------------
 
     //creates the GameManager instance
@@ -44,40 +42,10 @@ public class GameManager : MonoBehaviour
     // Update has pause menu checks
     void Update()
     {
-        //checking if correct scene is active before being able to pause
-        if (SceneManager.GetActiveScene().name == "CurrentWhitebox" || SceneManager.GetActiveScene().name == "Alex"|| SceneManager.GetActiveScene().name =="Whitebox2.0" || SceneManager.GetActiveScene().name == "Whitebox3.0")
-        {
-            if (!PauseMenuUI)
-            {
-                GrabPauseMenu();
-            }
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (GameIsPause)
-                    Resume();
-                else
-                    Pause();
-            }
-
-        }
-    }
-
-    //pause game
-    public void Pause()
-    {
-        PauseMenuUI.SetActive(true);
-        Time.timeScale = 0;
-        GameIsPause = true;
-    }
-    //resume game
-    public void Resume()
-    {
-        Time.timeScale = 1;
-        GrabPauseMenu();
-        PauseMenuUI.SetActive(false);
         
-        GameIsPause = false;
+    
     }
+
 
     //quit the game
     public void Quit()
@@ -91,22 +59,30 @@ public class GameManager : MonoBehaviour
 
     public void win()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Win");
 
     }
     //loads the lose scene
     public void lose()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("GameOver");
     }
     //lose scene go back to title scene
     public void Restart()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Title");
     }
     //pause menu go back to title scene
     public void Mainmenu()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Title");
     }
     //main menu start game and find the UI
@@ -115,13 +91,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("CurrentWhitebox");
     }
     //grabs the pause menu for the GameManager
-    public void GrabPauseMenu()
-    {
-        PauseMenuUI = GameObject.FindGameObjectWithTag("Pause");
-        PauseMenuUI.SetActive(false);
-        GameIsPause = false;
-        Time.timeScale = 1;
-    }
+    
 
     //template for GameManager variables
     /*
