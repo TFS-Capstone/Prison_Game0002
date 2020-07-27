@@ -27,11 +27,13 @@ public class FindCameraRadius : MonoBehaviour
     {
         //Enabling this start code seems to break the camera movement functionality.
 
-        //currentCameraIndex = 0;
-        //for (int i = 1; i < cameras.Length; i++)
-        //{
-        //    cameras[i].gameObject.SetActive(false);
-        //}
+        currentCameraIndex = 0;
+        for (int i = 1; i < cameras.Length; i++)
+        {
+            cameras[i].gameObject.GetComponent<CameraToggle>().FindCam();
+            cameras[i].gameObject.SetActive(false);
+
+        }
         //if (cameras.Length > 0)
         //{
         //    cameras[0].gameObject.SetActive(true);
