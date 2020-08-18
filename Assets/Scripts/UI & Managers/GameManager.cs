@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     //instance for the GameManager
     static GameManager _instance = null;
 
-    
+    public float playerSpeed;
     //end of variables --------------------------------
 
     //creates the GameManager instance

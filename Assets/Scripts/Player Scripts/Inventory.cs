@@ -41,6 +41,8 @@ public class Inventory : MonoBehaviour
 
 
     Transform _selected;
+
+    GameObject door;
     //End of item selection
     void Start()
     {
@@ -54,7 +56,7 @@ public class Inventory : MonoBehaviour
         //selection stuff
 
         if (_selected != null)
-            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard")
+            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door")
             {
             var selectionRenderer = _selected.GetComponent<Renderer>();
             selectionRenderer.material = originalMat;
@@ -74,11 +76,12 @@ public class Inventory : MonoBehaviour
                 
 
 
-                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard")    
+                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door")    
                 {
                     originalMat = selectionRenderer.material;
                     selectionRenderer.material = highlightMaterial;
                 }
+             
                 _selected = selection;
             }
                 
@@ -101,7 +104,7 @@ public class Inventory : MonoBehaviour
             if (hit.distance < 20 && hit.transform.gameObject.tag == "item")
             {
                 //Debug.Log("hit");
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (item != null)
                     {
@@ -117,7 +120,7 @@ public class Inventory : MonoBehaviour
             }
             else if (hit.distance < 20 && hit.transform.gameObject.tag == "disguise")
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (disguise != null)
                     {
@@ -133,7 +136,7 @@ public class Inventory : MonoBehaviour
             }
             else if (hit.distance < 20 && hit.transform.gameObject.tag == "keycard")
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (keycardObject != null)
                     {
@@ -161,8 +164,17 @@ public class Inventory : MonoBehaviour
                     Debug.Log(keycardObject);
 
                 }
+            } else if (hit.distance < 20 && hit.transform.gameObject.tag == "Door")
+            {
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    door = hit.transform.gameObject;
+                    door.GetComponent<DoorNew>().Open();
+                    
+                }
             }
-            
+
+
         }
 
 

@@ -37,41 +37,32 @@ public class DoorNew : MonoBehaviour
         }
         
     }
-    private void OnTriggerStay(Collider other)
+
+    public void Open()
     {
-        if (other.tag == "Player")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (keytype == doortype)
             {
-                if (keytype == doortype)
+                if (closed && canOpen)
                 {
-                    if (closed && canOpen)
-                    {
-                        canOpen = false;
-                        closed = false;
-                        stop = false;
-                        runOnce = false;
-                    }
-                    else if (!closed && canOpen)
-                    {
-                        canOpen = false;
-                        closed = true;
-                        stop = false;
-                        runOnce = false;
-                    }
-                } else
-                {
-                    Debug.Log("Wrong Key! Needed: " + doortype + ". Had: " + keytype);
+                    canOpen = false;
+                    closed = false;
+                    stop = false;
+                    runOnce = false;
                 }
-              
-
+                else if (!closed && canOpen)
+                {
+                    canOpen = false;
+                    closed = true;
+                    stop = false;
+                    runOnce = false;
+                }
             }
-            
-                
-            
-        }
-    }
+            else
+            {
+                Debug.Log("Wrong Key! Needed: " + doortype + ". Had: " + keytype);
+            }
 
+    }
 
     IEnumerator doorTime()
     {
