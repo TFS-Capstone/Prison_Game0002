@@ -24,13 +24,20 @@ public class MiniMap : MonoBehaviour
     void Update()
     {
         SpRend.color = current;
-        if (cam.isActiveAndEnabled)
+        if (cam == null)
         {
-            current = active;
-        }
-        else
+            cam = GetComponentInChildren<Camera>();            
+        }        
+        else if (cam != null)
         {
-            current = notActive;
+            if (cam.isActiveAndEnabled)
+            {
+                current = active;
+            }
+            else
+            {
+                current = notActive;
+            }
         }
     }
 }
