@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  speedMultiplier: 1
 --- !u!114 &2128080652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,11 +495,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 8187877655784107379}
-    - target: {fileID: 8206286734869945919, guid: 4f09d1cf012edfd40a1f2861cba4344d,
-        type: 3}
-      propertyPath: playerRotation
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f09d1cf012edfd40a1f2861cba4344d, type: 3}
 --- !u!4 &8187877654980124182 stripped

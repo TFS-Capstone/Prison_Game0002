@@ -18,6 +18,7 @@ TagManager:
   - MinigameUI
   - BlockNode
   - floor
+  - MiniMap
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - 
   - 
   - Cameras
-  - 
+  - Minimap
   - 
   - 
   - 
