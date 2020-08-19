@@ -47,7 +47,9 @@ public class CameraInteract : MonoBehaviour
             {
                 Debug.Log("hit door");
                 Animator anim = hit.collider.GetComponentInChildren<Animator>();
-                anim.SetTrigger("OpenClose");
+                GameObject door = hit.transform.gameObject;
+                door.GetComponent<DoorNew>().Open();
+                
             }
         }
     }
