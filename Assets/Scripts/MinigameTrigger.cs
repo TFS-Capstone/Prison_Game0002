@@ -43,14 +43,18 @@ public class MinigameTrigger : MonoBehaviour
     }
     public void ExitMinigame()
     {
-        gameObject.GetComponent<Character>().type = 0; //Enable character movement
+        //gameObject.GetComponent<Character>().type = 0; //Enable character movement
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
         minigameUI.SetActive(false);
         camera2.enabled = false;
         camera1.enabled = true;
     }
     public void startMinigame()
     {
-        gameObject.GetComponent<Character>().type = 2; //disable character movement
+        //gameObject.GetComponent<Character>().type = 2; //disable character movement
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         minigameUI.SetActive(true);
         camera1.enabled = false;
         camera2.enabled = true;

@@ -30,6 +30,36 @@ Transform:
   m_Father: {fileID: 8187877655784107379}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &632791078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632791079}
+  m_Layer: 0
+  m_Name: ProjectileSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &632791079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632791078}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.662, y: 0, z: 0.785}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8187877655784107379}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3040574128659534521
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +186,8 @@ GameObject:
   - component: {fileID: 820704970524936564}
   - component: {fileID: 2128080652}
   - component: {fileID: 813761106}
+  - component: {fileID: 401135093}
+  - component: {fileID: 401135095}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -178,6 +210,7 @@ Transform:
   - {fileID: 551351658}
   - {fileID: 3151851408772199114}
   - {fileID: 5293030763353894275}
+  - {fileID: 632791079}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -310,6 +343,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentCameraIndex: 0
   lastCameraIndex: 0
   layer:
@@ -343,6 +378,38 @@ MonoBehaviour:
   keycardObject: {fileID: 0}
   highlightMaterial: {fileID: 2100000, guid: 0c6a57faa4283114282c954b36e86c47, type: 2}
   cam: {fileID: 0}
+--- !u!114 &401135093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187877655784107369}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d547fa99c6d6494ba6b6439cca86b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameUI: {fileID: 0}
+  node: {fileID: 0}
+  camera1: {fileID: 8187877654980124177}
+  camera2: {fileID: 0}
+--- !u!114 &401135095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187877655784107369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48de605904ece1d409ccca4489e0f7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileToSpawn: {fileID: 7585143666495105323, guid: dd0c4e97e6267e440bab4a1b5b9a89b3,
+    type: 3}
+  projectile: {fileID: 0}
+  projSpawnPoint: {fileID: 632791079}
 --- !u!1001 &8198752689904190307
 PrefabInstance:
   m_ObjectHideFlags: 0
