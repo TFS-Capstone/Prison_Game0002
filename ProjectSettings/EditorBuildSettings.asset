@@ -8,25 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 511b95a68dfa96e46aa445d186e83d8b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Personal Scenes/Gareth.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Camera Interact.unity
     guid: ad2fc2fa3ed120c4fbb381d9ffe82edf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameOver.unity
     guid: 29cd6b0154111d144a2beff29febd099
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OldFiles/Prison Whitebox.unity
     guid: f2ecccbabfd126347be56a28697af6a9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OldFiles/Whitebox2.0.unity
     guid: e394447d1cc943b4b967fb9b342f7948
-  - enabled: 1
+  - enabled: 0
     path: Assets/Personal Scenes/Sheraaz.unity
     guid: 6171098db50e5d4449aa16bb2ffa753f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Win.unity
     guid: 3be15913764b23440a013817e29a2b50
   - enabled: 1
