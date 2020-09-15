@@ -28,8 +28,6 @@ public class Inventory : MonoBehaviour
     int keycard = 0; //type of keycard the player is holding, probably staying a number
     [SerializeField]
     GameObject keycardObject = null;
-    
-    public GameObject throwableObject = null; // type of throwable object the player is carrying
     //Item Selection
 
     [SerializeField]
@@ -58,7 +56,7 @@ public class Inventory : MonoBehaviour
         //selection stuff
 
         if (_selected != null)
-            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door" || _selected.gameObject.tag == "Throwable")
+            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door")
             {
             var selectionRenderer = _selected.GetComponent<Renderer>();
             selectionRenderer.material = originalMat;
@@ -78,7 +76,7 @@ public class Inventory : MonoBehaviour
                 
 
 
-                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door" || selection.gameObject.tag == "Throwable")    
+                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door")    
                 {
                     originalMat = selectionRenderer.material;
                     selectionRenderer.material = highlightMaterial;
@@ -166,32 +164,12 @@ public class Inventory : MonoBehaviour
                     Debug.Log(keycardObject);
 
                 }
-            } 
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Door")
+            } else if (hit.distance < 20 && hit.transform.gameObject.tag == "Door")
             {
                 if(Input.GetKeyDown(KeyCode.E))
                 {
                     door = hit.transform.gameObject;
                     door.GetComponent<DoorNew>().Open();
-                    
-                }
-            }
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Throwable")
-            {
-                if(Input.GetKeyDown(KeyCode.E))
-                {
-                    if (throwableObject != null)
-                    {
-                        throwableObject.transform.position = hit.point;
-                        throwableObject.SetActive(true);
-                    }
-                    throwableObject = hit.transform.gameObject;
-                    throwableObject.SetActive(false);
-                    Shoot shoot = GetComponent<Shoot>();
-                     
-                    shoot.projectileToSpawn = throwableObject;
-                    
-                    Debug.Log(throwableObject);
                     
                 }
             }
@@ -227,8 +205,11 @@ public class Inventory : MonoBehaviour
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
-                }                
+                }
+                
             }
-        }       
+        }
+       
     }
+
 }

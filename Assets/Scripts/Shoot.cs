@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    
-    public GameObject projectileToSpawn;
+    [SerializeField]
+    GameObject projectileToSpawn;
     [SerializeField]
     GameObject projectile;
     [SerializeField]
@@ -42,7 +42,6 @@ public class Shoot : MonoBehaviour
             if (projectileToSpawn)
             {
                 readyToFire = true;
-                projectileToSpawn.SetActive(true);
                 Debug.Log("ready to fire");
 
                 // spawn the item to throw / fire
@@ -56,7 +55,6 @@ public class Shoot : MonoBehaviour
         else if(readyToFire && Input.GetMouseButtonUp(1))
         {
             readyToFire = false;
-            projectileToSpawn.SetActive(false);
             if (projectile)
             {
                 Debug.Log("despawning object if still available");
@@ -95,10 +93,6 @@ public class Shoot : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             projectile.transform.parent = null;
-
-            projectileToSpawn = null;
-            Inventory invent = GetComponent<Inventory>();
-            invent.throwableObject = null;
 
             _projectile.initialDirection = ray.direction;
             _projectile.enabled = true;
