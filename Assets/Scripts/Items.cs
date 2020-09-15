@@ -6,7 +6,7 @@ public class Items : MonoBehaviour
 {
 
     public int type;
-    //types 1-3 are keycards, 5 & 6 are disguises, and 7 & 8 are items, 9 is projectile
+    //types 1-3 are keycards, 5 & 6 are disguises, and 7 & 8 are items
     // Start is called before the first frame update
     void Start()
     {
