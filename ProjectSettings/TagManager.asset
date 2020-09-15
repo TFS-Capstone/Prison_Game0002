@@ -19,6 +19,7 @@ TagManager:
   - BlockNode
   - floor
   - MiniMap
+  - Throwable
   layers:
   - Default
   - TransparentFX

@@ -65,6 +65,10 @@ public class Projectile : MonoBehaviour
     {
         // the collision needs to have a non-kinematic rigidbody for these to register.
         //do stuff
-        Destroy(gameObject);
+        if (!collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
