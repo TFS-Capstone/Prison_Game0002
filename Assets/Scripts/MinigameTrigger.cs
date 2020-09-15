@@ -9,6 +9,7 @@ public class MinigameTrigger : MonoBehaviour
     public MainBlockNode node;
     public Camera camera1;
     public Camera camera2;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class MinigameTrigger : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
         {
             if (hit.distance < 20 && hit.transform.gameObject.tag == "Minigame")
-            {
+            {//if the player hits the minigame trigger and presses f
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     startMinigame();
@@ -41,18 +42,20 @@ public class MinigameTrigger : MonoBehaviour
             }
         }
     }
-    public void ExitMinigame()
+    public void ExitMinigame() //exits the minigame
     {
-        //gameObject.GetComponent<Character>().type = 0; //Enable character movement
+        player.GetComponent<PlayerCharacterController>().enabled = true; //enables character movement
+        player.GetComponentInChildren<PlayerCameraController>().enabled = true; //enables camera movement
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.None;
         minigameUI.SetActive(false);
         camera2.enabled = false;
         camera1.enabled = true;
     }
-    public void startMinigame()
+    public void startMinigame() //starts the minigame
     {
-        //gameObject.GetComponent<Character>().type = 2; //disable character movement
+        player.GetComponent<PlayerCharacterController>().enabled = false; //disable character movement
+        player.GetComponentInChildren<PlayerCameraController>().enabled = false; //disable camera movement
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         minigameUI.SetActive(true);

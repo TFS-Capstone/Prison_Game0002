@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
     public Material redkey;
     public Material bluekey;
     public Material greenkey;
-
+    //item materials
     public Material item1;
     public Material item2;
 
@@ -28,27 +28,27 @@ public class Inventory : MonoBehaviour
     int keycard = 0; //type of keycard the player is holding, probably staying a number
     [SerializeField]
     GameObject keycardObject = null;
-    
-    public GameObject throwableObject = null; // type of throwable object the player is carrying
     //Item Selection
 
     [SerializeField]
-    Material highlightMaterial;
+    Material highlightMaterial; //the object that the player is looking at will turn this material
 
     [SerializeField]
-    Camera cam;
+    Camera cam; //camera for raycasts
 
-    Material originalMat;
-    GameObject temp;
+    Material originalMat; //the objects original material
+    GameObject temp; //   \_(0-0)_/
 
 
-    Transform _selected;
+    Transform _selected; //for the selected object
 
     GameObject door;
     //End of item selection
     void Start()
     {
+        //sets the player colour variable to the correct one
         playerColour = GetComponent<Renderer>();
+        //grabs the player's camera
         cam = GetComponentInChildren<Camera>();
     }
 
@@ -58,15 +58,16 @@ public class Inventory : MonoBehaviour
         //selection stuff
 
         if (_selected != null)
-            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door" || _selected.gameObject.tag == "Throwable")
+            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door")
             {
-            var selectionRenderer = _selected.GetComponent<Renderer>();
-            selectionRenderer.material = originalMat;
-            _selected = null;
-        }
+            var selectionRenderer = _selected.GetComponent<Renderer>(); //grabs the selected object's renderer
+            selectionRenderer.material = originalMat; //sets the variable to the selected object's material so it can be reset later
+            _selected = null; //something here
+            }
 
-
+        //send out the ray
         var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        //do the raycast
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 10))
         {
@@ -75,13 +76,10 @@ public class Inventory : MonoBehaviour
             
             if (selection != null)
             {
-                
-
-
-                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door" || selection.gameObject.tag == "Throwable")    
+                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door")    
                 {
-                    originalMat = selectionRenderer.material;
-                    selectionRenderer.material = highlightMaterial;
+                    originalMat = selectionRenderer.material; //grab the original material of the item (or door)
+                    selectionRenderer.material = highlightMaterial; //change the object's matieral to highlighted
                 }
              
                 _selected = selection;
@@ -104,7 +102,7 @@ public class Inventory : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100.0f))
         {
             if (hit.distance < 20 && hit.transform.gameObject.tag == "item")
-            {
+            {//pick up item stuff
                 //Debug.Log("hit");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -121,7 +119,7 @@ public class Inventory : MonoBehaviour
                 }
             }
             else if (hit.distance < 20 && hit.transform.gameObject.tag == "disguise")
-            {
+            {//pick up disguise stuff
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (disguise != null)
@@ -136,8 +134,8 @@ public class Inventory : MonoBehaviour
                     Debug.Log(disguise);
                 }
             }
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "keycard")
-            {
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "keycard") 
+            {//pick up keycard stuff
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (keycardObject != null)
@@ -166,47 +164,23 @@ public class Inventory : MonoBehaviour
                     Debug.Log(keycardObject);
 
                 }
-            } 
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Door")
+            }
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Door")//if the player hit a door
             {
                 if(Input.GetKeyDown(KeyCode.E))
                 {
                     door = hit.transform.gameObject;
-                    door.GetComponent<DoorNew>().Open();
+                    door.GetComponent<DoorNew>().Open(); //open the door (or close)
                     
                 }
             }
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Throwable")
-            {
-                if(Input.GetKeyDown(KeyCode.E))
-                {
-                    if (throwableObject != null)
-                    {
-                        throwableObject.transform.position = hit.point;
-                        throwableObject.SetActive(true);
-                    }
-                    throwableObject = hit.transform.gameObject;
-                    throwableObject.SetActive(false);
-                    Shoot shoot = GetComponent<Shoot>();
-                     
-                    shoot.projectileToSpawn = throwableObject;
-                    
-                    Debug.Log(throwableObject);
-                    
-                }
-            }
-
-
         }
-
-
-
         //if the player presses 'F' and has a disguise, they will change into that disguise
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (disguise != null)
             {
-                if (isDisguised)
+                if (isDisguised) //if the player is disguised, than take off the disguise
                 {
                     playerColour.material = original;
                     isDisguised = false;
@@ -214,21 +188,24 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    if (disguise.GetComponent<Items>().type == 4)
+                    if (disguise.GetComponent<Items>().type == 4) //if the player is not disguised, and they have the first disguise, then disguise
                     {
                         playerColour.material = Disguise1;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
 
-                    else if (disguise.GetComponent<Items>().type == 5)
+                    else if (disguise.GetComponent<Items>().type == 5) //if the player is not disguised, and they have the second disguise, then disguise
                     {
                         playerColour.material = Disguise2;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
-                }                
+                }
+                
             }
-        }       
+        }
+       
     }
+
 }
