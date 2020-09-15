@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         Application.Quit();
 #endif
     }
-
+    //win the game
     public void win()
     {
         Cursor.visible = true;
