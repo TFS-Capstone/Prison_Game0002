@@ -28,6 +28,8 @@ public class Inventory : MonoBehaviour
     int keycard = 0; //type of keycard the player is holding, probably staying a number
     [SerializeField]
     GameObject keycardObject = null;
+    
+    public GameObject throwableObject = null; // type of throwable object the player is carrying
     //Item Selection
 
     [SerializeField]
@@ -58,7 +60,7 @@ public class Inventory : MonoBehaviour
         //selection stuff
 
         if (_selected != null)
-            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door")
+            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door" || _selected.gameObject.tag == "Throwable")
             {
             var selectionRenderer = _selected.GetComponent<Renderer>(); //grabs the selected object's renderer
             selectionRenderer.material = originalMat; //sets the variable to the selected object's material so it can be reset later
@@ -76,7 +78,14 @@ public class Inventory : MonoBehaviour
             
             if (selection != null)
             {
+<<<<<<< HEAD
                 if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door")    
+=======
+                
+
+
+                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door" || selection.gameObject.tag == "Throwable")    
+>>>>>>> parent of ddba132... Revert "Art assets and Projectile linked to inventory"
                 {
                     originalMat = selectionRenderer.material; //grab the original material of the item (or door)
                     selectionRenderer.material = highlightMaterial; //change the object's matieral to highlighted
@@ -164,8 +173,13 @@ public class Inventory : MonoBehaviour
                     Debug.Log(keycardObject);
 
                 }
+<<<<<<< HEAD
             }
             else if (hit.distance < 20 && hit.transform.gameObject.tag == "Door")//if the player hit a door
+=======
+            } 
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Door")
+>>>>>>> parent of ddba132... Revert "Art assets and Projectile linked to inventory"
             {
                 if(Input.GetKeyDown(KeyCode.E))
                 {
@@ -174,6 +188,30 @@ public class Inventory : MonoBehaviour
                     
                 }
             }
+<<<<<<< HEAD
+=======
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Throwable")
+            {
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    if (throwableObject != null)
+                    {
+                        throwableObject.transform.position = hit.point;
+                        throwableObject.SetActive(true);
+                    }
+                    throwableObject = hit.transform.gameObject;
+                    throwableObject.SetActive(false);
+                    Shoot shoot = GetComponent<Shoot>();
+                     
+                    shoot.projectileToSpawn = throwableObject;
+                    
+                    Debug.Log(throwableObject);
+                    
+                }
+            }
+
+
+>>>>>>> parent of ddba132... Revert "Art assets and Projectile linked to inventory"
         }
         //if the player presses 'F' and has a disguise, they will change into that disguise
         if (Input.GetKeyDown(KeyCode.F))
@@ -201,11 +239,8 @@ public class Inventory : MonoBehaviour
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
-                }
-                
+                }                
             }
-        }
-       
+        }       
     }
-
 }
