@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    bool isPaused;
+
     public float idealRPM = 500f;
     public float maxRPM = 1000f;
 
@@ -22,10 +24,14 @@ public class CarController : MonoBehaviour
 
     public Rigidbody rigidbody;
 
+
+    
     // Start is called before the first frame update
     void Start()
     {
         rigidbody.centerOfMass = centerOfGravity.localPosition;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public float Speed()
@@ -41,6 +47,21 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (GameManager.instance.GameIsPause)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            isPaused = true;
+        }
+
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            isPaused = false;
+        }
+
+
         float scaledTorque = Input.GetAxis("Vertical") * torque;
 
         if (RL_Wheel.rpm < idealRPM)
@@ -97,4 +118,5 @@ public class CarController : MonoBehaviour
         if (groundedR)
             rigidbody.AddForceAtPosition(wheelR.transform.up * antiRollForce, wheelR.transform.position);
     }
+
 }

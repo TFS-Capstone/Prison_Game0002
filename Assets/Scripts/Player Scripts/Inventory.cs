@@ -19,6 +19,9 @@ public class Inventory : MonoBehaviour
     public Material item1;
     public Material item2;
 
+    bool holdingProj = false;
+    bool projIsOut = false;
+    public Transform handLocation;
 
     [SerializeField]
     GameObject disguise = null; //The type of disguise that the player is holding, will change based on what is picked up
@@ -45,6 +48,8 @@ public class Inventory : MonoBehaviour
     Transform _selected;
 
     GameObject door;
+
+    
     //End of item selection
     void Start()
     {
@@ -187,9 +192,7 @@ public class Inventory : MonoBehaviour
                     }
                     throwableObject = hit.transform.gameObject;
                     throwableObject.SetActive(false);
-                    Shoot shoot = GetComponent<Shoot>();
-                     
-                    shoot.projectileToSpawn = throwableObject;
+                    holdingProj = true;
                     
                     Debug.Log(throwableObject);
                     
@@ -230,5 +233,44 @@ public class Inventory : MonoBehaviour
                 }                
             }
         }       
+
+        if (holdingProj)
+        {
+            throwableObject.transform.position = handLocation.position;
+            throwableObject.transform.rotation = handLocation.rotation;
+            
+            if(Input.GetMouseButtonDown(1))
+            {
+                if (projIsOut)
+                {
+                    projIsOut = false;
+                    throwableObject.SetActive(false);
+                }
+                else
+                {
+                    projIsOut = true;
+                    throwableObject.SetActive(true);
+                }
+            }
+            if(projIsOut && Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("Throw");
+                Vector3 throwForce = (transform.forward * 5) + new Vector3(0, 10, 0);
+                throwableObject.GetComponent<Rigidbody>().AddForce(throwForce,ForceMode.Impulse);
+                throwableObject = null;
+                holdingProj = false;
+                projIsOut = false;
+            }
+
+        }
+
+
+
+
+
     }
+
+
+
+
 }
