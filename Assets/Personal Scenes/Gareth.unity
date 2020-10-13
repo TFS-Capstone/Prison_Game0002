@@ -4308,6 +4308,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6141738348270332035, guid: 57f17f06241150346a54c1cf944dd8d9,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 401135093, guid: 57f17f06241150346a54c1cf944dd8d9, type: 3}
       propertyPath: minigameUI
       value: 
