@@ -1907,6 +1907,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1986,6 +1992,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7757,6 +7769,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8629,6 +8647,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9071,6 +9095,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9697,6 +9727,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10509,6 +10545,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10837,6 +10879,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10922,6 +10970,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12028,6 +12082,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12720,6 +12780,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13419,6 +13485,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16641,6 +16713,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17943,6 +18021,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18784,6 +18868,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19289,6 +19379,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20568,6 +20664,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20858,6 +20960,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24391,6 +24499,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24470,6 +24584,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25767,6 +25887,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26294,6 +26420,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27598,6 +27730,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34099,6 +34237,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35147,6 +35291,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35464,6 +35614,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36148,6 +36304,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37124,6 +37286,12 @@ PrefabInstance:
       propertyPath: maximumX
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 3141909275750276435, guid: 034def9f921bad34e87ced462a379021,
+        type: 3}
+      propertyPath: alarmObject
+      value: 
+      objectReference: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
+        type: 3}
     - target: {fileID: 3349918975299556291, guid: 034def9f921bad34e87ced462a379021,
         type: 3}
       propertyPath: m_LocalPosition.x

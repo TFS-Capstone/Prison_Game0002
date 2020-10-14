@@ -24,6 +24,7 @@ TagManager:
   - Cube2
   - Cube3
   - Checker
+  - AlarmLocation
   layers:
   - Default
   - TransparentFX

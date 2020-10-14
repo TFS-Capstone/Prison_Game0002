@@ -9,11 +9,15 @@ public class CameraInteract : MonoBehaviour
     RaycastHit hit;
     Camera cam;
 
+    float alarmTimer = 5;
+    float alarmCooldown = 30; 
+    public static bool alarmSounded = false;
     public GameObject pingIcon;
+    public GameObject alarmObject;
     // Start is called before the first frame update
     void Start()
     {
-        
+        alarmSounded = false;
         cam = GetComponent<Camera>();
     }
 
@@ -31,8 +35,22 @@ public class CameraInteract : MonoBehaviour
             {
                 Ping();
             }
+            if (Input.GetKeyDown(KeyCode.C) && alarmCooldown == 30)
+            {
+                Alarm();
+            }
             
         }
+        if (alarmTimer < 5)
+            alarmTimer = alarmTimer + Time.fixedDeltaTime;
+        else
+            alarmTimer = 5;
+
+        if (alarmCooldown < 30)
+            alarmCooldown = alarmCooldown + Time.fixedDeltaTime;
+        else
+            alarmCooldown = 30;
+
     }
 
     private void CameraInteraction()
@@ -63,5 +81,13 @@ public class CameraInteract : MonoBehaviour
         {
             Instantiate(pingIcon, hit.point, Quaternion.identity);
         }
+    }
+    private void Alarm()
+    {
+        alarmCooldown = 0;
+        alarmTimer = 0;
+        Debug.Log("Alarm Sounded");
+        alarmSounded = true;
+        Instantiate(alarmObject, cam.transform);
     }
 }
