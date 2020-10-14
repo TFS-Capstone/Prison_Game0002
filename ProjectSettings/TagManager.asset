@@ -20,6 +20,10 @@ TagManager:
   - floor
   - MiniMap
   - Throwable
+  - Cube1
+  - Cube2
+  - Cube3
+  - Checker
   layers:
   - Default
   - TransparentFX
