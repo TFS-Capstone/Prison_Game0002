@@ -17,6 +17,7 @@ public class WinArea : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "player")
         GameManager.instance.win();
     }
 }

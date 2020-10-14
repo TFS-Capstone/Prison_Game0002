@@ -17,6 +17,13 @@ public class GameManager : MonoBehaviour
     static GameManager _instance = null;
 
     public float playerSpeed;
+
+
+
+    //player objects
+    bool PlayerType = true;
+    public GameObject Player;
+    public GameObject Car;
     //end of variables --------------------------------
 
     //creates the GameManager instance
@@ -36,14 +43,30 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this);
         }
-
+        if (SceneManager.GetActiveScene().Equals("CurrentWhitebox"))
+            Player.SetActive(false);
     }
 
     // Update has pause menu checks
     void Update()
     {
         
-    
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if(!PlayerType)
+            {
+                Car.SetActive(true);
+                Player.SetActive(false);
+                PlayerType = true;
+            }
+            else
+            {
+                Car.SetActive(false);
+                Player.SetActive(true);
+                PlayerType = false;
+            }
+        }
+
     }
 
 
@@ -89,6 +112,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("CurrentWhitebox");
+
     }
     //grabs the pause menu for the GameManager
     

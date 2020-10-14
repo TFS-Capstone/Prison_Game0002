@@ -6,30 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Photon/Scenes/DelayStartMenuNW.unity
+    guid: dedafbfdad156cb4a9fbea355a62b686
+  - enabled: 1
+    path: Assets/Photon/Scenes/DelayStartMultiplayerWaitRoom.unity
+    guid: 9f496c70633be884d8347ef4a0ee854a
+  - enabled: 1
+    path: Assets/Photon/Scenes/TestMultiplayer.unity
+    guid: 1c2b074a31e12ee46b0bf9080ff86d92
+  - enabled: 1
+    path: Assets/Photon/Scenes/QuickStartMenuNW.unity
+    guid: 035b489f2da64e242b980100158de737
+  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 511b95a68dfa96e46aa445d186e83d8b
-  - enabled: 0
-    path: Assets/Personal Scenes/Gareth.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Camera Interact.unity
-    guid: ad2fc2fa3ed120c4fbb381d9ffe82edf
-  - enabled: 0
-    path: Assets/Scenes/GameOver.unity
-    guid: 29cd6b0154111d144a2beff29febd099
-  - enabled: 0
-    path: Assets/Scenes/OldFiles/Prison Whitebox.unity
-    guid: f2ecccbabfd126347be56a28697af6a9
-  - enabled: 0
-    path: Assets/Scenes/OldFiles/Whitebox2.0.unity
-    guid: e394447d1cc943b4b967fb9b342f7948
-  - enabled: 0
-    path: Assets/Personal Scenes/Sheraaz.unity
-    guid: 6171098db50e5d4449aa16bb2ffa753f
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: 3be15913764b23440a013817e29a2b50
   - enabled: 1
     path: Assets/Scenes/CurrentWhitebox.unity
     guid: 27d73fb0398b62e40a4ed21de9791951
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 29cd6b0154111d144a2beff29febd099
   m_configObjects: {}
