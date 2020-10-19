@@ -47,19 +47,6 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.instance.GameIsPause)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            isPaused = true;
-        }
-
-        else
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            isPaused = false;
-        }
 
 
         float scaledTorque = Input.GetAxis("Vertical") * torque;
