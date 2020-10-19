@@ -28,12 +28,23 @@ public class GameSetupController : MonoBehaviour
     {
         Debug.Log("Creating player");
         // path: Photon; PhotonUnityNetworking; Resources; PhotonPrefabs
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), Vector3.zero, Quaternion.identity);
-
+        GameObject p = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), Vector3.zero, Quaternion.identity);
+        //if (p.GetPhotonView().IsMine)
+        //{
+        //    Camera mainCam = p.GetComponentInChildren<Camera>();
+        //    mainCam = Camera.main;
+            
+        //}
     }
 
     public void SetPlayer(int choice)
     {
-        
+
+
+
+
+
+
+        CreatePlayer();
     }
 }
