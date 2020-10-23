@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
     bool isPaused;
-
+    private PhotonView pv;
     public float idealRPM = 500f;
     public float maxRPM = 1000f;
 
@@ -29,7 +30,17 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody.centerOfMass = centerOfGravity.localPosition;
+        pv = GetComponent<PhotonView>();
+        if (pv.IsMine)
+        {
+            rigidbody.centerOfMass = centerOfGravity.localPosition;
+            GetComponentInChildren<Camera>().enabled = true;
+        }
+        else
+        {
+            GetComponentInChildren<Camera>().enabled = false;
+        }
+            
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -48,39 +59,42 @@ public class CarController : MonoBehaviour
     void FixedUpdate()
     {
 
-
-        float scaledTorque = Input.GetAxis("Vertical") * torque;
-
-        if (RL_Wheel.rpm < idealRPM)
-            scaledTorque = Mathf.Lerp(scaledTorque / 10f, scaledTorque, RL_Wheel.rpm / idealRPM);
-        else
-            scaledTorque = Mathf.Lerp(scaledTorque, 0, (RL_Wheel.rpm - idealRPM) / (maxRPM - idealRPM));
-
-        doRollBar(FR_Wheel, FL_Wheel);
-        doRollBar(RR_Wheel, RL_Wheel);
-
-        FR_Wheel.steerAngle = Input.GetAxis("Horizontal") * turnRadius;
-        FL_Wheel.steerAngle = Input.GetAxis("Horizontal") * turnRadius;
-
-        FR_Wheel.motorTorque = driveMode == DriveMode.Rear ? 0 : scaledTorque;
-        FL_Wheel.motorTorque = driveMode == DriveMode.Rear ? 0 : scaledTorque;
-        RR_Wheel.motorTorque = driveMode == DriveMode.Front ? 0 : scaledTorque;
-        RL_Wheel.motorTorque = driveMode == DriveMode.Front ? 0 : scaledTorque;
-
-        if (Input.GetKey(KeyCode.Space))
+        if (pv.IsMine)
         {
-            FR_Wheel.brakeTorque = brakeTorque;
-            FL_Wheel.brakeTorque = brakeTorque;
-            RR_Wheel.brakeTorque = brakeTorque;
-            RL_Wheel.brakeTorque = brakeTorque;
+            float scaledTorque = Input.GetAxis("Vertical") * torque;
+
+            if (RL_Wheel.rpm < idealRPM)
+                scaledTorque = Mathf.Lerp(scaledTorque / 10f, scaledTorque, RL_Wheel.rpm / idealRPM);
+            else
+                scaledTorque = Mathf.Lerp(scaledTorque, 0, (RL_Wheel.rpm - idealRPM) / (maxRPM - idealRPM));
+
+            doRollBar(FR_Wheel, FL_Wheel);
+            doRollBar(RR_Wheel, RL_Wheel);
+
+            FR_Wheel.steerAngle = Input.GetAxis("Horizontal") * turnRadius;
+            FL_Wheel.steerAngle = Input.GetAxis("Horizontal") * turnRadius;
+
+            FR_Wheel.motorTorque = driveMode == DriveMode.Rear ? 0 : scaledTorque;
+            FL_Wheel.motorTorque = driveMode == DriveMode.Rear ? 0 : scaledTorque;
+            RR_Wheel.motorTorque = driveMode == DriveMode.Front ? 0 : scaledTorque;
+            RL_Wheel.motorTorque = driveMode == DriveMode.Front ? 0 : scaledTorque;
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                FR_Wheel.brakeTorque = brakeTorque;
+                FL_Wheel.brakeTorque = brakeTorque;
+                RR_Wheel.brakeTorque = brakeTorque;
+                RL_Wheel.brakeTorque = brakeTorque;
+            }
+            else
+            {
+                FR_Wheel.brakeTorque = 0;
+                FL_Wheel.brakeTorque = 0;
+                RR_Wheel.brakeTorque = 0;
+                RL_Wheel.brakeTorque = 0;
+            }
         }
-        else
-        {
-            FR_Wheel.brakeTorque = 0;
-            FL_Wheel.brakeTorque = 0;
-            RR_Wheel.brakeTorque = 0;
-            RL_Wheel.brakeTorque = 0;
-        }
+        
     }
 
     void doRollBar(WheelCollider wheelL, WheelCollider wheelR)

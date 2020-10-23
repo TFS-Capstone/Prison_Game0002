@@ -6,13 +6,26 @@ using UnityEngine;
 
 public class GameSetupController : MonoBehaviour
 {
+    private PhotonView myPhotonView;
     [SerializeField]
     GameObject dustinPrefab, roryPrefab;
+    [SerializeField]
+    int dustinChoice;
+    [SerializeField]
+    int roryChoice;
+    [SerializeField]
+    Transform playerSpawnPoint, carSpawnPoint;
+
+    int myChoice;
     // Start is called before the first frame update
     void Start()
     {
+        myPhotonView = GetComponent<PhotonView>();
+        myChoice = 0;
+        dustinChoice = 0;
+        roryChoice = 0;
         //this is a test to create something, ideally this will be called after the characters have been selected
-        CreatePlayer();
+        //CreatePlayer();
         
         
         
@@ -24,27 +37,87 @@ public class GameSetupController : MonoBehaviour
         
     }
 
-    private void CreatePlayer()
+    private void CreatePlayer(int choice)
     {
-        Debug.Log("Creating player");
-        // path: Photon; PhotonUnityNetworking; Resources; PhotonPrefabs
-        GameObject p = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), Vector3.zero, Quaternion.identity);
+        if (choice == 1)
+        {
+            Debug.Log("Creating player");
+            // path: Photon; PhotonUnityNetworking; Resources; PhotonPrefabs
+            GameObject p = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), playerSpawnPoint.position, Quaternion.identity);
+
+        }
+        else if (choice ==2)
+        {
+            Debug.Log("Creating car");
+            // path: Photon; PhotonUnityNetworking; Resources; PhotonPrefabs
+            GameObject p = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Car"), carSpawnPoint.position, Quaternion.identity);
+
+        }
         //if (p.GetPhotonView().IsMine)
         //{
         //    Camera mainCam = p.GetComponentInChildren<Camera>();
         //    mainCam = Camera.main;
-            
+
         //}
     }
 
     public void SetPlayer(int choice)
     {
+        if (choice == 1 && dustinChoice != 1 && myChoice == 0)
+        {
+            //dustin Selected
+
+            //disable the choice ui
+            myChoice = choice;
+            Debug.Log("my choice is " + myChoice);
+            myPhotonView.RPC("RPC_SendPlayerChoice", RpcTarget.All, choice);
+        }
+
+        else if (choice == 2 && roryChoice != 2 && myChoice == 0)
+        {
+            //rory selected
+
+            //disable the choice ui
+            myChoice = choice;
+            Debug.Log("my choice is " + myChoice);
+            myPhotonView.RPC("RPC_SendPlayerChoice", RpcTarget.All, choice);
+        }
+
+        //CreatePlayer();
+    }
 
 
+    [PunRPC]
+    private void RPC_SendPlayerChoice(int choice)
+    {
+        //rpc to send and synce to all players
+        
+        if (choice ==1)
+        {
+            dustinChoice = 1;
+            Debug.Log("syncing player choices " + choice);
+        }
+        else if (choice ==2)
+        {
+            roryChoice = 2;
+            Debug.Log("syncing player choices " + choice);
+        }
 
+    }
 
+    [PunRPC]
+    public void RPC_LoadBothPlayers()
+    {
+        CreatePlayer(myChoice);
+    }
 
+    public void StartGame()
+    {
+        if (dustinChoice == 1 && roryChoice == 2)
+        {
+            Debug.Log("spawning both players");
 
-        CreatePlayer();
+            myPhotonView.RPC("RPC_LoadBothPlayers", RpcTarget.All);
+        }
     }
 }

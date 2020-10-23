@@ -14,6 +14,14 @@ public class PlayerCharacterController : MonoBehaviour
     private void Start()
     {
         pv = GetComponent<PhotonView>();
+        if (pv.IsMine)
+        {
+            GetComponentInChildren<Camera>().enabled = true;
+        }
+        else
+        {
+            GetComponentInChildren<Camera>().enabled = false;
+        }
     }
 
     void Update()

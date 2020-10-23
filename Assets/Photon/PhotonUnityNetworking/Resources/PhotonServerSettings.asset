@@ -36,6 +36,8 @@ MonoBehaviour:
   - ClickRpc
   - DestroyRpc
   - RPC_SendTimer
+  - RPC_SendPlayerChoice
+  - RPC_LoadBothPlayers
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
