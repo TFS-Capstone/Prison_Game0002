@@ -10,6 +10,7 @@ public class LevelLoad : MonoBehaviour
         GameManager.instance.Car = GameObject.Find("Car");
         GameManager.instance.Player = GameObject.Find("player");
         GameManager.instance.Player.SetActive(false);
+        GameManager.instance.chatMenu.SetActive(false);
     }
 
     // Update is called once per frame

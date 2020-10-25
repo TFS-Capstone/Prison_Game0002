@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public float playerSpeed;
 
+    public GameObject chatMenu;
+
 
 
     //player objects
@@ -65,6 +67,16 @@ public class GameManager : MonoBehaviour
                 Player.SetActive(true);
                 PlayerType = false;
             }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.T) && !GameIsPause && chatMenu.activeSelf == false)
+        {
+            chatMenu.SetActive(true);
+        }
+        
+        if(Input.GetKeyDown(KeyCode.Escape) && !GameIsPause && chatMenu.activeSelf == true)
+        {
+            chatMenu.SetActive(false);
         }
 
     }

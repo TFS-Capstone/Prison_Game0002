@@ -20,12 +20,22 @@ public class PauseMenu : MonoBehaviour
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }
-            else
+            else if (!isPaused && GameManager.instance.chatMenu.activeSelf == false)
             {
                 Pause();
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
+            else if (!isPaused && GameManager.instance.chatMenu.activeSelf == true)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.T) && !isPaused && GameManager.instance.chatMenu.activeSelf == false)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
