@@ -1,8 +1,10 @@
 ﻿using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSetupController : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class GameSetupController : MonoBehaviour
     int roryChoice;
     [SerializeField]
     Transform playerSpawnPoint, carSpawnPoint;
+    [SerializeField]
+    GameObject dustinSelect, rorySelect, startButton, disconnectButton;
 
     int myChoice;
     // Start is called before the first frame update
@@ -88,7 +92,7 @@ public class GameSetupController : MonoBehaviour
 
 
     [PunRPC]
-    private void RPC_SendPlayerChoice(int choice)
+    public void RPC_SendPlayerChoice(int choice)
     {
         //rpc to send and synce to all players
         
@@ -111,13 +115,31 @@ public class GameSetupController : MonoBehaviour
         CreatePlayer(myChoice);
     }
 
+    [PunRPC]
+    public void RPC_RemoveSelectionOpts()
+    {
+        dustinSelect.SetActive(false);
+        rorySelect.SetActive(false);
+        startButton.SetActive(false);
+
+        disconnectButton.SetActive(true);
+    }
     public void StartGame()
     {
-        if (dustinChoice == 1 && roryChoice == 2)
+        // only the master can start the server / game
+        if (PhotonNetwork.IsMasterClient)
         {
-            Debug.Log("spawning both players");
+            if (dustinChoice == 1 && roryChoice == 2)
+            {
+                Debug.Log("spawning both players");
 
-            myPhotonView.RPC("RPC_LoadBothPlayers", RpcTarget.All);
+                myPhotonView.RPC("RPC_LoadBothPlayers", RpcTarget.All);
+                myPhotonView.RPC("RPC_RemoveSelectionOpts", RpcTarget.All);
+            }
         }
+        
     }
+
+    
+
 }
