@@ -35,7 +35,7 @@ public class CameraInteract : MonoBehaviour
             {
                 Ping();
             }
-            if (Input.GetKeyDown(KeyCode.M) && alarmCooldown == 30)
+            if (Input.GetKeyDown(KeyCode.C) && alarmCooldown == 30)
             {
                 Alarm();
             }
@@ -89,6 +89,5 @@ public class CameraInteract : MonoBehaviour
         Debug.Log("Alarm Sounded");
         alarmSounded = true;
         Instantiate(alarmObject, cam.transform);
-        BroadcastMessage("AlarmSent", cam.transform);
     }
 }
