@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 using Photon.Pun;
+=======
+>>>>>>> parent of a745512... Week 2 and 3 work
 
 public class PlayerCharacterController : MonoBehaviour
 {
@@ -11,6 +14,7 @@ public class PlayerCharacterController : MonoBehaviour
     [SerializeField]
     float speedMultiplier = 1;
 
+<<<<<<< HEAD
     private void Start()
     {
         pv = GetComponent<PhotonView>();
@@ -21,6 +25,20 @@ public class PlayerCharacterController : MonoBehaviour
         else
         {
             GetComponentInChildren<Camera>().enabled = false;
+=======
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speedMultiplier = 2;
+            GameManager.instance.playerSpeed = 2;
+        }
+        if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            speedMultiplier = 0.5f;
+            GameManager.instance.playerSpeed = 0.5f;
+>>>>>>> parent of a745512... Week 2 and 3 work
         }
     }
 
@@ -28,6 +46,7 @@ public class PlayerCharacterController : MonoBehaviour
     {
         if (pv.IsMine)
         {
+<<<<<<< HEAD
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 speedMultiplier = 2;
@@ -46,6 +65,12 @@ public class PlayerCharacterController : MonoBehaviour
             PlayerMovement();
         }
         
+=======
+            speedMultiplier = 1;
+            GameManager.instance.playerSpeed = 1;
+        }
+        PlayerMovement();
+>>>>>>> parent of a745512... Week 2 and 3 work
     }
     void PlayerMovement()
 
