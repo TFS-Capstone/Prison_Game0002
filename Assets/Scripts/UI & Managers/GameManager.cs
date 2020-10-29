@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+
+    public Camera carCam, prisonerCam;
+
     //variables ---------------------------------------
     //if the player is disguised
     public bool disguised = false;
@@ -21,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject chatMenu;
 
 
+    public Camera selectionCam;
 
     //player objects
     bool PlayerType = true;
@@ -46,7 +51,21 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this);
         }
         if (SceneManager.GetActiveScene().Equals("CurrentWhitebox"))
-            Player.SetActive(false);
+        {
+            //    Player.SetActive(false);
+            if(GameSetupController.instance.myChoice ==1)
+            {
+                prisonerCam = Camera.main;
+            }
+            else
+            {
+                carCam = Camera.main;
+            }
+        }
+
+
+
+        selectionCam.enabled = true;
     }
 
     // Update has pause menu checks
@@ -94,30 +113,30 @@ public class GameManager : MonoBehaviour
 
     public void win()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Win");
 
     }
     //loads the lose scene
     public void lose()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("GameOver");
     }
     //lose scene go back to title scene
     public void Restart()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Title");
     }
     //pause menu go back to title scene
     public void Mainmenu()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Title");
     }
     //main menu start game and find the UI

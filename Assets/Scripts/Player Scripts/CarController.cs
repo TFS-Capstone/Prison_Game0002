@@ -41,8 +41,8 @@ public class CarController : MonoBehaviour
             GetComponentInChildren<Camera>().enabled = false;
         }
             
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     public float Speed()

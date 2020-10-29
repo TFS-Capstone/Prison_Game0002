@@ -21,8 +21,8 @@ public class PlayerCameraController : MonoBehaviour
     {
         pv = GetComponentInParent<PhotonView>();
         
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
         if (pv.IsMine)
         {
             cam = GetComponent<Camera>();
@@ -60,15 +60,15 @@ public class PlayerCameraController : MonoBehaviour
 
             if (GameManager.instance.GameIsPause)
             {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                //Cursor.visible = true;
+                //Cursor.lockState = CursorLockMode.None;
                 isPaused = true;
             }
 
             else
             {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.visible = false;
+                //Cursor.lockState = CursorLockMode.Locked;
                 isPaused = false;
             }
         }

@@ -8,9 +8,11 @@ using UnityEngine.UI;
 
 public class GameSetupController : MonoBehaviour
 {
+
+    static GameSetupController _instance = null;
+
     private PhotonView myPhotonView;
-    [SerializeField]
-    GameObject dustinPrefab, roryPrefab;
+    
     [SerializeField]
     int dustinChoice;
     [SerializeField]
@@ -20,10 +22,25 @@ public class GameSetupController : MonoBehaviour
     [SerializeField]
     GameObject dustinSelect, rorySelect, startButton, disconnectButton;
 
-    int myChoice;
+    public int myChoice;
+
+
+    public static GameSetupController instance
+    {
+        get { return _instance; }
+        set { instance = value; }
+    }
     // Start is called before the first frame update
     void Start()
     {
+
+        if (_instance)
+            Destroy(gameObject);
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this);
+        }
         myPhotonView = GetComponent<PhotonView>();
         myChoice = 0;
         dustinChoice = 0;
@@ -133,6 +150,9 @@ public class GameSetupController : MonoBehaviour
             {
                 Debug.Log("spawning both players");
 
+                
+
+                //PhotonNetwork.LoadLevel(6);
                 myPhotonView.RPC("RPC_LoadBothPlayers", RpcTarget.All);
                 myPhotonView.RPC("RPC_RemoveSelectionOpts", RpcTarget.All);
             }
