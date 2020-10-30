@@ -6,7 +6,7 @@ using Photon.Pun;
 
 public class PlayerCameraController : MonoBehaviour
 {
-    private PhotonView pv;
+    //private PhotonView pv;
     [SerializeField]
     float playerRotation = 1;
     [SerializeField]
@@ -19,71 +19,60 @@ public class PlayerCameraController : MonoBehaviour
     Transform _selected;
     void Start()
     {
-        pv = GetComponentInParent<PhotonView>();
-        
+
+
         //Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
-        if (pv.IsMine)
-        {
-            cam = GetComponent<Camera>();
-            Debug.Log("Cam " + cam);
-            Debug.Log("pv " + pv);
-        }
-        
+        cam = GetComponent<Camera>();
+        Debug.Log("Cam " + cam);
+
     }
     void Update()
     {
-        if (pv.IsMine)
+        if (_selected != null)
+            if (_selected.gameObject.name != "item" || _selected.gameObject.name != "disguise" || _selected.gameObject.name != "keycard" || _selected.gameObject.name != "floor")
+            {
+                var selectionRenderer = _selected.GetComponent<Renderer>();
+                selectionRenderer.enabled = true;
+                _selected = null;
+            }
+        var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 3.5f))
         {
-            if (_selected != null)
-                if (_selected.gameObject.name != "item" || _selected.gameObject.name != "disguise" || _selected.gameObject.name != "keycard" || _selected.gameObject.name != "floor")
-                {
-                    var selectionRenderer = _selected.GetComponent<Renderer>();
-                    selectionRenderer.enabled = true;
-                    _selected = null;
-                }
-            var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 3.5f))
+            var selection = hit.transform;
+            var selectionRenderer = selection.GetComponent<Renderer>();
+            if (selection.gameObject.name != "item" || selection.gameObject.name != "disguise" || selection.gameObject.name != "keycard" || selection.gameObject.name != "floor")
             {
-                var selection = hit.transform;
-                var selectionRenderer = selection.GetComponent<Renderer>();
-                if (selection.gameObject.name != "item" || selection.gameObject.name != "disguise" || selection.gameObject.name != "keycard" || selection.gameObject.name != "floor")
-                {
-                    selectionRenderer.enabled = false;
-                }
-                _selected = selection;
+                selectionRenderer.enabled = false;
             }
-
-
-
-
-            if (GameManager.instance.GameIsPause)
-            {
-                //Cursor.visible = true;
-                //Cursor.lockState = CursorLockMode.None;
-                isPaused = true;
-            }
-
-            else
-            {
-                //Cursor.visible = false;
-                //Cursor.lockState = CursorLockMode.Locked;
-                isPaused = false;
-            }
+            _selected = selection;
         }
-        
-            
+
+
+
+
+        if (GameManager.instance.GameIsPause)
+        {
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+            isPaused = true;
+        }
+
+        else
+        {
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+            isPaused = false;
+        }
+
     }
 
     void LateUpdate()
     {
-        if (pv.IsMine)
-        {
-            if (!isPaused)
-                CamControl();
-        }
-        
+        if (!isPaused)
+            CamControl();
+
     }
 
 

@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class PlayerCharacterController : MonoBehaviour
 {
-    private PhotonView pv;
+    //private PhotonView pv;
     [SerializeField]
     float speed;
     [SerializeField]
@@ -13,39 +13,35 @@ public class PlayerCharacterController : MonoBehaviour
 
     private void Start()
     {
-        pv = GetComponent<PhotonView>();
-        if (pv.IsMine)
-        {
-            GetComponentInChildren<Camera>().enabled = true;
-        }
-        else
-        {
-            GetComponentInChildren<Camera>().enabled = false;
-        }
+        //pv = GetComponent<PhotonView>();
+        //if (pv.IsMine)
+        //{
+        //    GetComponentInChildren<Camera>().enabled = true;
+        //}
+        //else
+        //{
+        //    GetComponentInChildren<Camera>().enabled = false;
+        //}
     }
 
     void Update()
     {
-        if (pv.IsMine)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                speedMultiplier = 2;
-                GameManager.instance.playerSpeed = 2;
-            }
-            if (Input.GetKeyDown(KeyCode.LeftControl))
-            {
-                speedMultiplier = 0.5f;
-                GameManager.instance.playerSpeed = 0.5f;
-            }
-            if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftControl))
-            {
-                speedMultiplier = 1;
-                GameManager.instance.playerSpeed = 1;
-            }
-            PlayerMovement();
+            speedMultiplier = 2;
+            GameManager.instance.playerSpeed = 2;
         }
-        
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            speedMultiplier = 0.5f;
+            GameManager.instance.playerSpeed = 0.5f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            speedMultiplier = 1;
+            GameManager.instance.playerSpeed = 1;
+        }
+        PlayerMovement();
     }
     void PlayerMovement()
 

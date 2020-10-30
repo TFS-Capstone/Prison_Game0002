@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject chatMenu;
 
 
-    public Camera selectionCam;
+    
 
     //player objects
     bool PlayerType = true;
@@ -52,20 +52,13 @@ public class GameManager : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().Equals("CurrentWhitebox"))
         {
-            //    Player.SetActive(false);
-            if(GameSetupController.instance.myChoice ==1)
-            {
-                prisonerCam = Camera.main;
-            }
-            else
-            {
-                carCam = Camera.main;
-            }
+                Player.SetActive(false);
+            
         }
 
 
 
-        selectionCam.enabled = true;
+        
     }
 
     // Update has pause menu checks
