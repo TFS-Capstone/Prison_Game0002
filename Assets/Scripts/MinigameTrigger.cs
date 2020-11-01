@@ -10,11 +10,13 @@ public class MinigameTrigger : MonoBehaviour
     public Camera camera1;
     public Camera camera2;
     public GameObject player;
+    public GameObject minigame;
     // Start is called before the first frame update
     void Start()
     {
         minigameUI.SetActive(false);
         camera2.enabled = false;
+        minigame.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,6 +51,7 @@ public class MinigameTrigger : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.None;
         minigameUI.SetActive(false);
+        minigame.SetActive(false);
         camera2.enabled = false;
         camera1.enabled = true;
     }
@@ -59,6 +62,7 @@ public class MinigameTrigger : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         minigameUI.SetActive(true);
+        minigame.SetActive(true);
         camera1.enabled = false;
         camera2.enabled = true;
     }

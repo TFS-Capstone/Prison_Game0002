@@ -7,6 +7,15 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
     public GameObject controlsUI;
+
+    void Start()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -20,23 +29,15 @@ public class PauseMenu : MonoBehaviour
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }
-            else if (!isPaused && GameManager.instance.chatMenu.activeSelf == false)
+            else
             {
                 Pause();
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
-            else if (!isPaused && GameManager.instance.chatMenu.activeSelf == true)
-            {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-            }
+            
         }
-        if(Input.GetKeyDown(KeyCode.T) && !isPaused && GameManager.instance.chatMenu.activeSelf == false)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
+        
     }
 
     public void Resume()

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 
 public class PlayerCameraController : MonoBehaviour
@@ -24,7 +23,7 @@ public class PlayerCameraController : MonoBehaviour
         //Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
         cam = GetComponent<Camera>();
-        Debug.Log("Cam " + cam);
+        //Debug.Log("Cam " + cam);
 
     }
     void Update()

@@ -155,7 +155,7 @@ public class FindCameraRadius : MonoBehaviour
         {
             Debug.Log("C button pressed. Accessing cams");
             //gameObject.GetComponent<Character>().type = 2; //disable character movement
-            GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
+            //GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
             if (lastCameraIndex != 0)
             {
                 cameras[currentCameraIndex].gameObject.SetActive(true);

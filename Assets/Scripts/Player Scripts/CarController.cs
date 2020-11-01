@@ -1,12 +1,10 @@
-﻿using Photon.Pun;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
     bool isPaused;
-    private PhotonView pv;
     public float idealRPM = 500f;
     public float maxRPM = 1000f;
 

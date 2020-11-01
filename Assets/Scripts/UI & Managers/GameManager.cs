@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
 
 
-    public Camera carCam, prisonerCam;
 
     //variables ---------------------------------------
     //if the player is disguised
@@ -22,15 +21,6 @@ public class GameManager : MonoBehaviour
 
     public float playerSpeed;
 
-    public GameObject chatMenu;
-
-
-    
-
-    //player objects
-    bool PlayerType = true;
-    public GameObject Player;
-    public GameObject Car;
     //end of variables --------------------------------
 
     //creates the GameManager instance
@@ -50,11 +40,6 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this);
         }
-        if (SceneManager.GetActiveScene().Equals("CurrentWhitebox"))
-        {
-                Player.SetActive(false);
-            
-        }
 
 
 
@@ -64,32 +49,7 @@ public class GameManager : MonoBehaviour
     // Update has pause menu checks
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            if(!PlayerType)
-            {
-                Car.SetActive(true);
-                Player.SetActive(false);
-                PlayerType = true;
-            }
-            else
-            {
-                Car.SetActive(false);
-                Player.SetActive(true);
-                PlayerType = false;
-            }
-        }
-        
-        if (Input.GetKeyDown(KeyCode.T) && !GameIsPause && chatMenu.activeSelf == false)
-        {
-            chatMenu.SetActive(true);
-        }
-        
-        if(Input.GetKeyDown(KeyCode.Escape) && !GameIsPause && chatMenu.activeSelf == true)
-        {
-            chatMenu.SetActive(false);
-        }
+
 
     }
 

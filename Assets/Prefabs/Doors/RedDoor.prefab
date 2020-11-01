@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2265890220572681277}
   - component: {fileID: 2265890220572681249}
   - component: {fileID: 2265890220572681276}
-  m_Layer: 0
-  m_Name: DoorNew
+  m_Layer: 10
+  m_Name: RedDoor
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -93,8 +93,8 @@ MonoBehaviour:
   axes: 0
   sensitivityX: 15
   sensitivityY: 15
-  minimumX: -360
-  maximumX: 360
+  minimumX: -45
+  maximumX: 45
   minimumY: -60
   maximumY: 60
 --- !u!114 &1370331112091233357
@@ -122,4 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pingIcon: {fileID: 2061839227192095048, guid: 7d4d1e249f1fa854a80f69511505e4a6,
+    type: 3}
+  alarmObject: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
     type: 3}
