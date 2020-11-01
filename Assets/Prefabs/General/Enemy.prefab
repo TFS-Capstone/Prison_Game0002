@@ -191,6 +191,7 @@ MonoBehaviour:
   visibleTarget: []
   meshResolution: 1
   edgeResolveIterations: 6
+  edgeDistanceThreshold: 4
   viewMeshFilter: {fileID: 994328381639958202}
 --- !u!1 &1353527260331937138
 GameObject:
