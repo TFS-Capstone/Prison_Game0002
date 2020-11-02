@@ -4874,7 +4874,7 @@ PrefabInstance:
     - target: {fileID: 8609229406562609605, guid: 4439fdec89e240246bdcda9806f64755,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 791
+      value: 1815
       objectReference: {fileID: 0}
     - target: {fileID: 8609229406562609605, guid: 4439fdec89e240246bdcda9806f64755,
         type: 3}
@@ -36596,6 +36596,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 868102661, guid: 57f17f06241150346a54c1cf944dd8d9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 868102661, guid: 57f17f06241150346a54c1cf944dd8d9, type: 3}
+      propertyPath: miniMapCanvas
+      value: 
+      objectReference: {fileID: 647911199}
     - target: {fileID: 1065988352, guid: 57f17f06241150346a54c1cf944dd8d9, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -36719,6 +36727,10 @@ PrefabInstance:
     - target: {fileID: 2128080652, guid: 57f17f06241150346a54c1cf944dd8d9, type: 3}
       propertyPath: player
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128080652, guid: 57f17f06241150346a54c1cf944dd8d9, type: 3}
+      propertyPath: findRadius
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3040574128659534521, guid: 57f17f06241150346a54c1cf944dd8d9,
         type: 3}

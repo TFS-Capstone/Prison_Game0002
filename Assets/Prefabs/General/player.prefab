@@ -410,49 +410,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8187877655784107369}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 705b2d9a817207f4c8716184f570af27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8187877655784107369}
   maxCamAngles: 0
-  findRange: 20
-  cameras:
-  - {fileID: 8187877654980124177}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  currentCameraIndex: 0
-  lastCameraIndex: 0
-  layer:
+  findRadius: 23
+  CamMask:
     serializedVersion: 2
     m_Bits: 256
+  inRangeCams: []
+  cameras: []
+  currentCameraIndex: 0
+  lastCameraIndex: 0
 --- !u!114 &813761106
 MonoBehaviour:
   m_ObjectHideFlags: 0

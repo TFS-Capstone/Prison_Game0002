@@ -1,31 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class FindCameraRadius : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // public GameObject[] availCams;
-
+    
     public GameObject player;
+    Camera pcCam;
     public int maxCamAngles;
-    //public int currentCams;
-    public float findRange = 20.0f;
+    
+
+    [Range(0,360)]
+    public float findRadius;
+    //in inspector, this has to be the same layer tha Camera object nodes are on
+    public LayerMask CamMask;
+
+    public List<Camera> inRangeCams = new List<Camera>();
 
     public Camera[] cameras;
     [SerializeField]
     private int currentCameraIndex;
     public int lastCameraIndex;
-    //in inspector, this has to be the same layer tha Camera object nodes are on
-    public LayerMask layer;
+    
 
-    //public bool inRange;
+    
 
 
     void Start()
     {
-        //Enabling this start code seems to break the camera movement functionality.
+        pcCam = gameObject.GetComponentInChildren<Camera>();
 
         currentCameraIndex = 0;
         for (int i = 1; i < cameras.Length; i++)
@@ -34,21 +39,17 @@ public class FindCameraRadius : MonoBehaviour
             cameras[i].gameObject.SetActive(false);
 
         }
-        //if (cameras.Length > 0)
-        //{
-        //    cameras[0].gameObject.SetActive(true);
-        //    Debug.Log("Camera, is now enabled");
-        //}
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Alpha5))
-        //{
-        //    FindCamsInRange();
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            FindCamsInRange();
+        }
         if (Input.GetKeyDown(KeyCode.V) && currentCameraIndex!=0)
         {
             NextCamera();
@@ -71,15 +72,29 @@ public class FindCameraRadius : MonoBehaviour
     //works ocassionally, but repeated use breaks
     private void FindCamsInRange()
     {
-        for (int i = 0; i < maxCamAngles; i++)
+        inRangeCams.Clear();
+        cameras = new Camera[0];
+
+        float camDistance;
+        Collider[] targetsInRadius = Physics.OverlapSphere(transform.position, findRadius, CamMask);
+        
+
+        for (int i = 0; i <targetsInRadius.Length; i++)
         {
-            Collider[] availableCams = Physics.OverlapSphere(transform.position, findRange, layer);
-            Debug.Log("Available cams " + availableCams.Length);
-            if (availableCams.Length == 0)
-            {
-                availableCams = null;
-            }
+            Camera camTarget = targetsInRadius[i].GetComponentInChildren<Camera>();
+            inRangeCams.Add(camTarget);
+
+            //camDistance = Vector3.Distance(transform.position, targetsInRadius[i].transform.position);
+            //if (inRangeCams.Count > 1)
+            //{
+                
+            //}
         }
+        
+
+        inRangeCams.Insert(0, pcCam);
+
+        cameras = inRangeCams.ToArray();
     }
 
     private void PreviousCamera()
@@ -90,18 +105,18 @@ public class FindCameraRadius : MonoBehaviour
         {
             currentCameraIndex--;
 
-            cameras[currentCameraIndex + 1].gameObject.SetActive(false);
+            cameras[currentCameraIndex + 1].gameObject.GetComponent<Cameras>().playerControlled = false;
             cameras[currentCameraIndex + 1].gameObject.GetComponent<CameraToggle>().FindCam();
-            cameras[currentCameraIndex].gameObject.SetActive(true);
+            cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
             cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
         }
         else if (currentCameraIndex - 1 == 0)
         {
             currentCameraIndex = cameras.Length - 1;
 
-            cameras[lastCameraIndex].gameObject.SetActive(false);
+            cameras[lastCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = false;
             cameras[lastCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-            cameras[currentCameraIndex].gameObject.SetActive(true);
+            cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
             cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
         }
 
@@ -118,18 +133,18 @@ public class FindCameraRadius : MonoBehaviour
         Debug.Log("V button has been pressed. Switching to the next camera");
         if (currentCameraIndex < cameras.Length)
         {
-            cameras[currentCameraIndex - 1].gameObject.SetActive(false);
+            cameras[currentCameraIndex - 1].gameObject.GetComponent<Cameras>().playerControlled = false;
             cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
-            cameras[currentCameraIndex].gameObject.SetActive(true);
+            cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
             cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
         }
         else
         {
-            cameras[currentCameraIndex - 1].gameObject.SetActive(false);
+            cameras[currentCameraIndex - 1].gameObject.GetComponent<Cameras>().playerControlled = false;
             cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
             currentCameraIndex = 1;
 
-            cameras[currentCameraIndex].gameObject.SetActive(true);
+            cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
             cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
         }
         lastCameraIndex = currentCameraIndex;
@@ -143,12 +158,12 @@ public class FindCameraRadius : MonoBehaviour
             //gameObject.GetComponent<Character>().type = 0; //Enable character movement
             GetComponent<MinMapToggle>().miniMapCanvas.SetActive(false);
 
-            cameras[currentCameraIndex].gameObject.SetActive(false);
+            cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = false;
             cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
 
             currentCameraIndex = 0;
 
-            cameras[currentCameraIndex].gameObject.SetActive(true);
+            //cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
             cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
         }
         else //if(currentCameraIndex == 0)
@@ -158,21 +173,21 @@ public class FindCameraRadius : MonoBehaviour
             //GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
             if (lastCameraIndex != 0)
             {
-                cameras[currentCameraIndex].gameObject.SetActive(true);
+                
                 cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
 
                 currentCameraIndex = lastCameraIndex;
 
-                cameras[currentCameraIndex].gameObject.SetActive(true);
+                cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
                 cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
             }
             else
             {
                 currentCameraIndex++;
                 lastCameraIndex++;
-                cameras[currentCameraIndex - 1].gameObject.SetActive(false);
+                
                 cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
-                cameras[currentCameraIndex].gameObject.SetActive(true);
+                cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
                 cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
             }
         }

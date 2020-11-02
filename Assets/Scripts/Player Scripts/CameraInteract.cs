@@ -35,7 +35,7 @@ public class CameraInteract : MonoBehaviour
             {
                 Ping();
             }
-            if (Input.GetKeyDown(KeyCode.C) && alarmCooldown == 30)
+            if (Input.GetKeyDown(KeyCode.F) && alarmCooldown == 30)
             {
                 Alarm();
             }
