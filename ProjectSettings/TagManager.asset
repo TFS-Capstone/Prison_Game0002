@@ -25,6 +25,7 @@ TagManager:
   - Cube3
   - Checker
   - AlarmLocation
+  - MiniMapCam
   layers:
   - Default
   - TransparentFX
