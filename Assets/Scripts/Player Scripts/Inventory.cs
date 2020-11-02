@@ -192,7 +192,8 @@ public class Inventory : MonoBehaviour
                     }
                     throwableObject = hit.transform.gameObject;
                     throwableObject.SetActive(false);
-                    holdingProj = true;
+                    //holdingProj = true;
+                    gameObject.GetComponent<Shoot>().projectileToSpawn = throwableObject;
                     
                     Debug.Log(throwableObject);
                     

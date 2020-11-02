@@ -50,6 +50,7 @@ public class Shoot : MonoBehaviour
                 projectile = Instantiate(projectileToSpawn, projSpawnPoint.position, transform.rotation) as GameObject;
                 // set the parent of the spawned object to the player
                 projectile.transform.parent = transform;
+                gameObject.GetComponent<Inventory>().throwableObject.SetActive(false);
             }
             
         }

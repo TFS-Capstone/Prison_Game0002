@@ -46,10 +46,10 @@ public class FindCameraRadius : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            FindCamsInRange();
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha5))
+        //{
+        //    FindCamsInRange();
+        //}
         if (Input.GetKeyDown(KeyCode.V) && currentCameraIndex!=0)
         {
             NextCamera();
@@ -62,20 +62,19 @@ public class FindCameraRadius : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            AccessCameraSystem();            
+            FindCamsInRange();            
         }       
 
     }
 
 
-    // my attempt at finding all the cams in range
-    //works ocassionally, but repeated use breaks
+    
     private void FindCamsInRange()
     {
         inRangeCams.Clear();
         cameras = new Camera[0];
 
-        float camDistance;
+        //float camDistance;
         Collider[] targetsInRadius = Physics.OverlapSphere(transform.position, findRadius, CamMask);
         
 
@@ -95,6 +94,12 @@ public class FindCameraRadius : MonoBehaviour
         inRangeCams.Insert(0, pcCam);
 
         cameras = inRangeCams.ToArray();
+
+        if (cameras.Length > 1)
+        {
+            AccessCameraSystem();
+        }
+        
     }
 
     private void PreviousCamera()
@@ -170,7 +175,7 @@ public class FindCameraRadius : MonoBehaviour
         {
             Debug.Log("C button pressed. Accessing cams");
             //gameObject.GetComponent<Character>().type = 2; //disable character movement
-            //GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
+            GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
             if (lastCameraIndex != 0)
             {
                 
