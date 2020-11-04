@@ -9,6 +9,8 @@ public class PlayerCharacterController : MonoBehaviour
     float speed;
     [SerializeField]
     float speedMultiplier = 1;
+    [HideInInspector]
+    public int type;
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class PlayerCharacterController : MonoBehaviour
         //{
         //    GetComponentInChildren<Camera>().enabled = false;
         //}
+        type = 0;
     }
 
     void Update()
@@ -40,7 +43,11 @@ public class PlayerCharacterController : MonoBehaviour
             speedMultiplier = 1;
             GameManager.instance.playerSpeed = 1;
         }
-        PlayerMovement();
+        if (type ==  0)
+        {
+            PlayerMovement();
+        }
+        
     }
     void PlayerMovement()
 

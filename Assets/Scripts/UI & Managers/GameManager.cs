@@ -66,9 +66,11 @@ public class GameManager : MonoBehaviour
 
     public void win()
     {
-        //Cursor.visible = true;
-        //Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        
         SceneManager.LoadScene("Win");
+        Debug.Log("winning");
 
     }
     //loads the lose scene

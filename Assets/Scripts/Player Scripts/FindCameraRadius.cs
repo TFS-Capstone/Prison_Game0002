@@ -9,7 +9,8 @@ public class FindCameraRadius : MonoBehaviour
     
     public GameObject player;
     Camera pcCam;
-    public int maxCamAngles;
+    PlayerCameraController pCamCScript;
+    PlayerCharacterController pCharCScript;
     
 
     [Range(0,360)]
@@ -31,6 +32,8 @@ public class FindCameraRadius : MonoBehaviour
     void Start()
     {
         pcCam = gameObject.GetComponentInChildren<Camera>();
+        pCamCScript = GetComponentInChildren<PlayerCameraController>();
+        pCharCScript = GetComponent<PlayerCharacterController>();
 
         currentCameraIndex = 0;
         for (int i = 1; i < cameras.Length; i++)
@@ -160,7 +163,10 @@ public class FindCameraRadius : MonoBehaviour
         if (currentCameraIndex != 0)
         {
             Debug.Log("C button pressed. returning to main camera");
-            //gameObject.GetComponent<Character>().type = 0; //Enable character movement
+            //gameObject.GetComponent<PlayerCharacterController>().type = 0; //Enable character movement
+            pCharCScript.type = 0;
+            //gameObject.GetComponentInChildren<PlayerCameraController>().type = 0; //disable character look movement
+            pCamCScript.type = 0;
             GetComponent<MinMapToggle>().miniMapCanvas.SetActive(false);
 
             cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = false;
@@ -174,7 +180,10 @@ public class FindCameraRadius : MonoBehaviour
         else //if(currentCameraIndex == 0)
         {
             Debug.Log("C button pressed. Accessing cams");
-            //gameObject.GetComponent<Character>().type = 2; //disable character movement
+            //gameObject.GetComponent<PlayerCharacterController>().type = 1; //disable character movement
+            pCharCScript.type = 1;
+            //gameObject.GetComponentInChildren<PlayerCameraController>().type = 1; //disable character look movement
+            pCamCScript.type = 1;
             GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
             if (lastCameraIndex != 0)
             {

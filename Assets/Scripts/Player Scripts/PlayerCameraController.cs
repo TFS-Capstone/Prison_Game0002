@@ -14,6 +14,8 @@ public class PlayerCameraController : MonoBehaviour
 
     bool isPaused;
 
+    [HideInInspector]
+    public int type = 0;
     Camera cam;
     Transform _selected;
     void Start()
@@ -69,7 +71,7 @@ public class PlayerCameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!isPaused)
+        if (!isPaused && type == 0)
             CamControl();
 
     }
