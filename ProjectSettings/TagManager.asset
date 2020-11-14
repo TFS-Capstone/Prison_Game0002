@@ -26,6 +26,7 @@ TagManager:
   - Checker
   - AlarmLocation
   - MiniMapCam
+  - Pushable
   layers:
   - Default
   - TransparentFX

@@ -33,6 +33,7 @@ public class Inventory : MonoBehaviour
     GameObject keycardObject = null;
     
     public GameObject throwableObject = null; // type of throwable object the player is carrying
+    public bool pushing = false;
     //Item Selection
 
     [SerializeField]
@@ -63,7 +64,7 @@ public class Inventory : MonoBehaviour
         //selection stuff
 
         if (_selected != null)
-            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door" || _selected.gameObject.tag == "Throwable")
+            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door" || _selected.gameObject.tag == "Throwable" || _selected.gameObject.tag == "Pushable")
             {
             var selectionRenderer = _selected.GetComponent<Renderer>();
             selectionRenderer.material = originalMat;
@@ -83,7 +84,7 @@ public class Inventory : MonoBehaviour
                 
 
 
-                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door" || selection.gameObject.tag == "Throwable")    
+                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door" || selection.gameObject.tag == "Throwable" || selection.gameObject.tag == "Pushable")    
                 {
                     originalMat = selectionRenderer.material;
                     selectionRenderer.material = highlightMaterial;
@@ -197,6 +198,23 @@ public class Inventory : MonoBehaviour
                     
                     Debug.Log(throwableObject);
                     
+                }
+            }
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Pushable")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (!pushing)
+                    {
+                        pushing = true;
+                        hit.transform.parent = gameObject.transform;
+
+                    }
+                    else if (pushing)
+                    {
+                        pushing = false;
+                        hit.transform.parent = null;
+                    }
                 }
             }
 

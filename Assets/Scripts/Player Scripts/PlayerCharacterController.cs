@@ -4,30 +4,26 @@ using UnityEngine;
 
 public class PlayerCharacterController : MonoBehaviour
 {
-    //private PhotonView pv;
+    
     [SerializeField]
     float speed;
+    float pushSpeed;
     [SerializeField]
     float speedMultiplier = 1;
     [HideInInspector]
     public int type;
 
+    bool pushing = false;
     private void Start()
     {
-        //pv = GetComponent<PhotonView>();
-        //if (pv.IsMine)
-        //{
-        //    GetComponentInChildren<Camera>().enabled = true;
-        //}
-        //else
-        //{
-        //    GetComponentInChildren<Camera>().enabled = false;
-        //}
+        
         type = 0;
+        pushSpeed = speed / 2;
     }
 
     void Update()
     {
+        pushing = GetComponent<Inventory>().pushing;
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speedMultiplier = 2;
@@ -50,11 +46,20 @@ public class PlayerCharacterController : MonoBehaviour
         
     }
     void PlayerMovement()
-
     {
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
-        Vector3 playerMovement = new Vector3(hor, 0f, ver) * (speed * speedMultiplier) * Time.deltaTime;
-        transform.Translate(playerMovement, Space.Self);
+        if (!pushing)
+        {
+            Vector3 playerMovement = new Vector3(hor, 0f, ver) * (speed * speedMultiplier) * Time.deltaTime;
+            transform.Translate(playerMovement, Space.Self);
+        }
+        else if (pushing)
+        {
+            Vector3 playerMovement = new Vector3(hor, 0f, ver) * (pushSpeed * speedMultiplier) * Time.deltaTime;
+            transform.Translate(playerMovement, Space.Self);
+        }
+        
+        
     }
 }
