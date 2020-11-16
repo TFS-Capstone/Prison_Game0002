@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2874453637533989748}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,10 +94,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6313572
-  m_Height: 2.1678019
+  m_Radius: 0.5
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.05607605, y: 0.08390093, z: -0.07528114}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &408998829950894876
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -129,10 +129,10 @@ BoxCollider:
   m_GameObject: {fileID: 408998829950894879}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.92086, y: 5.868406, z: 25.066097}
-  m_Center: {x: -0.13349724, y: -0.020366907, z: 9.249771}
+  m_Size: {x: 1.8998013, y: 2, z: 1.5419321}
+  m_Center: {x: -0.03200817, y: 0, z: 0.27096605}
 --- !u!114 &408998829950894878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,13 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ccbe9464812947a6bdcc495e74648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doLooking: 0
-  isLooking: 0
   disguised: 0
-  speed: 10
   target: {fileID: 0}
   player: {fileID: 0}
-  playerBack: {fileID: 0}
   patrolPath:
   - {fileID: 0}
   - {fileID: 0}
@@ -164,10 +160,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  patrolIndex: 0
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   nodeDistance: 0.2
-  pathName: Nodes
-  generatePath: 0
+  isWandering: 0
+  playerIsSeen: 0
+  getAwayDistance: 25
+  searchTime: 15
+  searchDistance: 30
+  empty: {fileID: 8145879703514034942, guid: 71dccb875ad6e114f92f4f6df3c10c25, type: 3}
+  MAXX: 17
+  MINX: -80
+  MAXZ: 88
+  MINZ: 3
 --- !u!114 &2874453637533989748
 MonoBehaviour:
   m_ObjectHideFlags: 0

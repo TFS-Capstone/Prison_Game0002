@@ -65,8 +65,10 @@ public class Projectile : MonoBehaviour
     {
         // the collision needs to have a non-kinematic rigidbody for these to register.
         //do stuff
+        Debug.Log(collision.gameObject);
         if (!collision.gameObject.CompareTag("Player"))
         {
+            suspicionMeter.instance.DistractEnemies(gameObject.transform);
             Destroy(gameObject);
         }
         

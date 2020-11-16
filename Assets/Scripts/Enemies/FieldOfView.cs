@@ -78,6 +78,7 @@ public class FieldOfView : MonoBehaviour
                     {
                         //add the target to the list
                         visibleTarget.Add(target);
+                        gameObject.GetComponent<Enemy_Patrol>().playerIsSeen = true;
                     }
                 }
             }

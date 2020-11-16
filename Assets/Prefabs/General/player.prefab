@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 813761106}
   - component: {fileID: 401135093}
   - component: {fileID: 868102661}
+  - component: {fileID: 868102671}
   m_Layer: 11
   m_Name: player
   m_TagString: Player
@@ -403,6 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   speedMultiplier: 1
+  type: 0
 --- !u!114 &2128080652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,9 +417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705b2d9a817207f4c8716184f570af27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8187877655784107369}
-  maxCamAngles: 0
-  findRadius: 23
+  player: {fileID: 0}
+  findRadius: 14
   CamMask:
     serializedVersion: 2
     m_Bits: 256
@@ -453,6 +454,7 @@ MonoBehaviour:
   keycard: 0
   keycardObject: {fileID: 0}
   throwableObject: {fileID: 0}
+  pushing: 0
   highlightMaterial: {fileID: 2100000, guid: 0c6a57faa4283114282c954b36e86c47, type: 2}
   cam: {fileID: 8187877654980124177}
 --- !u!114 &401135093
@@ -480,12 +482,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8187877655784107369}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2de308dafb30cf749a0bf0942e579663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   miniMapCanvas: {fileID: 0}
+--- !u!114 &868102671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187877655784107369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48de605904ece1d409ccca4489e0f7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileToSpawn: {fileID: 0}
+  projectile: {fileID: 0}
+  projSpawnPoint: {fileID: 632791079}
 --- !u!1001 &694232504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -568,10 +585,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5293030763353894275}
     m_Modifications:
+    - target: {fileID: 242961818728161112, guid: 4f09d1cf012edfd40a1f2861cba4344d,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 3383
+      objectReference: {fileID: 0}
     - target: {fileID: 242961818728161114, guid: 4f09d1cf012edfd40a1f2861cba4344d,
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 242961818728161114, guid: 4f09d1cf012edfd40a1f2861cba4344d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 242961818728161119, guid: 4f09d1cf012edfd40a1f2861cba4344d,
         type: 3}

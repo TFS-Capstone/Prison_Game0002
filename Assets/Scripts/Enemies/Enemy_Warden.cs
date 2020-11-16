@@ -51,6 +51,7 @@ public class Enemy_Warden : MonoBehaviour
         // type 0 is passive warden. they wait until player's suspicion is high enough before become aware of player's actions
         if (type == 0)
         {
+
             if (suspicionMeter.area1Metric >= wardenActiveThreshold)
             {
                 Debug.Log("Warden active");

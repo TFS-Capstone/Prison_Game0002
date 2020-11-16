@@ -6,6 +6,8 @@ public class suspicionMeter : MonoBehaviour
 {
     //instance for suspicion meter
     static suspicionMeter _instance = null;
+
+    #region old variables idk anymore
     //constant values for time between adding, and the values at which the meter does somthing new
     const float WAIT_TIME = 5, MAX1 = 5, MAX2 = 7, MAX3 = 10;
     //use this boolean to say that the player is in the camera range in area 1
@@ -14,12 +16,20 @@ public class suspicionMeter : MonoBehaviour
     bool canAdd = true;
     bool canRemove = true;
     //the actual number that the meter is at for area 1
-    [SerializeField]
+    [HideInInspector]
     public float area1Metric;
     //the temporary text box for the meter
-    public Text meter;
+    //public Text meter;
+    #endregion
 
-   
+    //the enemies
+    [SerializeField]
+    GameObject[] enemies = null;
+    //range that the enemy can hear from (goes through walls)
+    public float range = 20;
+
+
+
     void Start()
     {
         //instacnce stuff
@@ -28,9 +38,11 @@ public class suspicionMeter : MonoBehaviour
         else
         {
             _instance = this;
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
         //other stuff in start
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        
     }
 
     //creates the instance for the suspicion meter
@@ -42,8 +54,12 @@ public class suspicionMeter : MonoBehaviour
 
     void FixedUpdate()
     {
+   
+        
+        #region old out of date
+        /*
         //updates the text value for area 1
-        meter.text = area1Metric.ToString();
+        //meter.text = area1Metric.ToString();
 
         //if the player is in the camera, and its not running another add, it adds to the meter
         if (area1 && canAdd)
@@ -69,9 +85,23 @@ public class suspicionMeter : MonoBehaviour
             canRemove = false;
             StartCoroutine(remove());
         }
+        */
+        #endregion
+        
     }
 
+    public void DistractEnemies(Transform projHitLoc)
+    {
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (Vector3.Distance(enemies[i].transform.position, projHitLoc.position) < range)
+            {
+                enemies[i].GetComponent<Enemy_Patrol>().Distract(projHitLoc);
+            }
+        }
+    }
 
+    #region old shit that I don't want to look at
     //increse suspiscion for the first area
     public void increseArea1()
     {
@@ -109,6 +139,6 @@ public class suspicionMeter : MonoBehaviour
         canRemove = false;
         decreseArea1();
     }
-
+    #endregion
 
 }

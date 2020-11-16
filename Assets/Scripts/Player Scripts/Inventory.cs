@@ -196,7 +196,7 @@ public class Inventory : MonoBehaviour
                     //holdingProj = true;
                     gameObject.GetComponent<Shoot>().projectileToSpawn = throwableObject;
                     
-                    Debug.Log(throwableObject);
+                    //Debug.Log(throwableObject);
                     
                 }
             }
