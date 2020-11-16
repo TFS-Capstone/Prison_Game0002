@@ -240,6 +240,7 @@ public class Inventory : MonoBehaviour
                     {
                         keycard = 2;
                         GameManager.instance.keycardType = 2;
+                        EventManager.TriggerEvent("SecondKeycardQuest");
                     }
                     else if (keycardObject.GetComponent<Items>().type == 3)
                     {

@@ -9,6 +9,12 @@ public class Goal
     public bool completed;
     public GameObject itemRequired;
     public int itemRequiredID;
+
+    public float minX;
+    public float minZ;
+    public float maxX;
+    public float maxZ;
+
     public Quest quest;
 
    public void Increment(int amount)
@@ -22,13 +28,20 @@ public class Goal
         }
     }
 
-    public void ItemObtained(GameObject item, int itemID)
+    public virtual void ItemObtained(GameObject item, int itemID)
     {
-        if (item == itemRequired || itemID == itemRequiredID && !completed)
+        if (item == itemRequired && !completed || itemID == itemRequiredID && !completed)
         {
             this.completed = true;
+            
             Debug.Log("Item required obtained");
             quest.Complete();
         }
     }
+
+    public virtual void GoalUpdate(int countNeeded, GameObject itemRequired, int itemRequiredID, float minX, float minZ, float maxX, float maxZ)
+    {
+
+    }
+
 }

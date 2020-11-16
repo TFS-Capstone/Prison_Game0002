@@ -8,6 +8,7 @@ public class Quest : MonoBehaviour
     
     public string questName;
     public string description;
+    public int questNumber;
     public Goal goal;
     public bool completed;
     public List<string> itemRewards;
