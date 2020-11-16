@@ -6,6 +6,7 @@ public class GatherGoal : Goal
 {
     public int itemID;
 
+    
     public GatherGoal(int amountNeeded, int itemID, Quest quest)
     {
         countCurrent = 0;
@@ -15,12 +16,12 @@ public class GatherGoal : Goal
         this.itemID = itemID;
     }
 
-    void ItemGathered(int itemID)
+    public void ItemGathered(int itemID)
     {
         if (this.itemID == itemID)
         {
             Increment(1);
         }
     }
-
+    
 }

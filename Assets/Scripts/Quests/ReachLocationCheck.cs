@@ -6,8 +6,11 @@ public class ReachLocationCheck : MonoBehaviour
 {
     public GameObject itemToCheck;
 
-    
-   
+    private void Start()
+    {
+        
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

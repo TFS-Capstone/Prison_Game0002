@@ -7,6 +7,8 @@ public class Goal
     public int countNeeded;
     public int countCurrent;
     public bool completed;
+    public GameObject itemRequired;
+    public int itemRequiredID;
     public Quest quest;
 
    public void Increment(int amount)
@@ -15,7 +17,17 @@ public class Goal
         if(countCurrent >= countNeeded && !completed)
         {
             this.completed = true;
-            Debug.Log("goal Completed");
+            Debug.Log("goal number Completed");
+            quest.Complete();
+        }
+    }
+
+    public void ItemObtained(GameObject item, int itemID)
+    {
+        if (item == itemRequired || itemID == itemRequiredID && !completed)
+        {
+            this.completed = true;
+            Debug.Log("Item required obtained");
             quest.Complete();
         }
     }

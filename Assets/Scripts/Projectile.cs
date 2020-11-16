@@ -68,9 +68,20 @@ public class Projectile : MonoBehaviour
         Debug.Log(collision.gameObject);
         if (!collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("collison from projectile at " + collision.GetContact(0).point);
             suspicionMeter.instance.DistractEnemies(gameObject.transform);
             Destroy(gameObject);
         }
         
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("collison from projectile at " + gameObject.transform.position);
+            suspicionMeter.instance.DistractEnemies(gameObject.transform);
+            Destroy(gameObject);
+
+        }
     }
 }

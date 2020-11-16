@@ -107,120 +107,11 @@ public class Inventory : MonoBehaviour
         -- looking at a door with the correct keycard will open the door
         -- looking at a door with the wrong keycard will yield "This keycard does not work here"
        */
-        if (Physics.Raycast(ray, out hit, 100.0f))
+        
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (hit.distance < 20 && hit.transform.gameObject.tag == "item")
-            {
-                //Debug.Log("hit");
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    if (item != null)
-                    {
-                        item.transform.position = hit.point;
-                        item.SetActive(true);
-                    }
-                    item = hit.transform.gameObject;
-                    item.SetActive(false);
-                    //destroying the object breaks a few things
-                    //Destroy(hit.transform.gameObject);
-                    Debug.Log(item);
-                }
-            }
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "disguise")
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    if (disguise != null)
-                    {
-                        disguise.transform.position = hit.point;
-                        disguise.SetActive(true);
-                    }
-                    disguise = hit.transform.gameObject;
-                    disguise.SetActive(false);
-                    //destroying the object breaks a few things
-                    //Destroy(hit.transform.gameObject);
-                    Debug.Log(disguise);
-                }
-            }
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "keycard")
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    if (keycardObject != null)
-                    {
-                        keycardObject.transform.position = hit.point;
-                        keycardObject.SetActive(true);
-
-                    }
-                    keycardObject = hit.transform.gameObject;
-                    keycardObject.SetActive(false);
-                    if (keycardObject.GetComponent<Items>().type == 1)
-                    {
-                        keycard = 1;
-                        GameManager.instance.keycardType = 1;
-                    }
-                    else if (keycardObject.GetComponent<Items>().type == 2)
-                    {
-                        keycard = 2;
-                        GameManager.instance.keycardType = 2;
-                    }
-                    else if (keycardObject.GetComponent<Items>().type == 3)
-                    {
-                        keycard = 3;
-                        GameManager.instance.keycardType = 3;
-                    }
-                    Debug.Log(keycardObject);
-
-                }
-            } 
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Door")
-            {
-                if(Input.GetKeyDown(KeyCode.E))
-                {
-                    door = hit.transform.gameObject;
-                    door.GetComponent<DoorNew>().Open();
-                    
-                }
-            }
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Throwable")
-            {
-                if(Input.GetKeyDown(KeyCode.E))
-                {
-                    if (throwableObject != null)
-                    {
-                        throwableObject.transform.position = hit.point;
-                        throwableObject.SetActive(true);
-                    }
-                    throwableObject = hit.transform.gameObject;
-                    throwableObject.SetActive(false);
-                    //holdingProj = true;
-                    gameObject.GetComponent<Shoot>().projectileToSpawn = throwableObject;
-                    
-                    //Debug.Log(throwableObject);
-                    
-                }
-            }
-            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Pushable")
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    if (!pushing)
-                    {
-                        pushing = true;
-                        hit.transform.parent = gameObject.transform;
-
-                    }
-                    else if (pushing)
-                    {
-                        pushing = false;
-                        hit.transform.parent = null;
-                    }
-                }
-            }
-
-
+            PickUp();
         }
-
 
 
         //if the player presses 'F' and has a disguise, they will change into that disguise
@@ -288,7 +179,125 @@ public class Inventory : MonoBehaviour
 
 
     }
+    public void PickUp()
+    {
+        var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100.0f))
+        {
+            if (hit.distance < 20 && hit.transform.gameObject.tag == "item")
+            {
+                //Debug.Log("hit");
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (item != null)
+                    {
+                        item.transform.position = hit.point;
+                        item.SetActive(true);
+                    }
+                    item = hit.transform.gameObject;
+                    item.SetActive(false);
+                    //destroying the object breaks a few things
+                    //Destroy(hit.transform.gameObject);
+                    Debug.Log(item);
+                }
+            }
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "disguise")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (disguise != null)
+                    {
+                        disguise.transform.position = hit.point;
+                        disguise.SetActive(true);
+                    }
+                    disguise = hit.transform.gameObject;
+                    disguise.SetActive(false);
+                    //destroying the object breaks a few things
+                    //Destroy(hit.transform.gameObject);
+                    Debug.Log(disguise);
+                }
+            }
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "keycard")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (keycardObject != null)
+                    {
+                        keycardObject.transform.position = hit.point;
+                        keycardObject.SetActive(true);
 
+                    }
+                    keycardObject = hit.transform.gameObject;
+                    keycardObject.SetActive(false);
+                    if (keycardObject.GetComponent<Items>().type == 1)
+                    {
+                        keycard = 1;
+                        GameManager.instance.keycardType = 1;
+                        EventManager.TriggerEvent("FirstKeycardQuest");
+                    }
+                    else if (keycardObject.GetComponent<Items>().type == 2)
+                    {
+                        keycard = 2;
+                        GameManager.instance.keycardType = 2;
+                    }
+                    else if (keycardObject.GetComponent<Items>().type == 3)
+                    {
+                        keycard = 3;
+                        GameManager.instance.keycardType = 3;
+                    }
+                    Debug.Log(keycardObject);
+
+                }
+            }
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Door")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    door = hit.transform.gameObject;
+                    door.GetComponent<DoorNew>().Open();
+
+                }
+            }
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Throwable")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (throwableObject != null)
+                    {
+                        throwableObject.transform.position = hit.point;
+                        throwableObject.SetActive(true);
+                    }
+                    throwableObject = hit.transform.gameObject;
+                    throwableObject.SetActive(false);
+                    //holdingProj = true;
+                    gameObject.GetComponent<Shoot>().projectileToSpawn = throwableObject;
+
+                    //Debug.Log(throwableObject);
+
+                }
+            }
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Pushable")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (!pushing)
+                    {
+                        pushing = true;
+                        hit.transform.parent = gameObject.transform;
+
+                    }
+                    else if (pushing)
+                    {
+                        pushing = false;
+                        hit.transform.parent = null;
+                    }
+                }
+            }
+
+
+        }
+    }
 
 
 
