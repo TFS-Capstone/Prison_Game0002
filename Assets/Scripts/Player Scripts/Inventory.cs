@@ -26,11 +26,11 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     GameObject disguise = null; //The type of disguise that the player is holding, will change based on what is picked up
     [SerializeField]
-    GameObject item = null; //the type of item the player is holding, may change from number later
+    public GameObject item = null; //the type of item the player is holding, may change from number later
     [SerializeField]
-    int keycard = 0; //type of keycard the player is holding, probably staying a number
+    public int keycard = 0; //type of keycard the player is holding, probably staying a number
     [SerializeField]
-    GameObject keycardObject = null;
+    public GameObject keycardObject = null;
     
     public GameObject throwableObject = null; // type of throwable object the player is carrying
     public bool pushing = false;

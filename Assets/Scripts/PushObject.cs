@@ -27,7 +27,7 @@ public class PushObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             ResetObjectPosition();
-            Debug.Log("reseting");
+            
         }
     }
     //private void OnCollisionStay(Collision collision)
@@ -44,9 +44,14 @@ public class PushObject : MonoBehaviour
     //}
     public void ResetObjectPosition()
     {
-        gameObject.transform.parent = null;
-        transform.position = originalPosition;
-        transform.rotation = originalRotation;
+        if (gameObject.transform.parent == null)
+        {
+            //gameObject.transform.parent = null;
+            transform.position = originalPosition;
+            transform.rotation = originalRotation;
+            Debug.Log("reseting");
+        }
+        
         
     }
 }
