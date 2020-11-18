@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
     public Vector3 acceleration;
     public Vector3 initialDirection;
     [SerializeField]
-   
+    GameObject empty;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -69,7 +69,9 @@ public class Projectile : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("collison from projectile at " + collision.GetContact(0).point);
-            suspicionMeter.instance.DistractEnemies(gameObject.transform);
+            Vector3 newLoc = new Vector3(transform.position.x, 1.08f, transform.position.z);
+            GameObject newPoint = Instantiate(empty, newLoc, transform.rotation);
+            suspicionMeter.instance.DistractEnemies(newPoint);
             Destroy(gameObject);
         }
         
@@ -79,7 +81,9 @@ public class Projectile : MonoBehaviour
         if (!other.gameObject.CompareTag("Player"))
         {
             Debug.Log("collison from projectile at " + gameObject.transform.position);
-            suspicionMeter.instance.DistractEnemies(gameObject.transform);
+            Vector3 newLoc = new Vector3(transform.position.x, 1.08f, transform.position.z);
+            GameObject newPoint = Instantiate(empty, newLoc, transform.rotation);
+            suspicionMeter.instance.DistractEnemies(newPoint);
             Destroy(gameObject);
 
         }

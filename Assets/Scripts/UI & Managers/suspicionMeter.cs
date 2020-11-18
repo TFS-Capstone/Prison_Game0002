@@ -90,11 +90,11 @@ public class suspicionMeter : MonoBehaviour
         
     }
 
-    public void DistractEnemies(Transform projHitLoc)
+    public void DistractEnemies(GameObject projHitLoc)
     {
         for (int i = 0; i < enemies.Length; i++)
         {
-            if (Vector3.Distance(enemies[i].transform.position, projHitLoc.position) < range)
+            if (Vector3.Distance(enemies[i].transform.position, projHitLoc.transform.position) < range)
             {
                 enemies[i].GetComponent<Enemy_Patrol>().Distract(projHitLoc);
             }

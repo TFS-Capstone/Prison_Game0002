@@ -7,6 +7,7 @@ public class Enemy_Patrol : MonoBehaviour
     
     
     //if the player is disguised
+    [HideInInspector]
     public bool disguised = false;
     //the nav mesh manager
     NavMeshAgent nmAgent;
@@ -24,8 +25,9 @@ public class Enemy_Patrol : MonoBehaviour
 
 
     //if the AI is in it's wandering state
-    public bool isWandering = false;
+    bool isWandering = false;
     //if the player has been seen
+    [HideInInspector]
     public bool playerIsSeen = false;
     //the distance that the player needs to be to get away from the AI
     public float getAwayDistance = 25;
@@ -47,7 +49,6 @@ public class Enemy_Patrol : MonoBehaviour
     [SerializeField]
     GameObject empty;
     #endregion
-
     bool distracted = false;
 
     #region clamps
@@ -102,13 +103,21 @@ public class Enemy_Patrol : MonoBehaviour
 
             if (distracted)
             {
+                //Debug.Log("Still Distracted");
                 //check the distance to the distraction hit (now target) and if its less
                 if (Vector3.Distance(transform.position, target.position) < nodeDistance)
                 {
+                    //Debug.Log("Stopped distracted");
                     //the enemy wanders a bit looking for the player
                     isWandering = true;
                     //the enemy is no longer distracted
                     distracted = false;
+                    playerIsSeen = false;
+                    
+                    //the search center is exactly where the enemy is standing
+                    searchCenter = Instantiate(empty, transform.position, transform.rotation);
+                    wanderNodes.Add(searchCenter);
+                    FindNewLocation();
                 }
                 
             }
@@ -236,10 +245,11 @@ public class Enemy_Patrol : MonoBehaviour
         wanderNodes.Add(newPoint);
     }
 
-    public void Distract(Transform hitLoc)
+    public void Distract(GameObject hitLoc)
     {
         //set a new target to the location where the projectile hit
         target = hitLoc.transform;
+        wanderNodes.Add(hitLoc);
         //check this again
         if (nmAgent && target)
             nmAgent.SetDestination(target.position);

@@ -111,6 +111,7 @@ MonoBehaviour:
   vel: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
   initialDirection: {x: 0, y: 0, z: 0}
+  empty: {fileID: 8145879703514034942, guid: 71dccb875ad6e114f92f4f6df3c10c25, type: 3}
 --- !u!54 &4621254398833317051
 Rigidbody:
   m_ObjectHideFlags: 0
