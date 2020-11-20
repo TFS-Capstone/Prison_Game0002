@@ -12,8 +12,11 @@ public class FirstKeycardQuest : Quest
     {
         invent = gameObject.GetComponent<Inventory>();
         questName = "First keycard";
+
         description = "Obtain a level 1 keycard";
+        questNumber = 1;
         goal = new GatherGoal(1, 1, 1, this);
+        
 
         keyListener = new UnityAction(doSomething);
     }
@@ -32,6 +35,7 @@ public class FirstKeycardQuest : Quest
     {
         base.Complete();
         this.completed = true;
+        EventManager.StopListening("FirstKeycardQuest", keyListener);
     }
     void doSomething()
     {

@@ -12,7 +12,6 @@ public class Quest : MonoBehaviour
     public Goal goal;
     public bool completed;
     public List<string> itemRewards;
-
     
 
     public virtual void Complete()
@@ -20,6 +19,7 @@ public class Quest : MonoBehaviour
         Debug.Log("Quest Completed!");
         //this.completed = true;
         //GrantReward();
+        EventManager.TriggerEvent("NextQuest");
     }
 
     public void GrantReward()
@@ -31,5 +31,5 @@ public class Quest : MonoBehaviour
         }
         Destroy(this);
     }
-
+   
 }

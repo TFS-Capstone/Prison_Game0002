@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool disguised = false;
     //the type of keycard the player is holding
     public int keycardType = 0;
+    //whether the quest menu is displayed
+    public bool questsDisplayed = false;
     //whether the game is paused
     public  bool GameIsPause = false;
     //instance for the GameManager

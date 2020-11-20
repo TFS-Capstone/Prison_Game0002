@@ -28,6 +28,7 @@ TagManager:
   - MiniMapCam
   - Pushable
   - Enemy
+  - QuestMenu
   layers:
   - Default
   - TransparentFX
