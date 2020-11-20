@@ -333,21 +333,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0839324, y: 0.08219198, z: 1.5133156}
   m_Center: {x: 0.53669274, y: -0.023894152, z: -0.02256096}
---- !u!114 &1839571994635269158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6146224569477280983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65286d705fc5d2d44a3ab3aa21f1fed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doortype: 0
-  keytype: 0
-  animTime: 2
 --- !u!208 &7209409062581972640
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -364,6 +349,21 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.537, y: -0.024, z: -0.023000002}
   m_TimeToStationary: 0.5
+--- !u!114 &1839571994635269158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6146224569477280983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65286d705fc5d2d44a3ab3aa21f1fed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doortype: 0
+  keytype: 0
+  animTime: 2
 --- !u!64 &950834563311344319
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2158,13 +2158,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3303423251689376645, guid: b47b7d5368b1c4942a5d9b8d144c3eec,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.06
+      propertyPath: m_LocalPosition.x
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: -3303423251689376645, guid: b47b7d5368b1c4942a5d9b8d144c3eec,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.16
+      propertyPath: m_LocalPosition.y
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: b47b7d5368b1c4942a5d9b8d144c3eec,
         type: 3}
