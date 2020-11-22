@@ -61,7 +61,8 @@ public class Enemy_Patrol : MonoBehaviour
     [SerializeField]
     float MINZ = 200;
     #endregion
-
+    [SerializeField]
+    LayerMask def = 0;
     List<GameObject> wanderNodes = new List<GameObject>();
     void Start()
     {
@@ -130,9 +131,8 @@ public class Enemy_Patrol : MonoBehaviour
                 }
                 else
                 {
-                    //put in the patrol code
-                    //if there is a navMeshAgent and a target, then set the destination to the target
-                    if (nmAgent && target)
+                //if there is a navMeshAgent and a target, then set the destination to the target
+                if (nmAgent && target)
                          nmAgent.SetDestination(target.position);
                      //if the enemy is within the set minDistance, then go to the next patrol index
                     if (Vector3.Distance(transform.position, target.position) < nodeDistance)
@@ -156,8 +156,34 @@ public class Enemy_Patrol : MonoBehaviour
             float playerDst = Vector3.Distance(player.position, transform.position);
             //Debug.Log(playerDst);
 
-            //if the player is out side of the getaway distance
-            if (playerDst >= getAwayDistance)
+            if (Physics.Linecast(transform.position, player.position, out RaycastHit hitInfo, def))
+            {
+                //Debug.Log("hit an object: " + hitInfo.collider.gameObject);
+                Debug.Log("player hid behind an object");
+
+                //create a search center at the enemy's position
+                searchCenter = Instantiate(empty, transform.position, transform.rotation);
+                //add it to be deleted later
+                wanderNodes.Add(searchCenter);
+                //create the first search point at the player's location
+                GameObject newPoint = Instantiate(empty, player.transform.position, transform.rotation);
+                //set the target to the point above
+                target = newPoint.transform;
+                //check if there is still a navMeshAgent and a target
+                if (nmAgent && target)
+                    nmAgent.SetDestination(target.position);
+                //after setting the new position, destroy it
+                wanderNodes.Add(newPoint);
+
+                //the player is no longer seen
+                playerIsSeen = false;
+                //the enemy enters a state where it wanders for a while
+                isWandering = true;
+
+
+            }
+            else
+            if (playerDst >= getAwayDistance) //if the player is out side of the getaway distance
             {
                 Debug.Log("player got away");
                 //the player is no longer seen
@@ -166,8 +192,17 @@ public class Enemy_Patrol : MonoBehaviour
                 isWandering = true;
                 //the search center is exactly where the enemy is standing
                 searchCenter = Instantiate(empty, transform.position, transform.rotation);
+                //add it to be deleted later
                 wanderNodes.Add(searchCenter);
-                FindNewLocation();
+                //create the first search point at the player's location
+                GameObject newPoint = Instantiate(empty, player.transform.position, transform.rotation);
+                //set the target to the point above
+                target = newPoint.transform;
+                //check if there is still a navMeshAgent and a target
+                if (nmAgent && target)
+                    nmAgent.SetDestination(target.position);
+                //after setting the new position, destroy it
+                wanderNodes.Add(newPoint);
 
 
             }

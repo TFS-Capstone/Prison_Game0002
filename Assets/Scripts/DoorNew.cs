@@ -70,6 +70,44 @@ public class DoorNew : MonoBehaviour
         stop = true;
         canOpen = true;
     }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Enemy hit the door");
+            Debug.Log(doortype);
+            if (doortype <=2)
+            {
+                if (closed && canOpen)
+                {
+                    canOpen = false;
+                    closed = false;
+                    stop = false;
+                    runOnce = false;
+                    StartCoroutine(closeTime());
+                }
+                
+            }
+            else
+            {
+                Debug.LogError("This should not happen: enemy is trying to use an exit door");
+            }
+        }
+    }
+
+    IEnumerator closeTime()
+    {
+        yield return new WaitForSeconds(7);
+        if (!closed && canOpen)
+        {
+            canOpen = false;
+            closed = true;
+            stop = false;
+            runOnce = false;
+        }
+
+    }
 }
 
 
