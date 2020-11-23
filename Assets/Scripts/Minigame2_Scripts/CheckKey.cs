@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CheckKey : MonoBehaviour
 {
-    public bool minigame2End = false;
-    public bool minigame2Win = false;
-    public bool minigame2Lose = false;
+    public static bool minigame2End = false;
+    public static bool minigame2Win = false;
+    public static bool minigame2Lose = false;
     public Camera cameraD;
     bool clickReady = true;
     public GameObject MasterKey, winText;

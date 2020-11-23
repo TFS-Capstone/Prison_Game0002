@@ -59,6 +59,10 @@ public class MinigameTrigger : MonoBehaviour
             {
                 ExitMinigame2();
             }
+            if (CheckKey.minigame2End == true)
+            {
+                ExitMinigame2();
+            }
             
         }
     }
