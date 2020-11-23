@@ -13,6 +13,11 @@ public class PlayerCharacterController : MonoBehaviour
     [HideInInspector]
     public int type;
 
+    public Transform cam;
+    public CharacterController controller;
+    public float turnSmoothTime = 0.1f;
+    float smoothVelocity;
+
     bool pushing = false;
     private void Start()
     {
@@ -21,7 +26,7 @@ public class PlayerCharacterController : MonoBehaviour
         pushSpeed = speed / 2;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         pushing = GetComponent<Inventory>().pushing;
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -41,25 +46,34 @@ public class PlayerCharacterController : MonoBehaviour
         }
         if (type ==  0)
         {
-            PlayerMovement();
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+            Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
+            if (!pushing)
+            {
+                if (direction.magnitude >= 0.1f)
+                {
+                    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                    float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothVelocity, turnSmoothTime);
+                    transform.rotation = Quaternion.Euler(0, angle, 0);
+                    Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                    controller.Move(moveDir.normalized * speed * Time.deltaTime);
+                }
+            }
+            else if (pushing)
+            {
+
+                if (direction.magnitude >= 0.1f)
+                {
+                    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                    float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothVelocity, turnSmoothTime);
+                    transform.rotation = Quaternion.Euler(0, angle, 0);
+                    Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                    controller.Move(moveDir.normalized * pushSpeed * Time.deltaTime);
+                }
+            }
         }
         
     }
-    void PlayerMovement()
-    {
-        float hor = Input.GetAxis("Horizontal");
-        float ver = Input.GetAxis("Vertical");
-        if (!pushing)
-        {
-            Vector3 playerMovement = new Vector3(hor, 0f, ver) * (speed * speedMultiplier) * Time.deltaTime;
-            transform.Translate(playerMovement, Space.Self);
-        }
-        else if (pushing)
-        {
-            Vector3 playerMovement = new Vector3(hor, 0f, ver) * (pushSpeed * speedMultiplier) * Time.deltaTime;
-            transform.Translate(playerMovement, Space.Self);
-        }
-        
-        
-    }
+
 }
