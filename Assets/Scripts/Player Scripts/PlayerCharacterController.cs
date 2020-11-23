@@ -23,6 +23,7 @@ public class PlayerCharacterController : MonoBehaviour
     {
         
         type = 0;
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         pushSpeed = speed / 2;
     }
 
@@ -44,11 +45,12 @@ public class PlayerCharacterController : MonoBehaviour
             speedMultiplier = 1;
             GameManager.instance.playerSpeed = 1;
         }
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
         if (type ==  0)
         {
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
-            Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
+            
             if (!pushing)
             {
                 if (direction.magnitude >= 0.1f)
@@ -57,7 +59,7 @@ public class PlayerCharacterController : MonoBehaviour
                     float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothVelocity, turnSmoothTime);
                     transform.rotation = Quaternion.Euler(0, angle, 0);
                     Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-                    controller.Move(moveDir.normalized * speed * Time.deltaTime);
+                    controller.Move(moveDir.normalized * speed * speedMultiplier * Time.deltaTime);
                 }
             }
             else if (pushing)

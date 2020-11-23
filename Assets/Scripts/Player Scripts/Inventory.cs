@@ -41,7 +41,8 @@ public class Inventory : MonoBehaviour
 
     [SerializeField]
     Camera cam;
-
+    [SerializeField]
+    GameObject player;
     Material originalMat;
     GameObject temp;
 
@@ -55,7 +56,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         playerColour = GetComponent<Renderer>();
-        cam = GetComponentInChildren<Camera>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     
@@ -74,7 +75,7 @@ public class Inventory : MonoBehaviour
 
         var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 10))
+        if (Physics.Raycast(ray, out hit, 12))
         {
             var selection = hit.transform;
             var selectionRenderer = selection.GetComponent<Renderer>();
