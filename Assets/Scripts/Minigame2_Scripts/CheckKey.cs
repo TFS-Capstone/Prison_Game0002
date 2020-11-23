@@ -7,6 +7,7 @@ public class CheckKey : MonoBehaviour
     public bool minigame2End = false;
     public bool minigame2Win = false;
     public bool minigame2Lose = false;
+    public Camera cameraD;
     bool clickReady = true;
     public GameObject MasterKey, winText;
     public GameObject[] KeySet = new GameObject[7];
@@ -37,7 +38,7 @@ public class CheckKey : MonoBehaviour
         KeySet[round].SetActive(true);
         if (Input.GetMouseButton(0))
         {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var ray = cameraD.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100) && clickReady == true) //raycasting for mouse click
             {

@@ -9,19 +9,24 @@ public class MinigameTrigger : MonoBehaviour
     public MainBlockNode node;
     public Camera camera1;
     public Camera camera2;
+    public Camera camera3;
     public GameObject player;
     public GameObject minigame;
+    public GameObject minigame2;
     // Start is called before the first frame update
     void Start()
     {
         minigameUI.SetActive(false);
         camera2.enabled = false;
         minigame.SetActive(false);
+        minigame2.SetActive(false);
+        camera3.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+     
         if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
         {
             if (hit.distance < 20 && hit.transform.gameObject.tag == "Minigame")
@@ -29,6 +34,11 @@ public class MinigameTrigger : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     startMinigame();
+                }
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    startMinigame2();
+                    Debug.Log("Minigame 2 started");
                 }
             }
         }
@@ -42,6 +52,14 @@ public class MinigameTrigger : MonoBehaviour
             {
                 ExitMinigame();
             }
+        }
+        if (minigame2.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ExitMinigame2();
+            }
+            
         }
     }
     public void ExitMinigame() //exits the minigame
@@ -65,5 +83,25 @@ public class MinigameTrigger : MonoBehaviour
         minigame.SetActive(true);
         camera1.enabled = false;
         camera2.enabled = true;
+    }
+    public void startMinigame2()
+    {
+        player.GetComponent<PlayerCharacterController>().enabled = false; //disable character movement
+        player.GetComponentInChildren<PlayerCameraController>().enabled = false; //disable camera movement
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        minigame2.SetActive(true);
+        camera1.enabled = false;
+        camera3.enabled = true;
+    }
+    public void ExitMinigame2() //exits the minigame
+    {
+        player.GetComponent<PlayerCharacterController>().enabled = true; //enables character movement
+        player.GetComponentInChildren<PlayerCameraController>().enabled = true; //enables camera movement
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
+        minigame2.SetActive(false);
+        camera3.enabled = false;
+        camera1.enabled = true;
     }
 }
