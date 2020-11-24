@@ -31,7 +31,8 @@ public class FindCameraRadius : MonoBehaviour
 
     void Start()
     {
-        pcCam = gameObject.GetComponentInChildren<Camera>();
+        //pcCam = gameObject.GetComponentInChildren<Camera>();
+        pcCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         pCamCScript = GetComponentInChildren<PlayerCameraController>();
         pCharCScript = GetComponent<PlayerCharacterController>();
 
@@ -100,9 +101,15 @@ public class FindCameraRadius : MonoBehaviour
 
         if (cameras.Length > 1)
         {
+            if (cameras.Length > lastCameraIndex)
+            {
+                //currentCameraIndex = 0;
+                lastCameraIndex = 0;
+            }
             AccessCameraSystem();
         }
         
+
     }
 
     private void PreviousCamera()
@@ -164,9 +171,9 @@ public class FindCameraRadius : MonoBehaviour
         {
             Debug.Log("C button pressed. returning to main camera");
             //gameObject.GetComponent<PlayerCharacterController>().type = 0; //Enable character movement
-            pCharCScript.type = 0;
+            //pCharCScript.type = 0;
             //gameObject.GetComponentInChildren<PlayerCameraController>().type = 0; //disable character look movement
-            pCamCScript.type = 0;
+            //pCamCScript.type = 0;
             GetComponent<MinMapToggle>().miniMapCanvas.SetActive(false);
 
             cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = false;
@@ -177,13 +184,13 @@ public class FindCameraRadius : MonoBehaviour
             //cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
             cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
         }
-        else //if(currentCameraIndex == 0)
+        else if(currentCameraIndex == 0)
         {
             Debug.Log("C button pressed. Accessing cams");
             //gameObject.GetComponent<PlayerCharacterController>().type = 1; //disable character movement
-            pCharCScript.type = 1;
+            //pCharCScript.type = 1;
             //gameObject.GetComponentInChildren<PlayerCameraController>().type = 1; //disable character look movement
-            pCamCScript.type = 1;
+            //pCamCScript.type = 1;
             GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
             if (lastCameraIndex != 0)
             {
