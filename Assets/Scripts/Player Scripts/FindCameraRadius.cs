@@ -66,6 +66,7 @@ public class FindCameraRadius : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
+            Debug.Log("Keydown");
             FindCamsInRange();            
         }       
 
@@ -75,15 +76,20 @@ public class FindCameraRadius : MonoBehaviour
     
     private void FindCamsInRange()
     {
+        Debug.Log(1);
         inRangeCams.Clear();
         cameras = new Camera[0];
+        Debug.Log(2);
 
         //float camDistance;
         Collider[] targetsInRadius = Physics.OverlapSphere(transform.position, findRadius, CamMask);
-        
+
+        Debug.Log(3);
 
         for (int i = 0; i <targetsInRadius.Length; i++)
         {
+
+            Debug.Log(4 + "-" + i);
             Camera camTarget = targetsInRadius[i].GetComponentInChildren<Camera>();
             inRangeCams.Add(camTarget);
 
@@ -93,19 +99,24 @@ public class FindCameraRadius : MonoBehaviour
                 
             //}
         }
-        
 
+
+        Debug.Log(5);
         inRangeCams.Insert(0, pcCam);
+        Debug.Log(6);
 
         cameras = inRangeCams.ToArray();
+        Debug.Log(7);
 
         if (cameras.Length > 1)
         {
             if (cameras.Length > lastCameraIndex)
             {
+                Debug.Log("cam length greater than last cam index, setting last cam index to zero");
                 //currentCameraIndex = 0;
                 lastCameraIndex = 0;
             }
+            Debug.Log("accessing cameras sytem");
             AccessCameraSystem();
         }
         
@@ -174,7 +185,7 @@ public class FindCameraRadius : MonoBehaviour
             //pCharCScript.type = 0;
             //gameObject.GetComponentInChildren<PlayerCameraController>().type = 0; //disable character look movement
             //pCamCScript.type = 0;
-            GetComponent<MinMapToggle>().miniMapCanvas.SetActive(false);
+            //GetComponent<MinMapToggle>().miniMapCanvas.SetActive(false);
 
             cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = false;
             cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
@@ -186,29 +197,42 @@ public class FindCameraRadius : MonoBehaviour
         }
         else if(currentCameraIndex == 0)
         {
-            Debug.Log("C button pressed. Accessing cams");
+            Debug.Log("C button pressed. Accessing cams - lastCameraIndex:" + lastCameraIndex);
             //gameObject.GetComponent<PlayerCharacterController>().type = 1; //disable character movement
             //pCharCScript.type = 1;
             //gameObject.GetComponentInChildren<PlayerCameraController>().type = 1; //disable character look movement
             //pCamCScript.type = 1;
-            GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
+            //GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
+
+
+            Debug.Log("Cameras count: " + cameras.Length + " || lastCamIndex: " + lastCameraIndex + "  || currentCamIndex: " + currentCameraIndex);
             if (lastCameraIndex != 0)
             {
                 
                 cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-
+                Debug.Log("CIndex: " + currentCameraIndex + "    | Lindex: " + lastCameraIndex);
                 currentCameraIndex = lastCameraIndex;
 
                 cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
+                Debug.Log("finding cam " + cameras[currentCameraIndex]);
                 cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
             }
             else
             {
                 currentCameraIndex++;
                 lastCameraIndex++;
-                
+
+
+                Debug.Log("=============== Cameras count: " + cameras.Length + " || lastCamIndex: " + lastCameraIndex + "  || currentCamIndex: " + currentCameraIndex);
+                Debug.Log("==== current camera:");
+                Debug.Log(cameras[currentCameraIndex - 1].name);
+                Debug.Log("==== toggle component:");
+                Debug.Log(cameras[currentCameraIndex - 1].GetComponent<CameraToggle>());
+               
                 cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
+                Debug.Log("we passed it");
                 cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
+                Debug.Log("finding cam " + cameras[currentCameraIndex]);
                 cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
             }
         }
