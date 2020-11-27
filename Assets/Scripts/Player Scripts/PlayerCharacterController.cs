@@ -18,10 +18,12 @@ public class PlayerCharacterController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float smoothVelocity;
 
+    //CURRENT HEIGHT TO STAY AT
+    float yHeight;
     bool pushing = false;
     private void Start()
     {
-        
+        yHeight = transform.position.y;
         type = 0;
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         pushSpeed = speed / 2;
@@ -50,7 +52,8 @@ public class PlayerCharacterController : MonoBehaviour
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
         if (type ==  0)
         {
-            
+            if (transform.position.y != yHeight)
+                transform.position = new Vector3(transform.position.x, yHeight, transform.position.z);
             if (!pushing)
             {
                 if (direction.magnitude >= 0.1f)

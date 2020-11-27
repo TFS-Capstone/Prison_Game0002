@@ -69,7 +69,7 @@ public class MinigameTrigger : MonoBehaviour
     public void ExitMinigame() //exits the minigame
     {
         player.GetComponent<PlayerCharacterController>().enabled = true; //enables character movement
-        player.GetComponentInChildren<PlayerCameraController>().enabled = true; //enables camera movement
+        //player.GetComponentInChildren<PlayerCameraController>().enabled = true; //enables camera movement
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.None;
         minigameUI.SetActive(false);
@@ -80,7 +80,7 @@ public class MinigameTrigger : MonoBehaviour
     public void startMinigame() //starts the minigame
     {
         player.GetComponent<PlayerCharacterController>().enabled = false; //disable character movement
-        player.GetComponentInChildren<PlayerCameraController>().enabled = false; //disable camera movement
+        //player.GetComponentInChildren<PlayerCameraController>().enabled = false; //disable camera movement
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         minigameUI.SetActive(true);
@@ -91,7 +91,7 @@ public class MinigameTrigger : MonoBehaviour
     public void startMinigame2()
     {
         player.GetComponent<PlayerCharacterController>().enabled = false; //disable character movement
-        player.GetComponentInChildren<PlayerCameraController>().enabled = false; //disable camera movement
+        //player.GetComponentInChildren<PlayerCameraController>().enabled = false; //disable camera movement
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         minigame2.SetActive(true);
@@ -101,7 +101,7 @@ public class MinigameTrigger : MonoBehaviour
     public void ExitMinigame2() //exits the minigame
     {
         player.GetComponent<PlayerCharacterController>().enabled = true; //enables character movement
-        player.GetComponentInChildren<PlayerCameraController>().enabled = true; //enables camera movement
+        //player.GetComponentInChildren<PlayerCameraController>().enabled = true; //enables camera movement
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.None;
         minigame2.SetActive(false);

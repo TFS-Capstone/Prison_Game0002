@@ -83,7 +83,7 @@ public class Shoot : MonoBehaviour
         _projRb = projectile.GetComponent<Rigidbody>();
 
         float maxAimDistance = 25.0f;
-        Camera cam = GetComponentInChildren<Camera>();
+        Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
