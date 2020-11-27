@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1839571994635269158, guid: a15059f36077dc54b81f805fc30e51ee,
+        type: 3}
+      propertyPath: animTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3311152433509578376, guid: a15059f36077dc54b81f805fc30e51ee,
         type: 3}
       propertyPath: m_Name
-      value: PrisonCell_V2
+      value: PrisonCell_V2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4596782701265281716, guid: a15059f36077dc54b81f805fc30e51ee,
         type: 3}
