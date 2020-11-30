@@ -7,7 +7,8 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
     public GameObject controlsUI;
-
+    [HideInInspector]
+    public bool playerIsInCams;
     void Start()
     {
         Cursor.visible = false;
@@ -19,9 +20,9 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        playerIsInCams = GameManager.instance.playerInCams;
         GameManager.instance.GameIsPause = isPaused;
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !playerIsInCams)
         {
             if(isPaused)
             {
@@ -46,9 +47,13 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         controlsUI.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
     }
     public void Pause()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;

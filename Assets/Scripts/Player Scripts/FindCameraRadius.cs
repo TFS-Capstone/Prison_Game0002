@@ -182,6 +182,7 @@ public class FindCameraRadius : MonoBehaviour
         {
             Debug.Log("C button pressed. returning to main camera");
             gameObject.GetComponent<PlayerCharacterController>().type = 0; //Enable character movement
+            GameManager.instance.playerInCams = false; //tells the pause menu if the player is in the cameras
             //pCharCScript.type = 0;
             //gameObject.GetComponentInChildren<PlayerCameraController>().type = 0; //disable character look movement
             //pCamCScript.type = 0;
@@ -199,6 +200,7 @@ public class FindCameraRadius : MonoBehaviour
         {
             Debug.Log("C button pressed. Accessing cams - lastCameraIndex:" + lastCameraIndex);
             gameObject.GetComponent<PlayerCharacterController>().type = 1; //disable character movement
+            GameManager.instance.playerInCams = true; //tells the pause menu if the player is in the cameras
             //pCharCScript.type = 1;
             //gameObject.GetComponentInChildren<PlayerCameraController>().type = 1; //disable character look movement
             //pCamCScript.type = 1;

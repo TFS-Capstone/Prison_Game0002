@@ -40,7 +40,7 @@ public class DoorNew : MonoBehaviour
 
     public void Open()
     {
-            if (keytype == doortype)
+            if (keytype == doortype || doortype == 0)
             {
                 if (closed && canOpen)
                 {

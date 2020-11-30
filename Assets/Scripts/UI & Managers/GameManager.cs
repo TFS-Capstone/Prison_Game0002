@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public float playerSpeed;
 
+    [HideInInspector]
+    public bool playerInCams = false;
     //end of variables --------------------------------
 
     //creates the GameManager instance
@@ -42,10 +44,11 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this);
         }
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
 
 
 
-        
     }
 
     // Update has pause menu checks
@@ -69,7 +72,7 @@ public class GameManager : MonoBehaviour
     public void win()
     {
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
         
         SceneManager.LoadScene("Win");
         Debug.Log("winning");

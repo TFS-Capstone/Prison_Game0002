@@ -50,13 +50,14 @@ public class Inventory : MonoBehaviour
     Transform _selected;
 
     GameObject door;
-
-    
+    [SerializeField]
+    MinigameTrigger minigame;
     //End of item selection
     void Start()
     {
         playerColour = GetComponent<Renderer>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        minigame = player.GetComponent<MinigameTrigger>();
     }
 
     
@@ -65,7 +66,8 @@ public class Inventory : MonoBehaviour
         //selection stuff
 
         if (_selected != null)
-            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door" || _selected.gameObject.tag == "Throwable" || _selected.gameObject.tag == "Pushable")
+            if (_selected.gameObject.tag == "item" || _selected.gameObject.tag == "disguise" || _selected.gameObject.tag == "keycard" || _selected.gameObject.tag == "Door" 
+                || _selected.gameObject.tag == "Throwable" || _selected.gameObject.tag == "Pushable" || _selected.gameObject.tag == "Minigame")
             {
             var selectionRenderer = _selected.GetComponent<Renderer>();
             selectionRenderer.material = originalMat;
@@ -85,7 +87,8 @@ public class Inventory : MonoBehaviour
                 
 
 
-                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door" || selection.gameObject.tag == "Throwable" || selection.gameObject.tag == "Pushable")    
+                if (selection.gameObject.tag == "item" || selection.gameObject.tag == "disguise" || selection.gameObject.tag == "keycard" || selection.gameObject.tag == "Door"  
+                    || selection.gameObject.tag == "Throwable" || selection.gameObject.tag == "Pushable" || selection.gameObject.tag == "Minigame")    
                 {
                     originalMat = selectionRenderer.material;
                     selectionRenderer.material = highlightMaterial;
@@ -295,6 +298,27 @@ public class Inventory : MonoBehaviour
                         hit.transform.parent = null;
                     }
                 }
+            }
+            else if (hit.distance < 20 && hit.transform.gameObject.tag == "Minigame")
+            {
+                int gameType = hit.transform.gameObject.GetComponent<MinigameType>().type;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (gameType == 1)
+                    {
+                        minigame.startMinigame();
+                    }
+                    else if (gameType == 2)
+                    {
+                        minigame.startMinigame2();
+                    }
+                    else
+                    {
+                        Debug.LogError("Minigame type not set");
+                    }
+                }
+                    
+                
             }
 
 
