@@ -14,9 +14,19 @@ public class ReachCafeQuest : Quest
 
     private void Awake()
     {
-        questName = "Cafe Tier";
-        description = "Find and reach the Cafeteria";
-        questNumber = 2;
+        if (questName == "")
+        {
+            questName = "Cafe Tier";
+        }
+        if (description == "")
+        {
+            description = "Find and reach the Cafeteria";
+        }
+        if (questNumber <= 0)
+        {
+            questNumber = 2;
+        }
+       
         if ( minX ==0 || maxX == 0|| minZ == 0 || maxZ == 0)
         {
             goal = new ReachLocationGoal(this.gameObject, 0, 15, 8, 18, this);
@@ -42,7 +52,16 @@ public class ReachCafeQuest : Quest
     // Update is called once per frame
     void Update()
     {
+        Vector3 a = new Vector3(minX, 0, minZ);
+        Vector3 b = new Vector3(minX, 0, maxZ);
+        Vector3 c = new Vector3(maxX, 0, minZ);
+        Vector3 d = new Vector3(maxX, 0, maxZ);
+        Debug.DrawLine(a, b);
+        Debug.DrawLine(a, c);
+        Debug.DrawLine(b, d);
+        Debug.DrawLine(c, d);
         
+        //Debug.DrawLine(new Vector3(minX, 0, minZ), new Vector3(maxX, 0, maxZ));
     }
 
     public void CheckWithinBounds()

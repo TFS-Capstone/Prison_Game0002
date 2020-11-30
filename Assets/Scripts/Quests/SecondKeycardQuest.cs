@@ -10,9 +10,12 @@ public class SecondKeycardQuest : Quest
     private void Awake()
     {
         invent = gameObject.GetComponent<Inventory>();
-        questName = "Second keycard";
-        description = "Obtain a level 2 keycard";
-        questNumber = 3;
+        if (questName == "")
+            questName = "Second keycard";
+        if (description == "")
+            description = "Obtain a level 2 keycard";
+        if (questNumber <= 0)
+            questNumber = 3;
         goal = new GatherGoal(1, 2, 2, this);
         
 

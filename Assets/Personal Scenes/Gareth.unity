@@ -2058,17 +2058,17 @@ PrefabInstance:
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21941207
+      value: 0.2194121
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0042569553
+      value: 0.004256997
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0009573656
+      value: -0.00095737487
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
@@ -3316,7 +3316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: 
   description: 
-  questNumber: 0
+  questNumber: 2
   completed: 0
   itemRewards: []
   minX: 1

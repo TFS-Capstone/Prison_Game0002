@@ -13,9 +13,9 @@ public class EventTrigger : MonoBehaviour
         {
             EventManager.TriggerEvent("test");
         }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            EventManager.TriggerEvent("CheckPlayerBounds");
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    EventManager.TriggerEvent("CheckPlayerBounds");
+        //}
     }
 }

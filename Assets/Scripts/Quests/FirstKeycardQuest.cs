@@ -11,10 +11,12 @@ public class FirstKeycardQuest : Quest
     private void Awake()
     {
         invent = gameObject.GetComponent<Inventory>();
-        questName = "First keycard";
-
-        description = "Obtain a level 1 keycard";
-        questNumber = 1;
+        if (questName == "")
+            questName = "First keycard";
+        if (description == "")
+            description = "Obtain a level 1 keycard";
+        if (questNumber <=0)
+            questNumber = 1;
         goal = new GatherGoal(1, 1, 1, this);
         
 
