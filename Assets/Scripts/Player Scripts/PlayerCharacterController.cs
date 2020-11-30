@@ -77,6 +77,9 @@ public class PlayerCharacterController : MonoBehaviour
                     controller.Move(moveDir.normalized * pushSpeed * Time.deltaTime);
                 }
             }
+
+            // this is for the quests
+            EventManager.TriggerEvent("CheckPlayerBounds");
         }
         
     }

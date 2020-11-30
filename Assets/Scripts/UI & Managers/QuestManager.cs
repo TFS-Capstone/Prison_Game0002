@@ -101,6 +101,7 @@ public class QuestManager : MonoBehaviour
         {
             if (quest.isActiveAndEnabled)
             {
+                
                 listOfQuestsActive.Add(quest);
                 //Debug.Log(quest);
             }
@@ -110,6 +111,15 @@ public class QuestManager : MonoBehaviour
             }
 
         }
+        
+        listOfQuestsActive.Sort(delegate (Quest a, Quest b)
+        {
+            return a.questNumber.CompareTo(b.questNumber);
+        });
+        listOfQuestsInactive.Sort(delegate (Quest a, Quest b)
+        {
+            return a.questNumber.CompareTo(b.questNumber);
+        });
     }
 
     public void QuestTextUpdate()
