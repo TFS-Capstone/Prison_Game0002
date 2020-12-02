@@ -100,6 +100,7 @@ public class PlayerCharacterController : MonoBehaviour
 
             // this is for the quests
             EventManager.TriggerEvent("CheckPlayerBounds");
+            EventManager.TriggerEvent("CartReachCafeQuest");
         }
         
     }

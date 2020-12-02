@@ -46,6 +46,7 @@ public class Goal
 
     public virtual bool CheckBounds(GameObject toCheck, float minX, float maxX, float minZ, float maxZ)
     {
+        //Debug.Log(toCheck);
         // check if the object is within the bounds laid out in the quest
         if (toCheck.transform.position.x > minX && toCheck.transform.position.z > minZ
             && toCheck.transform.position.x < maxX && toCheck.transform.position.z < maxZ)

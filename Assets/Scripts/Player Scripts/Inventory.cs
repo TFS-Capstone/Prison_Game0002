@@ -22,6 +22,9 @@ public class Inventory : MonoBehaviour
     bool holdingProj = false;
     bool projIsOut = false;
     public Transform handLocation;
+    [SerializeField]
+    Transform pushablePushLocation;
+    public GameObject curPushingObj;
 
     [SerializeField]
     GameObject disguise = null; //The type of disguise that the player is holding, will change based on what is picked up
@@ -58,6 +61,10 @@ public class Inventory : MonoBehaviour
         playerColour = GetComponent<Renderer>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         minigame = player.GetComponent<MinigameTrigger>();
+        if (!pushablePushLocation)
+        {
+            Debug.LogError("no place to set push objects from, fix before trying to push an object");
+        }
     }
 
     
@@ -288,8 +295,14 @@ public class Inventory : MonoBehaviour
                 {
                     if (!pushing)
                     {
+                        EventManager.TriggerEvent("GetCartQuest");
                         pushing = true;
-                        hit.transform.parent = gameObject.transform;
+                        curPushingObj = hit.transform.gameObject;
+                        Debug.Log(curPushingObj);
+                        hit.transform.parent = pushablePushLocation.transform;
+                        hit.transform.position = pushablePushLocation.transform.position;
+                        hit.transform.rotation = pushablePushLocation.transform.rotation;
+                        //hit.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z+2);
 
                     }
                     else if (pushing)

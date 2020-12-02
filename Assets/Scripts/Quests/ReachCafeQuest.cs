@@ -29,7 +29,11 @@ public class ReachCafeQuest : Quest
        
         if ( minX ==0 || maxX == 0|| minZ == 0 || maxZ == 0)
         {
-            goal = new ReachLocationGoal(this.gameObject, 0, 15, 8, 18, this);
+            Debug.LogError("There are no bounds created on the quest " + questName);
+        }
+        else if(minX> maxX|| minZ >maxZ)
+        {
+            Debug.LogError("Quest " + questName + " has errors in its bounds: a min value is larger than the max value");
         }
         else
         {
@@ -67,5 +71,11 @@ public class ReachCafeQuest : Quest
     public void CheckWithinBounds()
     {
         goal.CheckBounds(goal.itemRequired, goal.minX, goal.maxX, goal.minZ, goal.maxZ);
+    }
+    public override void Complete()
+    {
+        base.Complete();
+        this.completed = true;
+        EventManager.StopListening("CheckPlayerBounds", reachCafeListener);
     }
 }
