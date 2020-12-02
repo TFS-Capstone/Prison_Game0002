@@ -3720,12 +3720,12 @@ PrefabInstance:
     - target: {fileID: 3654627437567950793, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0044352603
+      value: 0.0044352263
       objectReference: {fileID: 0}
     - target: {fileID: 3654627437567950793, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000856904
+      value: -0.0008568973
       objectReference: {fileID: 0}
     - target: {fileID: 3654627437567950793, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
@@ -3870,12 +3870,12 @@ PrefabInstance:
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.004401204
+      value: 0.0044012014
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0010174488
+      value: -0.0010174483
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
@@ -5902,6 +5902,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d00dd99b8b6c3b4488658f2367bef03e, type: 3}
+--- !u!95 &386320978 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3166231814383243141, guid: 57f17f06241150346a54c1cf944dd8d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1756951492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &393081950
 GameObject:
   m_ObjectHideFlags: 0
@@ -27059,6 +27065,16 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 490427917}
+    - target: {fileID: 820704970524936564, guid: 57f17f06241150346a54c1cf944dd8d9,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 386320978}
+    - target: {fileID: 3166231814383243141, guid: 57f17f06241150346a54c1cf944dd8d9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 89362746baa1de44291609da0ffc5604, type: 2}
     - target: {fileID: 8187877655784107369, guid: 57f17f06241150346a54c1cf944dd8d9,
         type: 3}
       propertyPath: m_Name

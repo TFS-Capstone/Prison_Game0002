@@ -24,6 +24,7 @@ public class Inventory : MonoBehaviour
     public Transform handLocation;
     [SerializeField]
     Transform pushablePushLocation;
+    public GameObject curPushingObj;
 
     [SerializeField]
     GameObject disguise = null; //The type of disguise that the player is holding, will change based on what is picked up
@@ -294,7 +295,10 @@ public class Inventory : MonoBehaviour
                 {
                     if (!pushing)
                     {
+                        EventManager.TriggerEvent("GetCartQuest");
                         pushing = true;
+                        curPushingObj = hit.transform.gameObject;
+                        Debug.Log(curPushingObj);
                         hit.transform.parent = pushablePushLocation.transform;
                         hit.transform.position = pushablePushLocation.transform.position;
                         hit.transform.rotation = pushablePushLocation.transform.rotation;
