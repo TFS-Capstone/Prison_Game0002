@@ -10,6 +10,7 @@ public class Shoot : MonoBehaviour
     GameObject projectile;
     [SerializeField]
     Transform projSpawnPoint;
+    
     //projectile and projectilePrefab will be whatever item the player picks up to throw, may not need both of these
     bool readyToFire = false;
 

@@ -20,8 +20,8 @@ public class Cameras : MonoBehaviour
 
     public bool playerControlled;
 
-
-    public Transform cameraPosition;
+    private MeshRenderer camModelMesh;
+    
     public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
     public RotationAxes axes = RotationAxes.MouseXAndY;
     public float sensitivityX = 15F;
@@ -41,6 +41,7 @@ public class Cameras : MonoBehaviour
 
         if (playerControlled)
         {
+            camModelMesh.enabled = false;
             if (axes == RotationAxes.MouseXAndY)
             {
                 //float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
@@ -68,6 +69,10 @@ public class Cameras : MonoBehaviour
                 transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
             }
         }
+        else
+        {
+            camModelMesh.enabled = true;
+        }
         
     }
 
@@ -78,7 +83,8 @@ public class Cameras : MonoBehaviour
         {
             GetComponent<Rigidbody>().freezeRotation = true;
         }
-            
+
+        camModelMesh = GetComponentInChildren<MeshRenderer>();
         
     }
 }
