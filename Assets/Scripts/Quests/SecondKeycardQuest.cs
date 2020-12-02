@@ -9,7 +9,7 @@ public class SecondKeycardQuest : Quest
     Inventory invent;
     private void Awake()
     {
-        invent = gameObject.GetComponent<Inventory>();
+        //invent = gameObject.GetComponent<Inventory>();
         if (questName == "")
             questName = "Second keycard";
         if (description == "")
