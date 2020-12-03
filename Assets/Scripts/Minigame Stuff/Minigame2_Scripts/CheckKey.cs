@@ -52,6 +52,7 @@ public class CheckKey : MonoBehaviour
                             minigame2Win = true;
                         mC.minigame2End = true;
                         winText.GetComponent<TextMesh>().text = "Win!";
+                        GameManager.instance.playerCardLevel = 1;
                         } // if win conditions are met
                     if (round < 7)
                     {

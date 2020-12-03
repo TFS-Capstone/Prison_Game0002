@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 868102671}
   - component: {fileID: 4790194596632698065}
   - component: {fileID: 868102662}
+  - component: {fileID: 7731355980449180026}
   m_Layer: 11
   m_Name: player
   m_TagString: Player
@@ -390,6 +391,7 @@ MonoBehaviour:
   speed: 10
   speedMultiplier: 1
   type: 0
+  animator: {fileID: 3166231814383243141}
   cam: {fileID: 0}
   controller: {fileID: 8187877655784107375}
   turnSmoothTime: 0.1
@@ -437,6 +439,8 @@ MonoBehaviour:
   item1: {fileID: 2100000, guid: 1a027e81edfd90d48b72390b49a7b2e3, type: 2}
   item2: {fileID: 2100000, guid: bb9c37a9a4c52ce498f892597bae3ff9, type: 2}
   handLocation: {fileID: 632791079}
+  pushablePushLocation: {fileID: 0}
+  curPushingObj: {fileID: 0}
   disguise: {fileID: 0}
   item: {fileID: 0}
   keycard: 0
@@ -446,6 +450,7 @@ MonoBehaviour:
   highlightMaterial: {fileID: 2100000, guid: 0c6a57faa4283114282c954b36e86c47, type: 2}
   cam: {fileID: 0}
   player: {fileID: 0}
+  minigame: {fileID: 0}
 --- !u!114 &401135093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +533,27 @@ MonoBehaviour:
   questNumber: 0
   completed: 0
   itemRewards: []
+--- !u!114 &7731355980449180026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187877655784107369}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24d5244d05c48f4ebd6e5a94cd5acfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName: 
+  description: 
+  questNumber: 0
+  completed: 0
+  itemRewards: []
+  minX: -35
+  minZ: 19
+  maxX: -13
+  maxZ: 31
 --- !u!1001 &694232504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -615,6 +641,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8187877655784107379}
     m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: ac0b71c97e9004f4da0638da34a3748c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 89362746baa1de44291609da0ffc5604, type: 2}
     - target: {fileID: -4216859302048453862, guid: ac0b71c97e9004f4da0638da34a3748c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -670,21 +701,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: ac0b71c97e9004f4da0638da34a3748c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: ac0b71c97e9004f4da0638da34a3748c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: ac0b71c97e9004f4da0638da34a3748c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -3380368256270459285, guid: ac0b71c97e9004f4da0638da34a3748c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -720,6 +736,12 @@ PrefabInstance:
 --- !u!4 &5006512736437150463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ac0b71c97e9004f4da0638da34a3748c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1666681317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3166231814383243141 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: ac0b71c97e9004f4da0638da34a3748c,
     type: 3}
   m_PrefabInstance: {fileID: 1666681317}
   m_PrefabAsset: {fileID: 0}

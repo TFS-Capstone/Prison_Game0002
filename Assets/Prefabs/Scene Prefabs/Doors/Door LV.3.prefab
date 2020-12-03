@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doortype: 3
   keytype: 0
-  animTime: 2.5
+  animTime: 2
 --- !u!54 &4743657311490440837
 Rigidbody:
   m_ObjectHideFlags: 0

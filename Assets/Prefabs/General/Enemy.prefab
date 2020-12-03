@@ -159,22 +159,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   nodeDistance: 0.2
-  isWandering: 0
   playerIsSeen: 0
   getAwayDistance: 25
   searchTime: 15
   searchDistance: 30
   empty: {fileID: 8145879703514034942, guid: 71dccb875ad6e114f92f4f6df3c10c25, type: 3}
-  MAXX: 17
-  MINX: -80
-  MAXZ: 88
-  MINZ: 3
+  MAXX: 0
+  MINX: -65
+  MAXZ: 107
+  MINZ: 0
+  def:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &2874453637533989748
 MonoBehaviour:
   m_ObjectHideFlags: 0

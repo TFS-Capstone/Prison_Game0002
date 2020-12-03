@@ -40,7 +40,7 @@ public class DoorNew : MonoBehaviour
 
     public void Open()
     {
-            if (keytype == doortype || doortype == 0)
+            if (keytype == doortype || doortype <= GameManager.instance.playerCardLevel)
             {
                 if (closed && canOpen)
                 {

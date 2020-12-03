@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     static GameManager _instance = null;
 
     public float playerSpeed;
-
+    public int playerCardLevel = 0;
     [HideInInspector]
     public bool playerInCams = false;
     //end of variables --------------------------------
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
     //main menu start game and find the UI
     public void StartGame()
     {
-        SceneManager.LoadScene("CurrentWhitebox");
+        SceneManager.LoadScene("Level");
 
     }
     //grabs the pause menu for the GameManager
