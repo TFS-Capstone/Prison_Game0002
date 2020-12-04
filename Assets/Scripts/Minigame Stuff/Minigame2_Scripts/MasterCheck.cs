@@ -16,9 +16,12 @@ public class MasterCheck : MonoBehaviour
             EndKeys[i].GetComponent<Renderer>().material.SetColor("_Color", Color.white);
             // Randomly generate the end keys
 
-        }Debug.Log(KeyMaster[0]);
-            Debug.Log(KeyMaster[1]);
-            Debug.Log(KeyMaster[2]);
+        }
+       /*
+        Debug.Log(KeyMaster[0]);
+        Debug.Log(KeyMaster[1]);
+        Debug.Log(KeyMaster[2]);
+       */
         //Debug Log for Endkeys
     }
 

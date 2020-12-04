@@ -75,8 +75,8 @@ public class DoorNew : MonoBehaviour
     {
         if (collider.gameObject.tag == "Enemy")
         {
-            Debug.Log("Enemy hit the door");
-            Debug.Log(doortype);
+            //Debug.Log("Enemy hit the door");
+
             if (doortype <=2)
             {
                 if (closed && canOpen)
@@ -91,7 +91,7 @@ public class DoorNew : MonoBehaviour
             }
             else
             {
-                Debug.LogError("This should not happen: enemy is trying to use an exit door");
+                //Debug.LogError("This should not happen: enemy is trying to use an exit door");
             }
         }
     }
