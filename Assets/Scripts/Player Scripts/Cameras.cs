@@ -21,6 +21,7 @@ public class Cameras : MonoBehaviour
     public bool playerControlled;
 
     private MeshRenderer camModelMesh;
+    public Transform pivotPoint;
     
     public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
     public RotationAxes axes = RotationAxes.MouseXAndY;
@@ -57,6 +58,7 @@ public class Cameras : MonoBehaviour
 
 
                     transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+                    pivotPoint.transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
 
                 }
                 else if (axes == RotationAxes.MouseX)
@@ -88,7 +90,7 @@ public class Cameras : MonoBehaviour
             GetComponent<Rigidbody>().freezeRotation = true;
         }
 
-        camModelMesh = GetComponentInChildren<MeshRenderer>();
+        camModelMesh = pivotPoint.GetComponentInChildren<MeshRenderer>();
         
     }
 }

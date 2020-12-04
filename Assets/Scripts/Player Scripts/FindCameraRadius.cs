@@ -12,6 +12,7 @@ public class FindCameraRadius : MonoBehaviour
     Camera pcCam;
     PlayerCameraController pCamCScript;
     PlayerCharacterController pCharCScript;
+    [SerializeField]
     bool camsAccessable = false;
     
 
