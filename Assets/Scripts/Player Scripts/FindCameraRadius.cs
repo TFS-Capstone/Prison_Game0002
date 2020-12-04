@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FindCameraRadius : MonoBehaviour
 {
-    
+    UnityAction camsAccessableListener;
     public GameObject player;
     Camera pcCam;
     PlayerCameraController pCamCScript;
     PlayerCharacterController pCharCScript;
+    bool camsAccessable = false;
     
 
     [Range(0,360)]
@@ -24,9 +26,20 @@ public class FindCameraRadius : MonoBehaviour
     [SerializeField]
     private int currentCameraIndex;
     public int lastCameraIndex;
-    
 
-    
+    private void Awake()
+    {
+        camsAccessableListener = new UnityAction(CamsNowAvailable);
+    }
+    private void OnEnable()
+    {
+        EventManager.StartListening("CamsAccessable", camsAccessableListener);
+    }
+    private void CamsNowAvailable()
+    {
+        camsAccessable = true;
+        EventManager.StopListening("CamsAccessable", camsAccessableListener);
+    }
 
 
     void Start()
@@ -50,6 +63,8 @@ public class FindCameraRadius : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         //if (Input.GetKeyDown(KeyCode.Alpha5))
         //{
         //    FindCamsInRange();
@@ -63,12 +78,16 @@ public class FindCameraRadius : MonoBehaviour
         {
             PreviousCamera();
         }
-
-        if (Input.GetKeyDown(KeyCode.C))
+        if (camsAccessable)
         {
-            Debug.Log("Keydown");
-            FindCamsInRange();            
-        }       
+            
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Debug.Log("Keydown");
+                FindCamsInRange();
+            }
+        }
+        
 
     }
 

@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MinigameTrigger : MonoBehaviour
 {
+    
     RaycastHit hit;
     public GameObject minigameUI;
     public MainBlockNode node;
@@ -13,6 +15,7 @@ public class MinigameTrigger : MonoBehaviour
     public GameObject player;
     public GameObject minigame;
     public GameObject minigame2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,9 @@ public class MinigameTrigger : MonoBehaviour
             if (node.connect == true)
             {
                 ExitMinigame();
+                EventManager.TriggerEvent("CamsAccessable");
+                
+
             }
         }
         if (minigame2.activeSelf == true)
