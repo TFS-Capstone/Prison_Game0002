@@ -44,9 +44,9 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this);
         }
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
 
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
 
 
     }
@@ -84,6 +84,8 @@ public class GameManager : MonoBehaviour
         //Cursor.visible = true;
         //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("GameOver");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
     //lose scene go back to title scene
     public void Restart()
@@ -91,6 +93,8 @@ public class GameManager : MonoBehaviour
         //Cursor.visible = true;
         //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Title");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
     //pause menu go back to title scene
     public void Mainmenu()
@@ -98,11 +102,15 @@ public class GameManager : MonoBehaviour
         //Cursor.visible = true;
         //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Title");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
     //main menu start game and find the UI
     public void StartGame()
     {
         SceneManager.LoadScene("Level");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
 
     }
     //grabs the pause menu for the GameManager
