@@ -76,21 +76,21 @@ public class FindCameraRadius : MonoBehaviour
     
     private void FindCamsInRange()
     {
-        Debug.Log(1);
+        //Debug.Log(1);
         inRangeCams.Clear();
         cameras = new Camera[0];
-        Debug.Log(2);
+        //Debug.Log(2);
 
         //float camDistance;
         Collider[] targetsInRadius = Physics.OverlapSphere(transform.position, findRadius, CamMask);
 
-        Debug.Log(3);
+        //Debug.Log(3);
 
         for (int i = 0; i <targetsInRadius.Length; i++)
         {
 
-            Debug.Log(4 + "-" + i);
-            Camera camTarget = targetsInRadius[i].GetComponentInChildren<Camera>();
+            //Debug.Log(4 + "-" + i);
+            Camera camTarget = targetsInRadius[i].GetComponent<Camera>();
             inRangeCams.Add(camTarget);
 
             //camDistance = Vector3.Distance(transform.position, targetsInRadius[i].transform.position);
@@ -101,12 +101,12 @@ public class FindCameraRadius : MonoBehaviour
         }
 
 
-        Debug.Log(5);
+        //Debug.Log(5);
         inRangeCams.Insert(0, pcCam);
-        Debug.Log(6);
+       // Debug.Log(6);
 
         cameras = inRangeCams.ToArray();
-        Debug.Log(7);
+        //Debug.Log(7);
 
         if (cameras.Length > 1)
         {
@@ -207,16 +207,16 @@ public class FindCameraRadius : MonoBehaviour
             //GetComponent<MinMapToggle>().miniMapCanvas.SetActive(true);
 
 
-            Debug.Log("Cameras count: " + cameras.Length + " || lastCamIndex: " + lastCameraIndex + "  || currentCamIndex: " + currentCameraIndex);
+            //Debug.Log("Cameras count: " + cameras.Length + " || lastCamIndex: " + lastCameraIndex + "  || currentCamIndex: " + currentCameraIndex);
             if (lastCameraIndex != 0)
             {
                 
                 cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
-                Debug.Log("CIndex: " + currentCameraIndex + "    | Lindex: " + lastCameraIndex);
+                //Debug.Log("CIndex: " + currentCameraIndex + "    | Lindex: " + lastCameraIndex);
                 currentCameraIndex = lastCameraIndex;
 
                 cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
-                Debug.Log("finding cam " + cameras[currentCameraIndex]);
+                //Debug.Log("finding cam " + cameras[currentCameraIndex]);
                 cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
             }
             else
@@ -225,16 +225,16 @@ public class FindCameraRadius : MonoBehaviour
                 lastCameraIndex++;
 
 
-                Debug.Log("=============== Cameras count: " + cameras.Length + " || lastCamIndex: " + lastCameraIndex + "  || currentCamIndex: " + currentCameraIndex);
-                Debug.Log("==== current camera:");
-                Debug.Log(cameras[currentCameraIndex - 1].name);
-                Debug.Log("==== toggle component:");
-                Debug.Log(cameras[currentCameraIndex - 1].GetComponent<CameraToggle>());
+                //Debug.Log("=============== Cameras count: " + cameras.Length + " || lastCamIndex: " + lastCameraIndex + "  || currentCamIndex: " + currentCameraIndex);
+                //Debug.Log("==== current camera:");
+                //Debug.Log(cameras[currentCameraIndex - 1].name);
+                //Debug.Log("==== toggle component:");
+                //Debug.Log(cameras[currentCameraIndex - 1].GetComponent<CameraToggle>());
                
                 cameras[currentCameraIndex - 1].gameObject.GetComponent<CameraToggle>().FindCam();
-                Debug.Log("we passed it");
+                //Debug.Log("we passed it");
                 cameras[currentCameraIndex].gameObject.GetComponent<Cameras>().playerControlled = true;
-                Debug.Log("finding cam " + cameras[currentCameraIndex]);
+                //Debug.Log("finding cam " + cameras[currentCameraIndex]);
                 cameras[currentCameraIndex].gameObject.GetComponent<CameraToggle>().FindCam();
             }
         }

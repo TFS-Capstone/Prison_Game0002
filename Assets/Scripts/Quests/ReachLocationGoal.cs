@@ -32,7 +32,7 @@ public class ReachLocationGoal : Goal
         }
         else
         {
-            Debug.Log("not within Bounds");
+            //Debug.Log("not within Bounds");
             return false;
         }
             

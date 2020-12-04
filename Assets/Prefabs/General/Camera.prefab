@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 803464121540407093}
   - component: {fileID: 1370331112091233357}
   - component: {fileID: 3141909275750276435}
+  - component: {fileID: -3760947291884297918}
   m_Layer: 8
   m_Name: Camera
   m_TagString: Cameras
@@ -91,7 +92,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControlled: 0
-  cameraPosition: {fileID: 3349918975299556291}
   axes: 0
   sensitivityX: 15
   sensitivityY: 15
@@ -127,6 +127,19 @@ MonoBehaviour:
     type: 3}
   alarmObject: {fileID: 8218128932060774593, guid: c3db1924595350a459a2a64bc78d1af8,
     type: 3}
+--- !u!65 &-3760947291884297918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5442216624921508737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8803081537889387075
 PrefabInstance:
   m_ObjectHideFlags: 0
