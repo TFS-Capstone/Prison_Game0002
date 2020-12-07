@@ -5,12 +5,12 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     // player material stuff
-    public Renderer playerColour;
-    public Material original;
-    public Material Disguise1;
-    public Material Disguise2;
+    public Renderer playerClothesMesh = null;
+    public Material prisonOutfit = null;
+    public Material guardOutfit = null;
+    public Material Disguise2 = null;
     public bool isDisguised = false;
-
+    /*
     //other materials for item selection
     public Material redkey;
     public Material bluekey;
@@ -18,7 +18,7 @@ public class Inventory : MonoBehaviour
 
     public Material item1;
     public Material item2;
-
+    */
     bool holdingProj = false;
     bool projIsOut = false;
     public Transform handLocation;
@@ -58,7 +58,8 @@ public class Inventory : MonoBehaviour
     //End of item selection
     void Start()
     {
-        playerColour = GetComponent<Renderer>();
+        //playerColour = GetComponent<Renderer>();
+        prisonOutfit = playerClothesMesh.material;
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         minigame = player.GetComponent<MinigameTrigger>();
         if (!pushablePushLocation)
@@ -132,7 +133,7 @@ public class Inventory : MonoBehaviour
             {
                 if (isDisguised)
                 {
-                    playerColour.material = original;
+                    playerClothesMesh.material = prisonOutfit;
                     isDisguised = false;
                     GameManager.instance.disguised = false;
                 }
@@ -140,14 +141,14 @@ public class Inventory : MonoBehaviour
                 {
                     if (disguise.GetComponent<Items>().type == 4)
                     {
-                        playerColour.material = Disguise1;
+                        playerClothesMesh.material = guardOutfit;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
 
                     else if (disguise.GetComponent<Items>().type == 5)
                     {
-                        playerColour.material = Disguise2;
+                        playerClothesMesh.material = Disguise2;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
