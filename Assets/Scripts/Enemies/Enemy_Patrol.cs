@@ -89,8 +89,14 @@ public class Enemy_Patrol : MonoBehaviour
 
     void Update()
     {
-        moveSpeed = nmAgent.velocity.x + nmAgent.velocity.y + nmAgent.velocity.z;
-        if (moveSpeed < 0)
+        moveSpeed = nmAgent.velocity.x + nmAgent.velocity.z;
+        
+        if (nmAgent.velocity.x !=0 || nmAgent.velocity.z !=0)
+            {
+            if (moveSpeed == 0)
+                moveSpeed = -(nmAgent.velocity.x) + nmAgent.velocity.z;
+            }
+if (moveSpeed < 0)
             moveSpeed = -moveSpeed;
 
         GAnimator.SetFloat("GWalking", moveSpeed);
