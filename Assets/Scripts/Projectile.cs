@@ -66,7 +66,7 @@ public class Projectile : MonoBehaviour
         // the collision needs to have a non-kinematic rigidbody for these to register.
         //do stuff
         Debug.Log(collision.gameObject);
-        if (!collision.gameObject.CompareTag("Player"))
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.layer.Equals("Default"))
         {
             Debug.Log("collison from projectile at " + collision.GetContact(0).point);
             Vector3 newLoc = new Vector3(transform.position.x, 1.08f, transform.position.z);
@@ -78,7 +78,7 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Player"))
+        if (!other.gameObject.CompareTag("Player") && !other.gameObject.layer.Equals("Default"))
         {
             Debug.Log("collison from projectile at " + gameObject.transform.position);
             Vector3 newLoc = new Vector3(transform.position.x, 1.08f, transform.position.z);

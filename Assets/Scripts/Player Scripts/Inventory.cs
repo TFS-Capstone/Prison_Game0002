@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
     // player material stuff
     public Renderer playerClothesMesh = null;
+    public Renderer playerPantsMesh = null;
     public Material prisonOutfit = null;
     public Material guardOutfit = null;
     public Material Disguise2 = null;
@@ -134,6 +135,7 @@ public class Inventory : MonoBehaviour
                 if (isDisguised)
                 {
                     playerClothesMesh.material = prisonOutfit;
+                    playerPantsMesh.material = prisonOutfit;
                     isDisguised = false;
                     GameManager.instance.disguised = false;
                 }
@@ -142,6 +144,7 @@ public class Inventory : MonoBehaviour
                     if (disguise.GetComponent<Items>().type == 4)
                     {
                         playerClothesMesh.material = guardOutfit;
+                        playerPantsMesh.material = guardOutfit;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
@@ -149,6 +152,7 @@ public class Inventory : MonoBehaviour
                     else if (disguise.GetComponent<Items>().type == 5)
                     {
                         playerClothesMesh.material = Disguise2;
+                        playerPantsMesh.material = Disguise2;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
                     }
