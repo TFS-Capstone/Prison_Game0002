@@ -29,6 +29,7 @@ TagManager:
   - Pushable
   - Enemy
   - QuestMenu
+  - CamPivot
   layers:
   - Default
   - TransparentFX

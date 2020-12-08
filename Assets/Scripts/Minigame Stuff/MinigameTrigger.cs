@@ -29,6 +29,12 @@ public class MinigameTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (node.connect == true)
+        {
+            //Debug.Log("connected");
+            EventManager.TriggerEvent("CamsAccessable");
+            EventManager.TriggerEvent("AccessCamsQuest");
+        }
         if (minigameUI.activeSelf == true)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -39,6 +45,7 @@ public class MinigameTrigger : MonoBehaviour
             {
                 ExitMinigame();
                 EventManager.TriggerEvent("CamsAccessable");
+                EventManager.TriggerEvent("AccessCamsQuest");
                 
 
             }
@@ -55,6 +62,7 @@ public class MinigameTrigger : MonoBehaviour
             }
             
         }
+        
     }
     public void ExitMinigame() //exits the minigame
     {

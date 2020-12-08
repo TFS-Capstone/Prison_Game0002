@@ -59,5 +59,9 @@ public class Goal
             return false;
 
     }
+    public virtual void GainCamAccess()
+    {
+
+    }
 
 }

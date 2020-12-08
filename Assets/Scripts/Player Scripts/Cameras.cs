@@ -90,6 +90,12 @@ public class Cameras : MonoBehaviour
             GetComponent<Rigidbody>().freezeRotation = true;
         }
 
+        foreach (Transform t in gameObject.GetComponentsInParent<Transform>() )
+        {
+            if (t.CompareTag("CamPivot"))
+                pivotPoint = t;
+        }
+        
         camModelMesh = pivotPoint.GetComponentInChildren<MeshRenderer>();
         
     }

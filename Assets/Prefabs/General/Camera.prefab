@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5442216624921508737}
-  m_LocalRotation: {x: -0, y: -0.007475888, z: -0, w: 0.99997205}
+  m_LocalRotation: {x: 0, y: -0.0074786483, z: 0, w: 0.99997205}
   m_LocalPosition: {x: -16.267887, y: 5.93, z: -4.829996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -66,7 +66,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -91,9 +91,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControlled: 0
+  pivotPoint: {fileID: 0}
   axes: 0
-  sensitivityX: 15
-  sensitivityY: 15
+  sensitivityX: 1
+  sensitivityY: 1
   minimumX: -45
   maximumX: 45
   minimumY: -60

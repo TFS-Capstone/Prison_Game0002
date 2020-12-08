@@ -40,6 +40,7 @@ public class FindCameraRadius : MonoBehaviour
     {
         camsAccessable = true;
         EventManager.StopListening("CamsAccessable", camsAccessableListener);
+        
     }
 
 

@@ -43,6 +43,13 @@ public class ReachCafeQuest : Quest
 
         reachCafeListener = new UnityAction(CheckWithinBounds);
     }
+
+    private void Start()
+    {
+        //Vector3 a = new Vector3(minX, 0, minZ);
+        //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //cube.transform.position = a;
+    }
     private void OnEnable()
     {
         EventManager.StartListening("CheckPlayerBounds", reachCafeListener);
