@@ -161,6 +161,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   nodeDistance: 0.2
+  GAnimator: {fileID: 7775458910697840802}
+  walkSpeed: 4
+  runSpeed: 10
   playerIsSeen: 0
   getAwayDistance: 25
   searchTime: 15
@@ -283,6 +286,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 408998829950894872}
     m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: 51491981a67249144ad89f835c359eb8,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 744460398b7c1bc4cba1dc24f6cb61ae, type: 2}
     - target: {fileID: -5939964940929269515, guid: 51491981a67249144ad89f835c359eb8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -353,6 +361,12 @@ PrefabInstance:
 --- !u!4 &391242999127789016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 51491981a67249144ad89f835c359eb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 4618245300237592258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7775458910697840802 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 51491981a67249144ad89f835c359eb8,
     type: 3}
   m_PrefabInstance: {fileID: 4618245300237592258}
   m_PrefabAsset: {fileID: 0}

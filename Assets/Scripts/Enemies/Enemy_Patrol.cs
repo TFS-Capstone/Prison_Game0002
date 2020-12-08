@@ -23,7 +23,11 @@ public class Enemy_Patrol : MonoBehaviour
     //the min distance to the node to switch to the next node
     public float nodeDistance = 2;
     public Animator GAnimator;
-    float moveSpeed;
+
+    [SerializeField]
+    float walkSpeed = 3;
+    [SerializeField]
+    float runSpeed = 10;
 
 
     //if the AI is in it's wandering state
@@ -89,17 +93,22 @@ public class Enemy_Patrol : MonoBehaviour
 
     void Update()
     {
-        moveSpeed = nmAgent.velocity.x + nmAgent.velocity.z;
-        
-        if (nmAgent.velocity.x !=0 || nmAgent.velocity.z !=0)
+        /*
+        walkSpeed = nmAgent.velocity.x + nmAgent.velocity.z;
+         if (nmAgent.velocity.x !=0 || nmAgent.velocity.z !=0)
             {
-            if (moveSpeed == 0)
-                moveSpeed = -(nmAgent.velocity.x) + nmAgent.velocity.z;
+            if (walkSpeed == 0)
+                walkSpeed = -(nmAgent.velocity.x) + nmAgent.velocity.z;
             }
-if (moveSpeed < 0)
-            moveSpeed = -moveSpeed;
+            if (walkSpeed < 0)
+            walkSpeed = -walkSpeed;
+         
+         */
 
-        GAnimator.SetFloat("GWalking", moveSpeed);
+
+
+
+
 
 
         //check if the agent is null, because apparently that's something that has to be done every update loop?
@@ -107,13 +116,17 @@ if (moveSpeed < 0)
         {
             nmAgent = GetComponent<NavMeshAgent>();
         }
+        //set the animator's speed to the velocity of the enemy
+        GAnimator.SetFloat("GWalking", nmAgent.velocity.magnitude);
         //check if the player is disguised
-        
+
         //if the player is not seen
         if (!playerIsSeen)
         {
             //find out if the player is disguised
             disguised = GameManager.instance.disguised;
+            
+            nmAgent.speed = walkSpeed;
             //do this here so that the player cannot change in front of the guards
             
 
@@ -176,6 +189,8 @@ if (moveSpeed < 0)
                 //Debug.Log("hit an object: " + hitInfo.collider.gameObject);
                 Debug.Log("player hid behind an object");
 
+                //set the speed back to normal
+                nmAgent.speed = walkSpeed;
                 //create a search center at the enemy's position
                 searchCenter = Instantiate(empty, transform.position, transform.rotation);
                 //add it to be deleted later
@@ -201,6 +216,9 @@ if (moveSpeed < 0)
             if (playerDst >= getAwayDistance) //if the player is out side of the getaway distance
             {
                 Debug.Log("player got away");
+
+                //set the velocity back to normal
+                nmAgent.speed = walkSpeed;
                 //the player is no longer seen
                 playerIsSeen = false;
                 //the enemy enters a state where it wanders for a while
@@ -225,6 +243,9 @@ if (moveSpeed < 0)
             {
                 if (!disguised)
                 {
+                    //set the speed to running
+                    nmAgent.speed = runSpeed;
+                    //the enemy is not distracted anymore
                     distracted = false;
                     //change the target to the player
                     target = player;
