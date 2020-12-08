@@ -22,6 +22,8 @@ public class Enemy_Patrol : MonoBehaviour
     int patrolIndex = 0;
     //the min distance to the node to switch to the next node
     public float nodeDistance = 2;
+    public Animator GAnimator;
+    float moveSpeed;
 
 
     //if the AI is in it's wandering state
@@ -87,6 +89,13 @@ public class Enemy_Patrol : MonoBehaviour
 
     void Update()
     {
+        moveSpeed = nmAgent.velocity.x + nmAgent.velocity.y + nmAgent.velocity.z;
+        if (moveSpeed < 0)
+            moveSpeed = -moveSpeed;
+
+        GAnimator.SetFloat("GWalking", moveSpeed);
+
+
         //check if the agent is null, because apparently that's something that has to be done every update loop?
         if (nmAgent == null)
         {
