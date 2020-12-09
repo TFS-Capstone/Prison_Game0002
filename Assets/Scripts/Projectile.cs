@@ -78,7 +78,7 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Player") && (other.gameObject.tag.Equals("Floor")))
+        if (!other.gameObject.CompareTag("Player") && (other.gameObject.tag.Equals("floor")))
         {
             Debug.Log("collison from projectile at " + gameObject.transform.position);
             Vector3 newLoc = new Vector3(transform.position.x, 1.08f, transform.position.z);
