@@ -10,8 +10,11 @@ public class QuestManager : MonoBehaviour
     public static bool questsDisplayed = false;
     public GameObject questName;
     public GameObject questDescription;
+    public GameObject questBg;
+
     public Text questNameText;
     public Text questDescriptionText;
+    public Image bg;
 
     GameObject player;
 
@@ -34,6 +37,8 @@ public class QuestManager : MonoBehaviour
         
         questName.SetActive(false);
         questDescription.SetActive(false);
+        questBg.SetActive(false);
+
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void OnEnable()
@@ -81,6 +86,7 @@ public class QuestManager : MonoBehaviour
     {
         questName.SetActive(true);
         questDescription.SetActive(true);
+        questBg.SetActive(true);
         questsDisplayed = true;
     }
 
@@ -88,6 +94,7 @@ public class QuestManager : MonoBehaviour
     {
         questName.SetActive(false);
         questDescription.SetActive(false);
+        questBg.SetActive(false);
         questsDisplayed = false;
     }
 
