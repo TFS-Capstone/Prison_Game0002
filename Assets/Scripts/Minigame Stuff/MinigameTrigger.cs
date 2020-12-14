@@ -56,7 +56,8 @@ public class MinigameTrigger : MonoBehaviour
                 
                 EventManager.TriggerEvent("CamsAccessable");
                 EventManager.TriggerEvent("AccessCamsQuest");
-                pipesWinUI.SetActive(true);
+                //pipesWinUI.SetActive(true);
+                ExitMinigame();
                 
 
             }
@@ -71,7 +72,8 @@ public class MinigameTrigger : MonoBehaviour
             {
                 Notifications notif = GameObject.FindGameObjectWithTag("Notifications").GetComponent<Notifications>();
                 notif.setMessage(notif.puzzle2Text, "");
-                mastermindWinUI.SetActive(true);
+                //mastermindWinUI.SetActive(true);
+                ExitMinigame2();
             }
             
         }
