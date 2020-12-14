@@ -9,6 +9,7 @@ public class Notifications : MonoBehaviour
     public Text objCompleteText;
     public GameObject messageObj;
     public Text messageText;
+    public GameObject bg;
 
     Queue messagesQueue;
     Queue objectiveQueue;
@@ -31,7 +32,8 @@ public class Notifications : MonoBehaviour
         if (questCompleteText == "")
             questCompleteText = "Quest Complete! Press Tab to view next quest";
         if (camsAccessed == "")
-            camsAccessed = "You now have access to the cams, press C to access them, V and Z to switch";
+            camsAccessed = "You now have access to the cams, " +
+                "press C to access them, V and Z to switch";
         if (KeycardCollected == "")
             KeycardCollected = "Keycard collected ";
         if (puzzle1Text == "")
@@ -65,6 +67,7 @@ public class Notifications : MonoBehaviour
         {
             messageText.text = messagesQueue.Dequeue().ToString();
             objCompleteText.text = objectiveQueue.Dequeue().ToString();
+            bg.SetActive(true);
             objectiveCompleteObj.SetActive(true);
             messageObj.SetActive(true);
             notificationActive = true;
@@ -78,6 +81,7 @@ public class Notifications : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
 
+        bg.SetActive(false);
         messageObj.SetActive(false);
         objectiveCompleteObj.SetActive(false);
         notificationActive = false;
