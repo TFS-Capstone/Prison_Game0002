@@ -59,7 +59,7 @@ public class PlayerCharacterController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         if (horizontal != 0 || vertical != 0)
         {
-          
+            AudioManager.PlaySoundOnce(gameObject.GetComponent<AudioSource>());
                 timeStill = 0;
                 animator.SetBool("IsMoving", true);
             
@@ -67,6 +67,7 @@ public class PlayerCharacterController : MonoBehaviour
         else
         {
             animator.SetBool("IsMoving", false);
+            AudioManager.StopSound(gameObject.GetComponent<AudioSource>());
         }
 
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
