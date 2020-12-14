@@ -49,7 +49,7 @@ public class MainBlockNode : MonoBehaviour
             {
                 for (int i = 0; i < nodes.Length; i++)
                 {
-                    if (nodes[i].connect == true && nodes[i].connectnumber < number)
+                    if (nodes[i].connect == true && nodes[i].connectnumber <= number)
                     {
                         connect = true;
                     }
@@ -60,7 +60,7 @@ public class MainBlockNode : MonoBehaviour
                 bool keep = false;
                 for (int i = 0; i < nodes.Length; i++)
                 {
-                    if (nodes[i].connect == true && nodes[i].connectnumber < number)
+                    if (nodes[i].connect == true && nodes[i].connectnumber <= number)
                     {
                         keep = true;
                     }

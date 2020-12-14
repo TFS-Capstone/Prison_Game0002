@@ -16,6 +16,13 @@ public class MinigameTrigger : MonoBehaviour
     public GameObject minigame;
     public GameObject minigame2;
 
+
+    [SerializeField]
+    GameObject mastermindUI = null;
+    [SerializeField]
+    GameObject mastermindWinUI = null;
+    [SerializeField]
+    GameObject pipesWinUI = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +31,9 @@ public class MinigameTrigger : MonoBehaviour
         minigame.SetActive(false);
         minigame2.SetActive(false);
         camera3.enabled = false;
+        mastermindUI.SetActive(false);
+        mastermindWinUI.SetActive(false);
+        pipesWinUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,9 +53,10 @@ public class MinigameTrigger : MonoBehaviour
             }
             if (node.connect == true)
             {
-                ExitMinigame();
+                
                 EventManager.TriggerEvent("CamsAccessable");
                 EventManager.TriggerEvent("AccessCamsQuest");
+                pipesWinUI.SetActive(true);
                 
 
             }
@@ -60,7 +71,7 @@ public class MinigameTrigger : MonoBehaviour
             {
                 Notifications notif = GameObject.FindGameObjectWithTag("Notifications").GetComponent<Notifications>();
                 notif.setMessage(notif.puzzle2Text, "");
-                ExitMinigame2();
+                mastermindWinUI.SetActive(true);
             }
             
         }
@@ -95,6 +106,7 @@ public class MinigameTrigger : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         minigame2.SetActive(true);
+        mastermindUI.SetActive(true);
         camera1.enabled = false;
         camera3.enabled = true;
     }

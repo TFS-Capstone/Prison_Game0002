@@ -42,11 +42,10 @@ public class GameManager : MonoBehaviour
         else
         {
             _instance = this;
-            DontDestroyOnLoad(this);
+            
         }
 
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+
 
 
     }

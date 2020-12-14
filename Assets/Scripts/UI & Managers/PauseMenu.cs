@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
                 Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                Cursor.lockState = CursorLockMode.Confined;
             }
             
         }
@@ -48,12 +48,12 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         controlsUI.SetActive(false);
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
     }
     public void Pause()
     {
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;

@@ -56,6 +56,9 @@ public class Inventory : MonoBehaviour
     GameObject door;
     [SerializeField]
     MinigameTrigger minigame;
+
+    [SerializeField]
+    LayerMask ignore = 0;
     //End of item selection
     void Start()
     {
@@ -67,6 +70,7 @@ public class Inventory : MonoBehaviour
         {
             Debug.LogError("no place to set push objects from, fix before trying to push an object");
         }
+        ignore = ~ignore;
     }
 
     
@@ -86,8 +90,9 @@ public class Inventory : MonoBehaviour
 
         var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 12))
+        if (Physics.Raycast(ray, out hit, 12,ignore))
         {
+
             var selection = hit.transform;
             var selectionRenderer = selection.GetComponent<Renderer>();
             
@@ -121,10 +126,9 @@ public class Inventory : MonoBehaviour
         -- looking at a door with the wrong keycard will yield "This keycard does not work here"
        */
         
-        if (Input.GetKeyDown(KeyCode.E))
-        {
+        //doesn't need to be nested in "if the player presses e. the function already checks
             PickUp();
-        }
+        
 
 
         //if the player presses 'F' and has a disguise, they will change into that disguise
@@ -199,8 +203,9 @@ public class Inventory : MonoBehaviour
     {
         var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100.0f))
+        if (Physics.Raycast(ray, out hit, 100.0f,ignore))
         {
+            
             if (hit.distance < 20 && hit.transform.gameObject.tag == "item")
             {
                 //Debug.Log("hit");

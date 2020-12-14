@@ -163,7 +163,7 @@ MonoBehaviour:
   nodeDistance: 0.2
   GAnimator: {fileID: 7775458910697840802}
   walkSpeed: 4
-  runSpeed: 10
+  runSpeed: 8
   playerIsSeen: 0
   getAwayDistance: 25
   searchTime: 15

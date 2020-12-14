@@ -49,6 +49,7 @@ public class BlockNode : MonoBehaviour
                 connectnumber = other.gameObject.GetComponent<BlockNode>().number;
                 connect = true;
             }
+          
         }
     }
 }
