@@ -12,8 +12,12 @@ public class Quest : MonoBehaviour
     public Goal goal;
     public bool completed;
     public List<string> itemRewards;
-    
 
+    Notifications notif;
+    private void Start()
+    {
+        notif = GameObject.FindGameObjectWithTag("Notifications").GetComponent<Notifications>();
+    }
     public virtual void Complete()
     {
         Debug.Log("Quest Completed!");

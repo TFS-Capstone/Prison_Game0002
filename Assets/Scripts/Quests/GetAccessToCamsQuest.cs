@@ -7,6 +7,7 @@ public class GetAccessToCamsQuest : Quest
 {
 
     private UnityAction accessCamsListener;
+    Notifications notif;
 
     private void OnEnable()
     {
@@ -35,6 +36,7 @@ public class GetAccessToCamsQuest : Quest
             questNumber = 2;
         }
         accessCamsListener = new UnityAction(GainCamAccess);
+        notif = GameObject.FindGameObjectWithTag("Notifications").GetComponent<Notifications>();
     }
 
     // Update is called once per frame
@@ -46,5 +48,6 @@ public class GetAccessToCamsQuest : Quest
     {
         this.completed = true;
         this.Complete();
+        notif.setMessage(notif.camsAccessed, notif.questCompleteText);
     }
 }

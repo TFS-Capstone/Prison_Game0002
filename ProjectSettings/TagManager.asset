@@ -30,6 +30,7 @@ TagManager:
   - Enemy
   - QuestMenu
   - CamPivot
+  - Notifications
   layers:
   - Default
   - TransparentFX

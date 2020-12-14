@@ -8,6 +8,7 @@ public class FirstKeycardQuest : Quest
 
     private UnityAction keyListener;
     Inventory invent;
+    Notifications notif;
     private void Awake()
     {
         //invent = gameObject.GetComponent<Inventory>();
@@ -21,6 +22,7 @@ public class FirstKeycardQuest : Quest
         
 
         keyListener = new UnityAction(doSomething);
+        notif = GameObject.FindGameObjectWithTag("Notifications").GetComponent<Notifications>();
     }
 
     private void OnEnable()
@@ -37,6 +39,7 @@ public class FirstKeycardQuest : Quest
     {
         base.Complete();
         this.completed = true;
+        notif.setMessage(notif.KeycardCollected, notif.questCompleteText);
         EventManager.StopListening("FirstKeycardQuest", keyListener);
     }
     void doSomething()

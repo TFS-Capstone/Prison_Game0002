@@ -58,6 +58,8 @@ public class MinigameTrigger : MonoBehaviour
             }
             if (CheckKey.minigame2End == true)
             {
+                Notifications notif = GameObject.FindGameObjectWithTag("Notifications").GetComponent<Notifications>();
+                notif.setMessage(notif.puzzle2Text, "");
                 ExitMinigame2();
             }
             

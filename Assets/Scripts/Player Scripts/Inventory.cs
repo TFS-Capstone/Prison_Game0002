@@ -262,6 +262,7 @@ public class Inventory : MonoBehaviour
                     {
                         keycard = 3;
                         GameManager.instance.keycardType = 3;
+                        EventManager.TriggerEvent("ThirdKeycardQuest");
                     }
                     Debug.Log(keycardObject);
 
