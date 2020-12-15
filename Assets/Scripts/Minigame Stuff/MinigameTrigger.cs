@@ -8,7 +8,7 @@ public class MinigameTrigger : MonoBehaviour
     
     RaycastHit hit;
     public GameObject minigameUI;
-    public MainBlockNode node;
+    public PipesRework node;
     public Camera camera1;
     public Camera camera2;
     public Camera camera3;
@@ -39,7 +39,7 @@ public class MinigameTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (node.connect == true)
+        if (node.isConnected == true)
         {
             //Debug.Log("connected");
             EventManager.TriggerEvent("CamsAccessable");
@@ -51,7 +51,7 @@ public class MinigameTrigger : MonoBehaviour
             {
                 ExitMinigame();
             }
-            if (node.connect == true)
+            if (node.isConnected == true)
             {
                 
                 EventManager.TriggerEvent("CamsAccessable");
