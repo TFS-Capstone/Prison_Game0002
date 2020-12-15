@@ -1357,6 +1357,7 @@ MonoBehaviour:
   - {fileID: 777626230}
   - {fileID: 160557969}
   minigame2End: 0
+  minigameReset: 0
 --- !u!4 &1423320304
 Transform:
   m_ObjectHideFlags: 0
@@ -2023,9 +2024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edce3725372a70d468c913341d8096d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigame2End: 0
-  minigame2Win: 0
-  minigame2Lose: 0
+  cameraD: {fileID: 123682743}
   MasterKey: {fileID: 1423320302}
   winText: {fileID: 1724968387}
   KeySet:

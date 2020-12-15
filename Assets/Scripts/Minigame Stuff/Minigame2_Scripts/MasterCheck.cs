@@ -7,6 +7,7 @@ public class MasterCheck : MonoBehaviour
     public int[] KeyMaster = new int[3];
     public GameObject[] EndKeys = new GameObject[3];
     public bool minigame2End = false;
+    public bool minigameReset = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,11 @@ public class MasterCheck : MonoBehaviour
             // Randomly generate the end keys
 
         }
-       /*
+       
         Debug.Log(KeyMaster[0]);
         Debug.Log(KeyMaster[1]);
         Debug.Log(KeyMaster[2]);
-       */
+       
         //Debug Log for Endkeys
     }
 
@@ -67,6 +68,17 @@ public class MasterCheck : MonoBehaviour
                  
                  */
             }
+        }
+        if (minigameReset == true)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                KeyMaster[i] = Random.Range(0, 6);
+            }
+            minigameReset = false;
+            Debug.Log(KeyMaster[0]);
+            Debug.Log(KeyMaster[1]);
+            Debug.Log(KeyMaster[2]);
         }
     }
 }

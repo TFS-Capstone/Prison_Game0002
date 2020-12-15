@@ -18,10 +18,11 @@ public class PlayerCharacterController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float smoothVelocity;
     float timeStill;
-
+    //public AudioClip aClip;
     //CURRENT HEIGHT TO STAY AT
     float yHeight;
     bool pushing = false;
+
     private void Start()
     {
         yHeight = transform.position.y;
@@ -59,15 +60,15 @@ public class PlayerCharacterController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         if (horizontal != 0 || vertical != 0)
         {
-            AudioManager.PlaySoundOnce(gameObject.GetComponent<AudioSource>());
+            
                 timeStill = 0;
                 animator.SetBool("IsMoving", true);
-            
+            //AudioManager.PlayAudioAtPoint(aClip, transform);
         }
         else
         {
             animator.SetBool("IsMoving", false);
-            AudioManager.StopSound(gameObject.GetComponent<AudioSource>());
+            
         }
 
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;

@@ -3633,17 +3633,17 @@ PrefabInstance:
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.22523274
+      value: 0.22523275
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.004366442
+      value: 0.004366471
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0010094129
+      value: -0.0010094196
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
@@ -11723,7 +11723,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d5f72e462ec2fb34db7a44461434c5ed, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -24870,6 +24870,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 490427917}
+    - target: {fileID: 820704970524936564, guid: 57f17f06241150346a54c1cf944dd8d9,
+        type: 3}
+      propertyPath: aClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3166231814383243141, guid: 57f17f06241150346a54c1cf944dd8d9,
         type: 3}
       propertyPath: m_ApplyRootMotion

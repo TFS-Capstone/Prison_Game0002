@@ -114,15 +114,34 @@ public class CheckKey : MonoBehaviour
                     } //advancing to the next round
                         if (round == 7 && minigame2Win == false)
                         {
-                            minigame2End = true;
-                            minigame2Lose = true;
-                        mC.minigame2End = true;
-                        winText.GetComponent<TextMesh>().text = "Lose!";
+                        round = 0;
+                        Cube1 = 0;
+                        Cube2 = 0;
+                        Cube3 = 0;
+                        rightPlace = 0;
+                        wrongPlace = 0;
+
+                        //winText.GetComponent<TextMesh>().text = "Lose!";
+                        for (int i = 0; i < 7; i++)
+                        {
+                            KeySet[i].SetActive(true);
+
+                            for (int j = 0; j <= 2; j++)
+                            {
+                                CheckSet[i].GetComponentsInChildren<Renderer>()[j].material.SetColor("_Color", Color.white);
+                                KeySet[i].GetComponentsInChildren<BoxCollider>()[j].enabled = true;
+                                KeySet[i].GetComponentsInChildren<Renderer>()[j].material.SetColor("_Color", Color.white);
+                            }
+                            if ( i > 0)
+                            KeySet[i].SetActive(false);
+                            mC.minigameReset = true;
+                        }
                     } //if all the rounds are spent
                        
                     }
                 if (hit.collider.tag == "Cube1")
                 {
+                    Debug.Log(round);
                     if (Cube1 == 5)
                         Cube1 = 0;
                     else
