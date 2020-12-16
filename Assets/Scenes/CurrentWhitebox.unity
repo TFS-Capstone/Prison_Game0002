@@ -3505,6 +3505,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.9818333
       objectReference: {fileID: 0}
+    - target: {fileID: 3654627437567950793, guid: 39f459f85d3327443bd17a54435d0f58,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654627437567950793, guid: 39f459f85d3327443bd17a54435d0f58,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3654627438274324752, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LookAt
@@ -3638,12 +3648,12 @@ PrefabInstance:
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.004366471
+      value: 0.0043664463
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0010094196
+      value: -0.001009414
       objectReference: {fileID: 0}
     - target: {fileID: 3654627438470831089, guid: 39f459f85d3327443bd17a54435d0f58,
         type: 3}
@@ -5648,7 +5658,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GAnimator
       value: 
-      objectReference: {fileID: 1926891395}
+      objectReference: {fileID: 1445961679}
     - target: {fileID: 408998829950894879, guid: 1ea4efbf0d7e9dd4eab0b0cd315265c3,
         type: 3}
       propertyPath: m_Name
@@ -5659,6 +5669,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 744460398b7c1bc4cba1dc24f6cb61ae, type: 2}
+    - target: {fileID: 7775458910697840802, guid: 1ea4efbf0d7e9dd4eab0b0cd315265c3,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ea4efbf0d7e9dd4eab0b0cd315265c3, type: 3}
 --- !u!1 &424147630
@@ -20720,6 +20735,12 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!95 &1445961679 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7775458910697840802, guid: 1ea4efbf0d7e9dd4eab0b0cd315265c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 416543769}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1448952152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26601,12 +26622,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6718410514673192672, guid: 9dd323827073526428d2f87b822c4bc7,
     type: 3}
   m_PrefabInstance: {fileID: 1875857547}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1926891395 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7775458910697840802, guid: 1ea4efbf0d7e9dd4eab0b0cd315265c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 416543769}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1932722813
 GameObject:
