@@ -29,6 +29,7 @@ public class CheckKey : MonoBehaviour
             KeySet[i].SetActive(false);
             //disable all the keys
         }
+        doReset();
     }
 
     // Update is called once per frame

@@ -74,9 +74,9 @@ public class GameManager : MonoBehaviour
     public void win()
     {
         
-        checkKey.GetComponent<CheckKey>().doReset();
+        
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
         
         SceneManager.LoadScene("Win");
         Debug.Log("winning");
@@ -87,12 +87,12 @@ public class GameManager : MonoBehaviour
     {
 
 
-        checkKey.GetComponent<CheckKey>().doReset();
+        
         //Cursor.visible = true;
         //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("GameOver");
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
     }
     //lose scene go back to title scene
     public void Restart()
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Title");
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
     }
     //pause menu go back to title scene
     public void Mainmenu()
@@ -110,14 +110,14 @@ public class GameManager : MonoBehaviour
         //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Title");
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
     }
     //main menu start game and find the UI
     public void StartGame()
     {
         SceneManager.LoadScene("Level");
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
     //grabs the pause menu for the GameManager
