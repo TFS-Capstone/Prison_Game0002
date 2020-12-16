@@ -19,14 +19,23 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'Guard_Animation_Ready:Guard_Left_Thumb1'
+      : rotation error = 14.688358 deg\n\t'Guard_Animation_Ready:Guard_Left_Ring1'
+      : rotation error = 12.420290 deg\n\t'Guard_Animation_Ready:Guard_Left_Pnky1'
+      : rotation error = 1.426648 deg\n\t'Guard_Animation_Ready:Guard_Right_Pnky1'
+      : rotation error = 18.273874 deg\n"
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Guard_Animation_Ready:Guard_QuickRigCharacter_LeftLeg'
+      has translation animation that will be discarded.\n\t'Guard_Animation_Ready:Guard_QuickRigCharacter_RightLeg'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -46,8 +55,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -104,8 +113,1317 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Thumb2
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Thumb3
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Thumb4
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Index1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Index2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Index3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Mid1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Mid2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Mid3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Ring2
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Ring3
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Ring4
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Pnky2
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Pnky3
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Left_Pnky4
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Thumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Thumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Thumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Index1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Index2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Index3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Mid1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Mid2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Mid3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Ring1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Ring2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Ring3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Pnky2
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Pnky3
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_Right_Pnky4
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Guard_Run_Cycle(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:mesh
+      parentName: Guard_Run_Cycle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:yaodai
+      parentName: Guard_Animation_Ready:mesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_Reference
+      parentName: Guard_Run_Cycle(Clone)
+      position: {x: -0.0035796356, y: 0.007980139, z: 0.050561216}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_Hips
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Reference
+      position: {x: 0.0035797176, y: 1.0530149, z: -0.05396348}
+      rotation: {x: -0.5161006, y: 0.48336348, z: 0.5161005, w: -0.48336348}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000001}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftUpLeg
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Hips
+      position: {x: 0.020396803, y: 0.0047472254, z: 0.09832924}
+      rotation: {x: 0.08942628, y: -0.00008958578, z: -0.995993, w: -0.0009978861}
+      scale: {x: 1.0000008, y: 1.0000012, z: 1.0000008}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftLeg
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftUpLeg
+      position: {x: -0.46360594, y: 0.0000015112561, z: 0.0000008685376}
+      rotation: {x: 0.000000027008351, y: 3.2414956e-11, z: 0.00000003232071, w: 1}
+      scale: {x: 0.9999998, y: 1.0000002, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftFoot
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftLeg
+      position: {x: -0.453606, y: 0.000000056990594, z: -0.00000017288023}
+      rotation: {x: 0.000000035216193, y: -0.00000025992816, z: -0.45682043, w: -0.889559}
+      scale: {x: 1.0000005, y: 1, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftToeBase
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftFoot
+      position: {x: -0.18106818, y: -0.000000037866965, z: -0.000000063466665}
+      rotation: {x: -0.0000000035796712, y: -0.000000023280304, z: -0.00000005960463,
+        w: 1}
+      scale: {x: 1.0000005, y: 0.9999996, z: 1.0000004}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_RightUpLeg
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Hips
+      position: {x: 0.020396832, y: 0.0047471775, z: -0.098329075}
+      rotation: {x: -0.000108629465, y: -0.1089582, z: 0.0009910911, w: -0.99404585}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_RightLeg
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightUpLeg
+      position: {x: 0.46360663, y: 0.00000025354677, z: -0.000000009823826}
+      rotation: {x: -0.000000003892637, y: -0.00000008195638, z: -0.000004887232,
+        w: 1}
+      scale: {x: 1.0000008, y: 1.0000013, z: 1.0000011}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_RightFoot
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightLeg
+      position: {x: 0.45360607, y: -0.00000011835349, z: 0.0000001086052}
+      rotation: {x: -0.00001553939, y: 0.000030342757, z: 0.45682034, w: 0.889559}
+      scale: {x: 0.9999998, y: 0.99999964, z: 0.99999994}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_RightToeBase
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightFoot
+      position: {x: 0.18106808, y: 5.1810983e-10, z: 0.0000000053959064}
+      rotation: {x: 0.000000006901246, y: 0.00000002158231, z: 0.0000000600765, w: 1}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000008}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Hips
+      position: {x: -0.10666483, y: 0.000000011130409, z: -0.000000026979418}
+      rotation: {x: 0.000000059604638, y: -0, z: -0.03627732, w: -0.9993418}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000005}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine1
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine
+      position: {x: -0.10648565, y: 0.000000022073108, z: -0.000000014617792}
+      rotation: {x: 0.0000000010811475, y: 0.0000000297827, z: 0.000000029802319,
+        w: 1}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine2
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine1
+      position: {x: -0.10648567, y: 0.000000008330632, z: -0.000000020283448}
+      rotation: {x: -0.000000028136432, y: 0.000000059683124, z: 0.016399931, w: -0.9998656}
+      scale: {x: 1.0000007, y: 1.0000008, z: 1.0000004}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftShoulder
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine2
+      position: {x: -0.21039908, y: -0.018519873, z: 0.072166115}
+      rotation: {x: 0.5823443, y: -0.45544395, z: -0.37290493, w: -0.56070304}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000007}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftArm
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftShoulder
+      position: {x: -0.116102636, y: -0.00028883657, z: 0.00003260854}
+      rotation: {x: 0.687923, y: 0.08647675, z: 0.16359068, w: 0.701799}
+      scale: {x: 1.0000007, y: 1.0000012, z: 1.0000006}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftForeArm
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftArm
+      position: {x: -0.33367655, y: 0.00000016053849, z: -0.000000015913848}
+      rotation: {x: -0.000000029802315, y: -0, z: -0.000000044703473, w: 1}
+      scale: {x: 1.000001, y: 1.0000004, z: 1.0000006}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftHand
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftForeArm
+      position: {x: -0.24205212, y: 0.015621905, z: -0.001056134}
+      rotation: {x: 0.000000029802315, y: 0.000000007450579, z: 0.000000044703473,
+        w: 1}
+      scale: {x: 1.000001, y: 1.0000005, z: 1.0000008}
+    - name: Guard_Animation_Ready:Guard_transform6
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftHand
+      position: {x: 0.6646062, y: 0.047990736, z: 1.6434602}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Left_Thumb1
+      parentName: Guard_Animation_Ready:Guard_transform6
+      position: {x: -0.6915703, y: 1.6348637, z: -0.009274046}
+      rotation: {x: 0.03128066, y: 0.28927037, z: 0.102858454, w: 0.95119107}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_Left_Thumb2
+      parentName: Guard_Animation_Ready:Guard_Left_Thumb1
+      position: {x: -0.035893556, y: -0.012788672, z: 0.00074120937}
+      rotation: {x: -0.026089415, y: 0.052044276, z: -0.18116911, w: 0.98172736}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000008}
+    - name: Guard_Animation_Ready:Guard_Left_Thumb3
+      parentName: Guard_Animation_Ready:Guard_Left_Thumb2
+      position: {x: -0.038616035, y: -0.011255644, z: 0.0006952549}
+      rotation: {x: -0.040657043, y: -0.037081808, z: 0.02255507, w: 0.99823004}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: Guard_Animation_Ready:Guard_Left_Thumb4
+      parentName: Guard_Animation_Ready:Guard_Left_Thumb3
+      position: {x: -0.03867862, y: -0.0073678996, z: 0.00049091416}
+      rotation: {x: -0.0052677547, y: -0.020414362, z: -0.10153285, w: 0.99460876}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000004}
+    - name: Guard_Animation_Ready:Guard_Left_Thumb5
+      parentName: Guard_Animation_Ready:Guard_Left_Thumb4
+      position: {x: -0.021242619, y: -0.008493235, z: -0.0008072231}
+      rotation: {x: -0.013954126, y: -0.18471992, z: -0.07402355, w: 0.97990024}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_transform7
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftHand
+      position: {x: 0.6646062, y: 0.047990736, z: 1.6434602}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Left_Index1
+      parentName: Guard_Animation_Ready:Guard_transform7
+      position: {x: -0.740903, y: 1.6485623, z: -0.02901368}
+      rotation: {x: 0.0496851, y: 0.0537271, z: -0.006391483, w: 0.99729836}
+      scale: {x: 1.0000012, y: 1.0000012, z: 1.0000008}
+    - name: Guard_Animation_Ready:Guard_Left_Index2
+      parentName: Guard_Animation_Ready:Guard_Left_Index1
+      position: {x: -0.042483248, y: -0.0032057103, z: 0.00046441253}
+      rotation: {x: 0.003567511, y: 0.0013559303, z: 0.06895093, w: 0.9976127}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_Left_Index3
+      parentName: Guard_Animation_Ready:Guard_Left_Index2
+      position: {x: -0.037373874, y: -0.000000069425965, z: 0.00000004530389}
+      rotation: {x: -0.028950393, y: -0.008002439, z: 0.035747368, w: 0.9989095}
+      scale: {x: 1.0000012, y: 1.0000008, z: 0.9999996}
+    - name: Guard_Animation_Ready:Guard_Left_Index4
+      parentName: Guard_Animation_Ready:Guard_Left_Index3
+      position: {x: -0.035422586, y: -0.000000021912792, z: -0.000000025924201}
+      rotation: {x: -0.004256044, y: -0.01574313, z: 0.04051913, w: 0.9990457}
+      scale: {x: 1.000001, y: 1.0000012, z: 1.0000005}
+    - name: Guard_Animation_Ready:Guard_Left_Index5
+      parentName: Guard_Animation_Ready:Guard_Left_Index4
+      position: {x: -0.03664473, y: 2.0107179e-16, z: 1.110223e-18}
+      rotation: {x: -0.008430589, y: -0.040694516, z: -0.20268711, w: 0.97836137}
+      scale: {x: 0.99999964, y: 1.0000002, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_transform8
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftHand
+      position: {x: 0.6646062, y: 0.047990736, z: 1.6434602}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Left_Mid1
+      parentName: Guard_Animation_Ready:Guard_transform8
+      position: {x: -0.75142235, y: 1.6386617, z: -0.051685076}
+      rotation: {x: -0.004795282, y: 0.05169964, z: 0.06448211, w: 0.99656725}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000004}
+    - name: Guard_Animation_Ready:Guard_Left_Mid2
+      parentName: Guard_Animation_Ready:Guard_Left_Mid1
+      position: {x: -0.054818124, y: -0.000000001461978, z: -0.0000000019582669}
+      rotation: {x: 0.01462398, y: -0.007963258, z: 0.033510488, w: 0.99929965}
+      scale: {x: 1.0000011, y: 1.0000007, z: 1.0000005}
+    - name: Guard_Animation_Ready:Guard_Left_Mid3
+      parentName: Guard_Animation_Ready:Guard_Left_Mid2
+      position: {x: -0.03202475, y: -0.00000008910401, z: 0.000000018057461}
+      rotation: {x: 0.0030283548, y: 0.031228997, z: 0.19949628, w: 0.97939616}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Guard_Animation_Ready:Guard_Left_Mid4
+      parentName: Guard_Animation_Ready:Guard_Left_Mid3
+      position: {x: -0.033253085, y: 0.01124994, z: -0.0014794226}
+      rotation: {x: -0.00000002351589, y: -0.00000005587934, z: 0.07455295, w: 0.9972171}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000001}
+    - name: Guard_Animation_Ready:Guard_Left_Mid5
+      parentName: Guard_Animation_Ready:Guard_Left_Mid4
+      position: {x: -0.038003527, y: 2.2870594e-16, z: -7.105427e-17}
+      rotation: {x: 0, y: -0, z: -0.24307866, w: 0.9700066}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:Guard_transform9
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftHand
+      position: {x: 0.6646062, y: 0.047990736, z: 1.6434602}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Left_Ring1
+      parentName: Guard_Animation_Ready:Guard_transform9
+      position: {x: -0.75421494, y: 1.6304551, z: -0.072443806}
+      rotation: {x: -0.000522673, y: -0.09039596, z: 0.025691302, w: 0.99557436}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_Left_Ring2
+      parentName: Guard_Animation_Ready:Guard_Left_Ring1
+      position: {x: -0.040037382, y: 0.000000028376627, z: 0.000000019060858}
+      rotation: {x: -0.026790274, y: 0.06498712, z: 0.07773359, w: 0.99449307}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1}
+    - name: Guard_Animation_Ready:Guard_Left_Ring3
+      parentName: Guard_Animation_Ready:Guard_Left_Ring2
+      position: {x: -0.027823988, y: -0.0000001390329, z: -0.000000013959518}
+      rotation: {x: 0.0021452347, y: 0.0033673397, z: 0.036432516, w: 0.99932814}
+      scale: {x: 0.9999999, y: 0.9999998, z: 1.0000004}
+    - name: Guard_Animation_Ready:Guard_Left_Ring4
+      parentName: Guard_Animation_Ready:Guard_Left_Ring3
+      position: {x: -0.031993534, y: 0.00000010347287, z: 0.000000009426433}
+      rotation: {x: 0.007181009, y: 0.013856724, z: 0.03835976, w: 0.99914217}
+      scale: {x: 0.9999997, y: 0.9999998, z: 1.0000001}
+    - name: Guard_Animation_Ready:Guard_Left_Ring5
+      parentName: Guard_Animation_Ready:Guard_Left_Ring4
+      position: {x: -0.039703872, y: -5.4614297e-16, z: 3.719247e-17}
+      rotation: {x: 0.007813223, y: 0.037572622, z: -0.2034422, w: 0.9783346}
+      scale: {x: 1.0000007, y: 1.0000007, z: 0.99999994}
+    - name: Guard_Animation_Ready:Guard_transform10
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_LeftHand
+      position: {x: 0.6646062, y: 0.047990736, z: 1.6434602}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Left_Pnky1
+      parentName: Guard_Animation_Ready:Guard_transform10
+      position: {x: -0.74543786, y: 1.6445663, z: -0.08815787}
+      rotation: {x: -0.032862447, y: -0.1795752, z: 0.17698634, w: 0.96713424}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000007}
+    - name: Guard_Animation_Ready:Guard_Left_Pnky2
+      parentName: Guard_Animation_Ready:Guard_Left_Pnky1
+      position: {x: -0.034730673, y: -0.0000000030304024, z: 0.000000038545984}
+      rotation: {x: -0.0010845024, y: 0.11887096, z: -0.090900265, w: 0.98873943}
+      scale: {x: 1.0000013, y: 1.0000015, z: 1.0000008}
+    - name: Guard_Animation_Ready:Guard_Left_Pnky3
+      parentName: Guard_Animation_Ready:Guard_Left_Pnky2
+      position: {x: -0.027446492, y: -0.00000006732106, z: -0.000000088164256}
+      rotation: {x: 0.028921345, y: 0.01585454, z: 0.028261265, w: 0.9990563}
+      scale: {x: 0.9999998, y: 0.99999964, z: 1.0000004}
+    - name: Guard_Animation_Ready:Guard_Left_Pnky4
+      parentName: Guard_Animation_Ready:Guard_Left_Pnky3
+      position: {x: -0.02554211, y: 0.000000029346328, z: 0.000000028544964}
+      rotation: {x: 0.024709318, y: 0.03842594, z: 0.009898917, w: 0.9989069}
+      scale: {x: 1.0000002, y: 1, z: 1.0000008}
+    - name: Guard_Animation_Ready:Guard_Left_Pnky5
+      parentName: Guard_Animation_Ready:Guard_Left_Pnky4
+      position: {x: -0.027064353, y: -1.6083055e-16, z: 3.6359802e-17}
+      rotation: {x: -0.0051618605, y: -0.030774485, z: -0.16534239, w: 0.98574245}
+      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_RightShoulder
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine2
+      position: {x: -0.20871891, y: -0.018476661, z: -0.0721662}
+      rotation: {x: -0.4559516, y: -0.58171153, z: 0.56039083, w: -0.37374064}
+      scale: {x: 1.0000006, y: 1.0000018, z: 1.0000018}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_RightArm
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightShoulder
+      position: {x: 0.11620714, y: 0.00000029303786, z: -0.00000006417119}
+      rotation: {x: -0.687923, y: -0.08647659, z: -0.16359064, w: -0.701799}
+      scale: {x: 1.0000013, y: 1.0000005, z: 0.9999994}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_RightForeArm
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightArm
+      position: {x: 0.28835562, y: -0.00000017359177, z: 0.000000953567}
+      rotation: {x: 0.000000089406946, y: -0.000000014901158, z: 0.000000044703473,
+        w: 1}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_RightHand
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightForeArm
+      position: {x: 0.32371718, y: -0.000000087353044, z: -0.00000006282464}
+      rotation: {x: -0.01604413, y: 0.15095039, z: -0.104467764, w: 0.9828749}
+      scale: {x: 1.0000005, y: 1.0000011, z: 1.0000014}
+    - name: Guard_Animation_Ready:Guard_transform1
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightHand
+      position: {x: -0.65744686, y: -0.047990736, z: -1.6434602}
+      rotation: {x: 0.7071068, y: -0.000000017216156, z: 0.000000017216156, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Right_Thumb1
+      parentName: Guard_Animation_Ready:Guard_transform1
+      position: {x: 0.68404317, y: 1.6338699, z: -0.02783789}
+      rotation: {x: 0.9522729, y: -0.0044217054, z: 0.30521592, w: 0.00034186972}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.000001}
+    - name: Guard_Animation_Ready:Guard_Right_Thumb2
+      parentName: Guard_Animation_Ready:Guard_Right_Thumb1
+      position: {x: 0.032584906, y: -0.000005851207, z: -0.00000024315443}
+      rotation: {x: 0.0017147813, y: -0.0131958835, z: 0.03657058, w: 0.99924254}
+      scale: {x: 1.0000006, y: 0.99999934, z: 1.0000001}
+    - name: Guard_Animation_Ready:Guard_Right_Thumb3
+      parentName: Guard_Animation_Ready:Guard_Right_Thumb2
+      position: {x: 0.0335345, y: 0.0000064751875, z: 0.00000003829195}
+      rotation: {x: -0.0309494, y: -0.038747977, z: -0.007871186, w: 0.99873865}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000005}
+    - name: Guard_Animation_Ready:Guard_Right_Thumb4
+      parentName: Guard_Animation_Ready:Guard_Right_Thumb3
+      position: {x: 0.03572201, y: -0.000002076948, z: -0.00000012034705}
+      rotation: {x: -0.0052676913, y: -0.020414412, z: -0.10153297, w: 0.9946087}
+      scale: {x: 1.0000001, y: 0.9999996, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_Right_Thumb5
+      parentName: Guard_Animation_Ready:Guard_Right_Thumb4
+      position: {x: 0.033606853, y: 0.0000013614522, z: 0.00000016933956}
+      rotation: {x: -0.013954071, y: -0.18471992, z: -0.07402351, w: 0.97990024}
+      scale: {x: 1.0000006, y: 1.000001, z: 1.0000013}
+    - name: Guard_Animation_Ready:Guard_transform2
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightHand
+      position: {x: -0.65744686, y: -0.047990736, z: -1.6434602}
+      rotation: {x: 0.7071068, y: -0.000000017216156, z: 0.000000017216156, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Right_Index1
+      parentName: Guard_Animation_Ready:Guard_transform2
+      position: {x: 0.730933, y: 1.6479299, z: -0.03614233}
+      rotation: {x: 0.99002266, y: 0.13317896, z: -0.01685184, w: 0.042831298}
+      scale: {x: 1.0000014, y: 1.0000014, z: 1.0000021}
+    - name: Guard_Animation_Ready:Guard_Right_Index2
+      parentName: Guard_Animation_Ready:Guard_Right_Index1
+      position: {x: 0.04237328, y: -0.0000030701165, z: -0.000000057500188}
+      rotation: {x: 0.014903981, y: -0.01045709, z: 0.030189343, w: 0.99937844}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000004}
+    - name: Guard_Animation_Ready:Guard_Right_Index3
+      parentName: Guard_Animation_Ready:Guard_Right_Index2
+      position: {x: 0.037374504, y: 0.0000006165081, z: 0.00000013628474}
+      rotation: {x: -0.0009683755, y: -0.0036457314, z: 0.034866445, w: 0.9993849}
+      scale: {x: 1.0000002, y: 0.99999964, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_Right_Index4
+      parentName: Guard_Animation_Ready:Guard_Right_Index3
+      position: {x: 0.035421915, y: -0.00000085352735, z: -0.00000009460999}
+      rotation: {x: -0.0050685056, y: -0.015500531, z: 0.092390195, w: 0.9955894}
+      scale: {x: 1.000001, y: 1.0000004, z: 1.000001}
+    - name: Guard_Animation_Ready:Guard_Right_Index5
+      parentName: Guard_Animation_Ready:Guard_Right_Index4
+      position: {x: 0.036644876, y: 0.0000015372921, z: -0.00000003321819}
+      rotation: {x: -0.008430578, y: -0.040694658, z: -0.20268716, w: 0.97836137}
+      scale: {x: 1.000001, y: 1.000001, z: 1.0000013}
+    - name: Guard_Animation_Ready:Guard_transform3
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightHand
+      position: {x: -0.65744686, y: -0.047990736, z: -1.6434602}
+      rotation: {x: 0.7071068, y: -0.000000017216156, z: 0.000000017216156, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Right_Mid1
+      parentName: Guard_Animation_Ready:Guard_transform3
+      position: {x: 0.741306, y: 1.6568098, z: -0.060877714}
+      rotation: {x: 0.98826766, y: 0.14828639, z: -0.035754427, w: 0.007731463}
+      scale: {x: 1.0000014, y: 1.0000013, z: 1.0000019}
+    - name: Guard_Animation_Ready:Guard_Right_Mid2
+      parentName: Guard_Animation_Ready:Guard_Right_Mid1
+      position: {x: 0.05482191, y: -0.0000067120022, z: -0.000000008421068}
+      rotation: {x: 0.014625599, y: -0.00795563, z: 0.03341397, w: 0.999303}
+      scale: {x: 1.0000007, y: 1.0000006, z: 1.0000005}
+    - name: Guard_Animation_Ready:Guard_Right_Mid3
+      parentName: Guard_Animation_Ready:Guard_Right_Mid2
+      position: {x: 0.03202474, y: 0.0000021847418, z: -0.000000056205703}
+      rotation: {x: 0.0054784813, y: 0.00471091, z: 0.02906355, w: 0.99955153}
+      scale: {x: 0.9999998, y: 1.0000004, z: 1.0000007}
+    - name: Guard_Animation_Ready:Guard_Right_Mid4
+      parentName: Guard_Animation_Ready:Guard_Right_Mid3
+      position: {x: 0.038112592, y: 0.0000043822733, z: 0.000000021481398}
+      rotation: {x: 0.00000017182896, y: -0.000000033527602, z: 0.07455308, w: 0.99721706}
+      scale: {x: 1.0000011, y: 0.9999996, z: 1.000001}
+    - name: Guard_Animation_Ready:Guard_Right_Mid5
+      parentName: Guard_Animation_Ready:Guard_Right_Mid4
+      position: {x: 0.038003255, y: -0.0000016063269, z: 1.3322676e-16}
+      rotation: {x: -0.0000001270205, y: 0.000000033845602, z: -0.24307871, w: 0.97000664}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000006}
+    - name: Guard_Animation_Ready:Guard_transform4
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightHand
+      position: {x: -0.65744686, y: -0.047990736, z: -1.6434602}
+      rotation: {x: 0.7071068, y: -0.000000017216156, z: 0.000000017216156, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Right_Ring1
+      parentName: Guard_Animation_Ready:Guard_transform4
+      position: {x: 0.74409896, y: 1.65491, z: -0.08641101}
+      rotation: {x: 0.98336655, y: 0.15120822, z: -0.09707374, w: -0.026515184}
+      scale: {x: 1.0000013, y: 1.0000014, z: 1.0000019}
+    - name: Guard_Animation_Ready:Guard_Right_Ring2
+      parentName: Guard_Animation_Ready:Guard_Right_Ring1
+      position: {x: 0.040037002, y: -0.00000026882046, z: 0.00000012496766}
+      rotation: {x: -0.007843721, y: 0.0036700775, z: 0.0244226, w: 0.99966425}
+      scale: {x: 1.0000014, y: 1.0000007, z: 1.0000008}
+    - name: Guard_Animation_Ready:Guard_Right_Ring3
+      parentName: Guard_Animation_Ready:Guard_Right_Ring2
+      position: {x: 0.027824122, y: 0.000008991792, z: 0.0000000270229}
+      rotation: {x: 0.002146431, y: 0.0033819089, z: 0.036723327, w: 0.9993175}
+      scale: {x: 1.0000005, y: 1, z: 1.0000006}
+    - name: Guard_Animation_Ready:Guard_Right_Ring4
+      parentName: Guard_Animation_Ready:Guard_Right_Ring3
+      position: {x: 0.03199149, y: -0.0000073418632, z: 0.00000036157974}
+      rotation: {x: 0.0071755135, y: 0.019255258, z: 0.053306807, w: 0.9983668}
+      scale: {x: 0.99999905, y: 1.0000002, z: 1.0000001}
+    - name: Guard_Animation_Ready:Guard_Right_Ring5
+      parentName: Guard_Animation_Ready:Guard_Right_Ring4
+      position: {x: 0.03970437, y: 0.000001746249, z: -0.0000006902685}
+      rotation: {x: 0.007813036, y: 0.037572704, z: -0.20344211, w: 0.9783346}
+      scale: {x: 0.99999946, y: 1.0000001, z: 0.9999996}
+    - name: Guard_Animation_Ready:Guard_transform5
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_RightHand
+      position: {x: -0.65744686, y: -0.047990736, z: -1.6434602}
+      rotation: {x: 0.7071068, y: -0.000000017216156, z: 0.000000017216156, w: 0.7071068}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: Guard_Animation_Ready:Guard_Right_Pnky1
+      parentName: Guard_Animation_Ready:Guard_transform5
+      position: {x: 0.7375908, y: 1.6439283, z: -0.09505494}
+      rotation: {x: 0.97331107, y: 0.13906236, z: -0.18072201, w: -0.025820673}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1.0000011}
+    - name: Guard_Animation_Ready:Guard_Right_Pnky2
+      parentName: Guard_Animation_Ready:Guard_Right_Pnky1
+      position: {x: 0.035761405, y: 0.000757775, z: 0.00676809}
+      rotation: {x: 0.1450232, y: 0.07141453, z: 0.10657827, w: 0.9810756}
+      scale: {x: 1.0000001, y: 1, z: 0.9999998}
+    - name: Guard_Animation_Ready:Guard_Right_Pnky3
+      parentName: Guard_Animation_Ready:Guard_Right_Pnky2
+      position: {x: 0.027446307, y: 0.00000018052816, z: 0.0000003216506}
+      rotation: {x: 0.016771011, y: 0.020001164, z: 0.022878844, w: 0.9993975}
+      scale: {x: 1.000001, y: 1.0000002, z: 1.0000002}
+    - name: Guard_Animation_Ready:Guard_Right_Pnky4
+      parentName: Guard_Animation_Ready:Guard_Right_Pnky3
+      position: {x: 0.025542803, y: 0.000004113655, z: -0.00000070646223}
+      rotation: {x: 0.024711998, y: 0.03847084, z: 0.009954692, w: 0.9989045}
+      scale: {x: 1.0000013, y: 1.0000007, z: 1.0000014}
+    - name: Guard_Animation_Ready:Guard_Right_Pnky5
+      parentName: Guard_Animation_Ready:Guard_Right_Pnky4
+      position: {x: 0.027064702, y: -0.00000092622514, z: 0.000000873296}
+      rotation: {x: -0.0051620733, y: -0.030774448, z: -0.16534221, w: 0.98574257}
+      scale: {x: 0.9999995, y: 0.9999996, z: 0.99999917}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_Neck
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Spine2
+      position: {x: -0.28487736, y: -0.000000035610935, z: -0.000000029792401}
+      rotation: {x: -0.00000003369607, y: -0.000000026113355, z: -0.10724005, w: 0.9942332}
+      scale: {x: 1.0000011, y: 1.0000013, z: 1.0000011}
+    - name: Guard_Animation_Ready:Guard_QuickRigCharacter_Head
+      parentName: Guard_Animation_Ready:Guard_QuickRigCharacter_Neck
+      position: {x: -0.10902642, y: -0.000000037211098, z: -0.000000017842869}
+      rotation: {x: -0, y: -1.2434496e-14, z: 0.000000059604638, w: 1}
+      scale: {x: 0.99999946, y: 0.9999993, z: 0.9999995}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      parentName: Guard_Run_Cycle(Clone)
+      position: {x: -0.0035796356, y: 0.025588142, z: 0.15736113}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_HipsEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.08262215, y: 0.88603944, z: 0.0908711}
+      rotation: {x: 0.05629249, y: 0.12159019, z: 0.0061516785, w: 0.99096376}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftAnkleEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.00973145, y: 0.119527966, z: 0.62014055}
+      rotation: {x: -0.29115275, y: -0.036185432, z: 0.0826021, w: 0.9524167}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightAnkleEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.22757053, y: 0.57544416, z: -0.34043926}
+      rotation: {x: 0.8624691, y: -0.02359507, z: -0.05298814, w: 0.5027751}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftWristEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.28655788, y: 1.0216987, z: 0.14531693}
+      rotation: {x: 0.037230726, y: 0.19461809, z: 0.64731807, w: 0.73601425}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightWristEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.3789139, y: 1.161738, z: 0.4067972}
+      rotation: {x: -0.045722786, y: -0.5021984, z: -0.558742, w: 0.65841764}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftKneeEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.008697589, y: 0.5142416, z: 0.4077442}
+      rotation: {x: -0.288196, y: -0.007826275, z: 0.092271656, w: 0.9530833}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightKneeEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.31129923, y: 0.44864276, z: 0.08404592}
+      rotation: {x: 0.7678532, y: 0.15436317, z: -0.13342202, w: 0.6072661}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftElbowEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.170983, y: 1.216696, z: 0.084090576}
+      rotation: {x: -0.10890451, y: 0.056363996, z: 0.49461713, w: 0.86041665}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightElbowEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.3943446, y: 1.3657017, z: 0.16368838}
+      rotation: {x: -0.093089655, y: -0.49319178, z: -0.505839, w: 0.7015861}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_ChestOriginEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.09085325, y: 1.1494298, z: 0.0649014}
+      rotation: {x: 0.1683145, y: 0.08376194, z: -0.004283398, w: 0.9821588}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_ChestEndEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.09413318, y: 1.5540853, z: 0.18825409}
+      rotation: {x: 0.16217318, y: 0.06826134, z: 0.0081222225, w: 0.9843649}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftFootEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.029115815, y: 0.11714698, z: 0.79912555}
+      rotation: {x: -0.29115275, y: -0.036185667, z: 0.08260209, w: 0.9524167}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightFootEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.23284078, y: 0.51061, z: -0.5072065}
+      rotation: {x: 0.807377, y: -0.056714196, z: -0.0023876803, w: 0.58729905}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftShoulderEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.07080655, y: 1.5795323, z: 0.28825027}
+      rotation: {x: 0.11975885, y: -0.35287878, z: 0.4742599, w: 0.79762894}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightShoulderEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.24784988, y: 1.5929546, z: 0.1758411}
+      rotation: {x: 0.13071106, y: -0.017227083, z: -0.45048583, w: 0.8829951}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_HeadEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.078374535, y: 1.7353873, z: 0.12827791}
+      rotation: {x: 0.079953045, y: -0.024572015, z: 0.015891504, w: 0.996369}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHipEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.009045623, y: 0.8834708, z: 0.11447195}
+      rotation: {x: -0.34806222, y: 0.05142681, z: 0.07829155, w: 0.9327799}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHipEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.18695498, y: 0.8930266, z: 0.069462836}
+      rotation: {x: -0.062436245, y: 0.043363504, z: 0.035288475, w: 0.99648184}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandThumbEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.34766448, y: 1.005969, z: 0.40170017}
+      rotation: {x: 0.13345397, y: 0.22251678, z: 0.47961858, w: 0.83823764}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandIndexEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.3628236, y: 0.97190136, z: 0.42755637}
+      rotation: {x: 0.0018762989, y: 0.33352098, z: 0.6665998, w: 0.6666371}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandMiddleEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.35996056, y: 0.9454532, z: 0.41083562}
+      rotation: {x: 0.042204488, y: 0.39253125, z: 0.7597913, w: 0.5165802}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandRingEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.373281, y: 0.94594616, z: 0.3630875}
+      rotation: {x: 0.05444522, y: 0.3670976, z: 0.78951013, w: 0.48882392}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandPinkyEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.40214968, y: 0.9514228, z: 0.33993727}
+      rotation: {x: -0.008505663, y: 0.28640497, z: 0.7738603, w: 0.5648364}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandThumbEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.3243805, y: 0.962779, z: 0.2178874}
+      rotation: {x: -0.08550044, y: 0.19827907, z: -0.5291642, w: 0.82058537}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandIndexEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.31959474, y: 0.9002953, z: 0.21973126}
+      rotation: {x: -0.17244583, y: 0.0053831222, z: -0.7581303, w: 0.6288656}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandMiddleEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.3002483, y: 0.8890774, z: 0.20586228}
+      rotation: {x: 0.19363786, y: 0.075333126, z: 0.8486329, w: -0.48646846}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandRingEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.3021392, y: 0.89563894, z: 0.17687821}
+      rotation: {x: -0.28178394, y: -0.11394988, z: -0.7987717, w: 0.5192081}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandPinkyEffector
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.29051214, y: 0.88959146, z: 0.15096714}
+      rotation: {x: -0.33302188, y: -0.046511725, z: -0.7110255, w: 0.6175564}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Hips
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.081830844, y: 0.9069447, z: 0.089927346}
+      rotation: {x: 0.05629249, y: 0.12159019, z: 0.0061516785, w: 0.99096376}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftUpLeg
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Hips
+      position: {x: -0.09832901, y: -0.020663757, z: 0.0034023058}
+      rotation: {x: -0.40676168, y: -0.054112744, z: 0.02755402, w: 0.91151386}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftLeg
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftUpLeg
+      position: {x: -0.08258487, y: -0.45515245, z: -0.030764861}
+      rotation: {x: 0.057189953, y: -0.06565997, z: -0.00817684, w: 0.9961683}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftFoot
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftLeg
+      position: {x: -0.08080353, y: -0.4453348, z: -0.03010126}
+      rotation: {x: -0.0062612616, y: -0.026519625, z: -0.014215891, w: 0.9995276}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftToeBase
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftFoot
+      position: {x: -0.018792666, y: -0.11349638, z: 0.13982505}
+      rotation: {x: 1.788242e-14, y: -0.00000021761878, z: -0.000000082173145, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightUpLeg
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Hips
+      position: {x: 0.09832901, y: -0.020663757, z: 0.0034023058}
+      rotation: {x: -0.12209993, y: -0.074972466, z: 0.018882116, w: 0.989502}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightLeg
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightUpLeg
+      position: {x: 0.100425966, y: -0.45156813, z: -0.03051815}
+      rotation: {x: 0.81486, y: 0.108718544, z: -0.10634603, w: 0.55935144}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightFoot
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightLeg
+      position: {x: 0.09825973, y: -0.4418275, z: -0.029864296}
+      rotation: {x: 0.14005816, y: -0.018813875, z: 0.18330972, w: 0.97284496}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightToeBase
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightFoot
+      position: {x: 0.022864742, y: -0.11267799, z: 0.13988033}
+      rotation: {x: -0.097313896, y: 0.025267513, z: 0.061851, w: 0.9930086}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Spine
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Hips
+      position: {x: -0, y: 0.106436156, z: 0.006980069}
+      rotation: {x: 0.11274117, y: -0.003462797, z: 0.0014898849, w: 0.9936173}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Spine1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Spine
+      position: {x: -0, y: 0.106483, z: -0.00075439154}
+      rotation: {x: -0.0037244444, y: -0.0059189564, z: 0.007618771, w: 0.99994653}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Spine2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Spine1
+      position: {x: -0, y: 0.106483, z: -0.00075439335}
+      rotation: {x: -0.0037093335, y: -0.0054146796, z: 0.0069238255, w: 0.9999545}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftShoulder
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Spine2
+      position: {x: -0.07216617, y: 0.21080565, z: -0.0131035205}
+      rotation: {x: -0.011233994, y: -0.030677103, z: -0.022548724, w: 0.99921185}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftArm
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftShoulder
+      position: {x: -0.10824924, y: 0.03899292, z: 0.015542636}
+      rotation: {x: -0.03668317, y: -0.32219398, z: 0.5497807, w: 0.76979643}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftForeArm
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftArm
+      position: {x: -0.3336766, y: 2.842171e-16, z: -2.220446e-18}
+      rotation: {x: 0.018715974, y: 0.4605695, z: 0.030106798, w: 0.8869155}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHand
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftForeArm
+      position: {x: -0.24205218, y: 0, z: 0.0156576}
+      rotation: {x: 0.16403852, y: 0.021804959, z: 0.17386103, w: 0.97076684}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandThumb1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHand
+      position: {x: -0.026963882, y: -0.011188049, z: 0.03804882}
+      rotation: {x: 0.12519489, y: 0.014113088, z: 0.021618234, w: 0.99179626}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandThumb2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandThumb1
+      position: {x: -0.026443481, y: -0.02137558, z: 0.017212657}
+      rotation: {x: -0.03736965, y: -0.2673178, z: -0.107226655, w: 0.9568946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandThumb3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandThumb2
+      position: {x: -0.025880966, y: -0.02615158, z: 0.01626779}
+      rotation: {x: 0.017437078, y: -0.029462045, z: -0.007184894, w: 0.999388}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandThumb4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandThumb3
+      position: {x: -0.030663222, y: -0.021228332, z: 0.012636628}
+      rotation: {x: -0.0000001937446, y: -0.0000001239151, z: -0.00000065474086, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandIndex1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHand
+      position: {x: -0.07629661, y: 0.0038105773, z: 0.01927793}
+      rotation: {x: -0.0005678876, y: -0.05528663, z: 0.03258363, w: 0.9979386}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandIndex2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandIndex1
+      position: {x: -0.03970543, y: -0.004698944, z: 0.014721584}
+      rotation: {x: 0.0037754364, y: 0.0024250722, z: 0.025565146, w: 0.9996631}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandIndex3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandIndex2
+      position: {x: -0.03097267, y: -0.019893035, z: 0.006462707}
+      rotation: {x: 0.0006402349, y: 0.00067743636, z: 0.025938395, w: 0.9996631}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandIndex4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandIndex3
+      position: {x: -0.024302825, y: -0.025739288, z: 0.0012726545}
+      rotation: {x: -0.00000020405798, y: 0.00000025576193, z: 0.00000040730987, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandMiddle1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHand
+      position: {x: -0.08681587, y: -0.0045384215, z: -0.0040095258}
+      rotation: {x: 0.010687388, y: 0.0037553748, z: 0.050787456, w: 0.99864525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandMiddle2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandMiddle1
+      position: {x: -0.053585965, y: -0.008745117, z: 0.007556034}
+      rotation: {x: 0.0008888824, y: 0.00049433735, z: 0.051659312, w: 0.99866426}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandMiddle3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandMiddle2
+      position: {x: -0.027996978, y: -0.0155357355, z: 0.0006304479}
+      rotation: {x: 0.0055553233, y: 0.004506885, z: 0.16146891, w: 0.9868519}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandMiddle4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandMiddle3
+      position: {x: -0.027257843, y: -0.022115784, z: 0.0015549778}
+      rotation: {x: -0.00000027969747, y: -0.00000007737203, z: -0.00000011006939,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandRing1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHand
+      position: {x: -0.089608535, y: -0.011326446, z: -0.025274439}
+      rotation: {x: 0.001000949, y: -0.008678326, z: 0.10782205, w: 0.99413186}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandRing2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandRing1
+      position: {x: -0.039330214, y: -0.0015612793, z: -0.0073272977}
+      rotation: {x: -0.0070527596, y: -0.004572985, z: 0.10354777, w: 0.994589}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandRing3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandRing2
+      position: {x: -0.023271713, y: -0.0150842285, z: -0.0022512984}
+      rotation: {x: -0.0029312694, y: -0.0033575436, z: 0.10379442, w: 0.9945888}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandRing4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandRing3
+      position: {x: -0.021021195, y: -0.024079284, z: -0.0013726639}
+      rotation: {x: -0.0000012278675, y: 0.00000073056395, z: 0.00000056350314, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandPinky1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHand
+      position: {x: -0.08083145, y: 0.0038122558, z: -0.040001094}
+      rotation: {x: -0.0072687985, y: -0.0068351943, z: 0.0074454546, w: 0.9999225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandPinky2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandPinky1
+      position: {x: -0.030314941, y: -0.011485291, z: -0.012462494}
+      rotation: {x: -0.08575686, y: -0.05457697, z: 0.22912863, w: 0.96807396}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandPinky3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandPinky2
+      position: {x: -0.02116539, y: -0.013470306, z: -0.011130509}
+      rotation: {x: 0.0010111931, y: 0.0013481048, z: -0.0118792495, w: 0.99992806}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandPinky4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_LeftHandPinky3
+      position: {x: -0.015167236, y: -0.020235747, z: -0.0035872268}
+      rotation: {x: -0.00000025020498, y: 0.000000047131934, z: -0.0000004387819,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightShoulder
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Spine2
+      position: {x: 0.07216617, y: 0.20912491, z: -0.0131035205}
+      rotation: {x: -0.014610513, y: 0.019085966, z: 0.05937923, w: 0.9979461}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightArm
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightShoulder
+      position: {x: 0.108249255, y: 0.039301604, z: 0.015542636}
+      rotation: {x: 0.047638632, y: -0.18819891, z: -0.4668731, w: 0.86275214}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightForeArm
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightArm
+      position: {x: 0.28835583, y: 0, z: -2.220446e-18}
+      rotation: {x: 0.044466432, y: -0.5380633, z: -0.058049522, w: 0.83972675}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHand
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightForeArm
+      position: {x: 0.32371727, y: 2.842171e-16, z: -2.220446e-18}
+      rotation: {x: 0.0032568641, y: 0.00027718124, z: -0.08327343, w: 0.9965214}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandThumb1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHand
+      position: {x: 0.017884674, y: -0.017350005, z: 0.024178104}
+      rotation: {x: -0.07262895, y: 0.0742402, z: 0.10165452, w: 0.9893836}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandThumb2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandThumb1
+      position: {x: 0.019018555, y: -0.014792328, z: 0.021937542}
+      rotation: {x: 0.029860456, y: 0.057478104, z: 0.032062892, w: 0.9973849}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandThumb3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandThumb2
+      position: {x: 0.01817543, y: -0.020330047, z: 0.01951692}
+      rotation: {x: 0.03640266, y: 0.05991698, z: 0.025870683, w: 0.9972039}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandThumb4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandThumb3
+      position: {x: 0.023344954, y: -0.021348724, z: 0.016592374}
+      rotation: {x: -0.000000016567656, y: -0.00000006931905, z: -0.00000028710744,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandIndex1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHand
+      position: {x: 0.067498475, y: -0.018333435, z: 0.025852982}
+      rotation: {x: -0.0077896053, y: 0.070520505, z: -0.067049325, w: 0.9952239}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandIndex2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandIndex1
+      position: {x: 0.038642883, y: 0.007529297, z: 0.01566951}
+      rotation: {x: 0.014294337, y: -0.003948178, z: -0.05906773, w: 0.99814385}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandIndex3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandIndex2
+      position: {x: 0.034940872, y: -0.009652404, z: 0.0091006085}
+      rotation: {x: 0.009101699, y: -0.0063890894, z: -0.05987638, w: 0.99814385}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandIndex4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandIndex3
+      position: {x: 0.028503722, y: -0.020010527, z: 0.0064674946}
+      rotation: {x: 0.000000045160693, y: 0.000000003838534, z: 0.0000002996132, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandMiddle1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHand
+      position: {x: 0.08479683, y: -0.01299118, z: 0.0041615297}
+      rotation: {x: -0.011783623, y: 0.015142531, z: -0.13025175, w: 0.9912953}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandMiddle2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandMiddle1
+      position: {x: 0.05335701, y: 0.00622879, z: 0.010939698}
+      rotation: {x: 0.012713178, y: -0.0031082686, z: -0.12056492, w: 0.99261916}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandMiddle3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandMiddle2
+      position: {x: 0.030926742, y: -0.0075614927, z: 0.003456078}
+      rotation: {x: 0.0117700435, y: -0.012097099, z: -0.12009239, w: 0.9926193}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandMiddle4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandMiddle3
+      position: {x: 0.026319504, y: -0.027050324, z: 0.005304073}
+      rotation: {x: -0.0000008408509, y: -0.00000007404936, z: -0.0000015810041, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandRing1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHand
+      position: {x: 0.091951214, y: -0.015580139, z: -0.020444838}
+      rotation: {x: -0.05412836, y: -0.08572372, z: -0.10979725, w: 0.98877}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandRing2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandRing1
+      position: {x: 0.03920395, y: 0.00807373, z: -0.000910449}
+      rotation: {x: 0.0027926015, y: -0.0016958307, z: -0.10536191, w: 0.9944286}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandRing3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandRing2
+      position: {x: 0.023772277, y: -0.014433288, z: 0.0008621478}
+      rotation: {x: 0.0024541589, y: -0.0026578133, z: -0.10535056, w: 0.9944286}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandRing4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandRing3
+      position: {x: 0.021688156, y: -0.023491973, z: 0.001097579}
+      rotation: {x: -0.0000002732433, y: 0.0000005053557, z: -0.0000016724362, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandPinky1
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHand
+      position: {x: 0.08431953, y: -0.024008483, z: -0.030855749}
+      rotation: {x: -0.08405399, y: -0.10271478, z: -0.08717958, w: 0.98731166}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandPinky2
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandPinky1
+      position: {x: 0.03434143, y: -0.00025360106, z: -0.012077243}
+      rotation: {x: -0.012301758, y: 0.0067050993, z: -0.041626487, w: 0.999035}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandPinky3
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandPinky2
+      position: {x: 0.022840042, y: -0.012449341, z: -0.008754978}
+      rotation: {x: -0.0026371595, y: 0.003946317, z: -0.043664843, w: 0.99903494}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandPinky4
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_RightHandPinky3
+      position: {x: 0.014109954, y: -0.021112213, z: -0.0027601337}
+      rotation: {x: -0.00000059685726, y: 0.00000061683767, z: -0.0000012619735, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Neck
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Spine2
+      position: {x: -0, y: 0.28478315, z: 0.00732532}
+      rotation: {x: -0.029112516, y: -0.036559995, z: 0.005056109, w: 0.9988945}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Head
+      parentName: Guard_Animation_Ready:QuickRigCharacter_Ctrl_Neck
+      position: {x: -0, y: 0.10588547, z: 0.025980389}
+      rotation: {x: -0.026644789, y: -0.03703898, z: 0.010401616, w: 0.9989044}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -116,10 +1434,10 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
