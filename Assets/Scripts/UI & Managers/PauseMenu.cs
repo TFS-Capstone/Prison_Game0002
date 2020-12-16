@@ -9,10 +9,26 @@ public class PauseMenu : MonoBehaviour
     public GameObject controlsUI;
     [HideInInspector]
     public bool playerIsInCams;
+
+    [SerializeField]
+    AudioSource music = null;
+    [SerializeField]
+    AudioSource ambience = null;
+
+  
+
+    float ambienceBaseVolume = 0;
+    float musicBaseVolume = 0;
+
+    float volumeMultiplier = 1;
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        ambienceBaseVolume = ambience.volume;
+        musicBaseVolume = music.volume;
+        
     }
 
 
@@ -20,6 +36,8 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        music.volume = musicBaseVolume * volumeMultiplier;
+        ambience.volume = ambienceBaseVolume * volumeMultiplier;
         playerIsInCams = GameManager.instance.playerInCams;
         GameManager.instance.GameIsPause = isPaused;
         if (Input.GetKeyDown(KeyCode.Escape) && !playerIsInCams)
@@ -27,12 +45,14 @@ public class PauseMenu : MonoBehaviour
             if(isPaused)
             {
                 Resume();
+                volumeMultiplier = 1;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }
             else
             {
                 Pause();
+                volumeMultiplier = 0.5f;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
             }

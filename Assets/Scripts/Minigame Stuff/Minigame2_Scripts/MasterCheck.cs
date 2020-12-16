@@ -11,17 +11,11 @@ public class MasterCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       for (int i = 0; i < 3; i++)
-        {
-            KeyMaster[i] = Random.Range(0, 6);
-            EndKeys[i].GetComponent<Renderer>().material.SetColor("_Color", Color.white);
-            // Randomly generate the end keys
-
-        }
+        Redo();
        
-        Debug.Log(KeyMaster[0]);
-        Debug.Log(KeyMaster[1]);
-        Debug.Log(KeyMaster[2]);
+        //Debug.Log(KeyMaster[0]);
+        //Debug.Log(KeyMaster[1]);
+        //Debug.Log(KeyMaster[2]);
        
         //Debug Log for Endkeys
     }
@@ -80,5 +74,18 @@ public class MasterCheck : MonoBehaviour
             Debug.Log(KeyMaster[1]);
             Debug.Log(KeyMaster[2]);
         }
+    }
+
+    public void Redo()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            KeyMaster[i] = Random.Range(0, 6);
+            EndKeys[i].GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+            // Randomly generate the end keys
+
+        }
+
+        minigameReset = true;
     }
 }

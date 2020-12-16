@@ -12,6 +12,11 @@ public class DoorNew : MonoBehaviour
     [SerializeField]
     float animTime;
 
+    [SerializeField]
+    AudioClip door;
+    [SerializeField]
+    float clipWaitTime = 1;
+
     bool closed = true;
     bool stop = true;
     bool runOnce = true;
@@ -48,6 +53,7 @@ public class DoorNew : MonoBehaviour
                     closed = false;
                     stop = false;
                     runOnce = false;
+                StartCoroutine(waitToPlayClip());
                 }
                 else if (!closed && canOpen)
                 {
@@ -55,7 +61,8 @@ public class DoorNew : MonoBehaviour
                     closed = true;
                     stop = false;
                     runOnce = false;
-                }
+                StartCoroutine(waitToPlayClip());
+            }
             }
             else
             {
@@ -70,7 +77,11 @@ public class DoorNew : MonoBehaviour
         stop = true;
         canOpen = true;
     }
-
+    IEnumerator waitToPlayClip()
+    {
+        yield return new WaitForSeconds(clipWaitTime);
+        AudioManager.instance.PlayAudioAtPoint(door, transform);
+    }
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Enemy")

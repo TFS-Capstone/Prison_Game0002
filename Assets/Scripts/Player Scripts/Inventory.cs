@@ -60,6 +60,17 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     LayerMask ignore = 0;
     //End of item selection
+
+    [SerializeField]
+    AudioClip itemPickUp = null;
+    [SerializeField]
+    AudioClip changeOutfit = null;
+
+    [SerializeField]
+    AudioClip click = null;
+    [SerializeField]
+    AudioClip openPipes = null;
+
     void Start()
     {
         //playerColour = GetComponent<Renderer>();
@@ -142,6 +153,7 @@ public class Inventory : MonoBehaviour
                     playerPantsMesh.material = prisonOutfit;
                     isDisguised = false;
                     GameManager.instance.disguised = false;
+                    AudioManager.instance.PlayAudioAtPoint(changeOutfit, transform);
                 }
                 else
                 {
@@ -151,6 +163,7 @@ public class Inventory : MonoBehaviour
                         playerPantsMesh.material = guardOutfit;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
+                        AudioManager.instance.PlayAudioAtPoint(changeOutfit, transform);
                     }
 
                     else if (disguise.GetComponent<Items>().type == 5)
@@ -159,6 +172,7 @@ public class Inventory : MonoBehaviour
                         playerPantsMesh.material = Disguise2;
                         isDisguised = true;
                         GameManager.instance.disguised = true;
+                        AudioManager.instance.PlayAudioAtPoint(changeOutfit, transform);
                     }
                 }                
             }
@@ -203,7 +217,7 @@ public class Inventory : MonoBehaviour
     {
         var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100.0f,ignore))
+        if (Physics.Raycast(ray, out hit, 12,ignore))
         {
             
             if (hit.distance < 20 && hit.transform.gameObject.tag == "item")
@@ -215,12 +229,14 @@ public class Inventory : MonoBehaviour
                     {
                         item.transform.position = hit.point;
                         item.SetActive(true);
+                        
                     }
                     item = hit.transform.gameObject;
                     item.SetActive(false);
+                    AudioManager.instance.PlayAudioAtPoint(itemPickUp, transform);
                     //destroying the object breaks a few things
                     //Destroy(hit.transform.gameObject);
-                    Debug.Log(item);
+                    //Debug.Log(item);
                 }
             }
             else if (hit.distance < 20 && hit.transform.gameObject.tag == "disguise")
@@ -231,12 +247,14 @@ public class Inventory : MonoBehaviour
                     {
                         disguise.transform.position = hit.point;
                         disguise.SetActive(true);
+
                     }
                     disguise = hit.transform.gameObject;
                     disguise.SetActive(false);
+                    AudioManager.instance.PlayAudioAtPoint(itemPickUp, transform);
                     //destroying the object breaks a few things
                     //Destroy(hit.transform.gameObject);
-                    Debug.Log(disguise);
+                    //Debug.Log(disguise);
                 }
             }
             else if (hit.distance < 20 && hit.transform.gameObject.tag == "keycard")
@@ -251,6 +269,7 @@ public class Inventory : MonoBehaviour
                     }
                     keycardObject = hit.transform.gameObject;
                     keycardObject.SetActive(false);
+                    AudioManager.instance.PlayAudioAtPoint(itemPickUp, transform);
                     if (keycardObject.GetComponent<Items>().type == 1)
                     {
                         keycard = 1;
@@ -331,10 +350,12 @@ public class Inventory : MonoBehaviour
                     if (gameType == 1)
                     {
                         minigame.startMinigame();
+                        AudioManager.instance.PlayAudioAtPoint(openPipes, transform);
                     }
                     else if (gameType == 2)
                     {
                         minigame.startMinigame2();
+                        AudioManager.instance.PlayAudioAtPoint(click, transform);
                     }
                     else
                     {

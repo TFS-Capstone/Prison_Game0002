@@ -314,6 +314,8 @@ MonoBehaviour:
   doortype: 3
   keytype: 0
   animTime: 2
+  door: {fileID: 8300000, guid: 54621059a2eda9e46920ada44d57c23b, type: 3}
+  clipWaitTime: 0.4
 --- !u!54 &4743657311490440837
 Rigidbody:
   m_ObjectHideFlags: 0

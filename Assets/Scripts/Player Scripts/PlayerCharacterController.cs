@@ -8,7 +8,6 @@ public class PlayerCharacterController : MonoBehaviour
     [SerializeField]
     float speed;
     float pushSpeed;
-    [SerializeField]
     float speedMultiplier = 1;
     [HideInInspector]
     public int type;
@@ -18,10 +17,26 @@ public class PlayerCharacterController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float smoothVelocity;
     float timeStill;
-    //public AudioClip aClip;
+
+    [SerializeField]
+    AudioClip[] walkClips = null;
+
+
+
+    [SerializeField]
+    float walkStepDelay = 0.3f;  
+    [SerializeField]
+    float runStepDelay = 0.1f;
+    [SerializeField]
+    float crouchStepDelay = 0.5f;
+
     //CURRENT HEIGHT TO STAY AT
     float yHeight;
     bool pushing = false;
+
+    bool canPlaySound = true;
+
+
 
     private void Start()
     {
@@ -29,6 +44,8 @@ public class PlayerCharacterController : MonoBehaviour
         type = 0;
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         pushSpeed = speed / 2;
+
+        
     }
 
     void FixedUpdate()
@@ -61,9 +78,36 @@ public class PlayerCharacterController : MonoBehaviour
         if (horizontal != 0 || vertical != 0)
         {
             
-                timeStill = 0;
-                animator.SetBool("IsMoving", true);
-            //AudioManager.PlayAudioAtPoint(aClip, transform);
+            timeStill = 0;
+            animator.SetBool("IsMoving", true);
+            if (canPlaySound)
+            {
+                if (speedMultiplier == 0.5f)
+                {
+                    int temp = Random.Range(0, walkClips.Length);
+                    AudioManager.instance.PlayAudioAtPoint(walkClips[temp], transform);
+                    //Debug.Log("Played sound: " + walkClips[temp]);
+                    canPlaySound = false;
+                    StartCoroutine(waitToPlaySound(walkClips[temp].length + crouchStepDelay));
+                }
+                else if (speedMultiplier == 1)
+                {
+                    int temp = Random.Range(0, walkClips.Length);
+                    AudioManager.instance.PlayAudioAtPoint(walkClips[temp], transform);
+                    //Debug.Log("Played sound: " + walkClips[temp]);
+                    canPlaySound = false;
+                    StartCoroutine(waitToPlaySound(walkClips[temp].length + walkStepDelay));
+                }
+                else if (speedMultiplier == 2)
+                {
+                    int temp = Random.Range(0, walkClips.Length);
+                    AudioManager.instance.PlayAudioAtPoint(walkClips[temp], transform);
+                    //Debug.Log("Played sound: " + walkClips[temp]);
+                    canPlaySound = false;
+                    StartCoroutine(waitToPlaySound(walkClips[temp].length + runStepDelay));
+                }
+            }
+            
         }
         else
         {
@@ -105,6 +149,12 @@ public class PlayerCharacterController : MonoBehaviour
             EventManager.TriggerEvent("CartReachCafeQuest");
         }
         
+    }
+
+    IEnumerator waitToPlaySound(float time)
+    {
+        yield return new WaitForSeconds(time);
+        canPlaySound = true;
     }
 
 }

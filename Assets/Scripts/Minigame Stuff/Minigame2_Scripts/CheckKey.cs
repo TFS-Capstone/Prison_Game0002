@@ -134,7 +134,8 @@ public class CheckKey : MonoBehaviour
                             }
                             if ( i > 0)
                             KeySet[i].SetActive(false);
-                            mC.minigameReset = true;
+                            //mC.minigameReset = true;
+                            doReset();
                         }
                     } //if all the rounds are spent
                        
@@ -268,4 +269,14 @@ public class CheckKey : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         clickReady = true;
     }//co-routine to limit click speed to controllable levels
+
+    public void doReset()
+    {
+        
+        minigame2End = false;
+        minigame2Lose = false;
+        mC.Redo();
+        //mC.minigame2End = false;
+    }
+ 
 }

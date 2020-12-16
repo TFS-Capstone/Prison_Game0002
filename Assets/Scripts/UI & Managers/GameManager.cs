@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     public int playerCardLevel = 0;
     [HideInInspector]
     public bool playerInCams = false;
+
+    [SerializeField]
+    GameObject checkKey = null;
     //end of variables --------------------------------
 
     //creates the GameManager instance
@@ -70,6 +73,8 @@ public class GameManager : MonoBehaviour
 
     public void win()
     {
+        
+        checkKey.GetComponent<CheckKey>().doReset();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         
@@ -80,6 +85,9 @@ public class GameManager : MonoBehaviour
     //loads the lose scene
     public void lose()
     {
+
+
+        checkKey.GetComponent<CheckKey>().doReset();
         //Cursor.visible = true;
         //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("GameOver");

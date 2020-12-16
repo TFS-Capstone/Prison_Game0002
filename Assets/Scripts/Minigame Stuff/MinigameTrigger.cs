@@ -23,6 +23,12 @@ public class MinigameTrigger : MonoBehaviour
     GameObject mastermindWinUI = null;
     [SerializeField]
     GameObject pipesWinUI = null;
+
+    [SerializeField]
+    AudioClip click = null;
+    [SerializeField]
+    AudioClip pipesClose = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +91,7 @@ public class MinigameTrigger : MonoBehaviour
     }
     public void ExitMinigame() //exits the minigame
     {
+        AudioManager.instance.PlayAudioAtPoint(pipesClose, player.transform);
         player.GetComponent<PlayerCharacterController>().enabled = true; //enables character movement
         //player.GetComponentInChildren<PlayerCameraController>().enabled = true; //enables camera movement
         Cursor.visible = false;
@@ -118,6 +125,7 @@ public class MinigameTrigger : MonoBehaviour
     }
     public void ExitMinigame2() //exits the minigame
     {
+        AudioManager.instance.PlayAudioAtPoint(click, player.transform);
         player.GetComponent<PlayerCharacterController>().enabled = true; //enables character movement
         //player.GetComponentInChildren<PlayerCameraController>().enabled = true; //enables camera movement
         Cursor.visible = false;
